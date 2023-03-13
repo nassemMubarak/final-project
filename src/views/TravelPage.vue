@@ -9,7 +9,7 @@
             <h2>
               <i class="fa fa-car bg-green"></i> Travel
               <small class="hidden-xs-down hidden-sm-down"
-                >Nulla felis eros, varius sit amet volutpat non.
+                >nothing.
               </small>
             </h2>
           </div>
