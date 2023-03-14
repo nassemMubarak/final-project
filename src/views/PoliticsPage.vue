@@ -25,7 +25,7 @@
                 <div class="row">   
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
-                            <div v-for="(item,index) in news.slice(pagNumber==1?0:(pagNumber-1)*5, pagNumber==1?5:pagNumber*5)" :key="index" class="blog-list clearfix">
+                            <div v-for="(item,index) in news.slice(pagNumber==1?0:(pagNumber-1)*10, pagNumber==1?10:pagNumber*10)" :key="index" class="blog-list clearfix">
                                 <div  class="blog-box row">
                                     <div class="col-md-4">
                                         <div class="post-media">
@@ -49,7 +49,7 @@
                                         <div class="col-lg-10 offset-lg-1">
                                         <div class="banner-spot clearfix">
                                             <div class="banner-img">
-                                                <img src="../../public\frontend\assets\upload/banner_02.jpg" alt=""
+                                                <img src="../../public\frontend\assets\upload/ramadan1.jpg" alt=""
                                                     class="img-fluid">
                                             </div><!-- end banner-img -->
                                         </div><!-- end banner -->
@@ -79,8 +79,8 @@
                                         <li @click="pagNumber==1?pagNumber:pagNumber--" class="page-item">
                                             <router-link class="page-link" to="/politics">السابق</router-link>
                                         </li>
-                                        <li v-for="index in Math.ceil(news.length/5)" :key="index"  @click="pagNumber=index" class="page-item"><router-link  class="page-link" to="/politics">{{ index }}</router-link></li>
-                                        <li @click="Math.ceil(news.length/5)==pagNumber?pagNumber:pagNumber++" class="page-item">
+                                        <li v-for="index in Math.ceil(news.length/10)" :key="index"  @click="pagNumber=index" class="page-item"><router-link  class="page-link" to="/politics">{{ index }}</router-link></li>
+                                        <li @click="Math.ceil(news.length/10)==pagNumber?pagNumber:pagNumber++" class="page-item">
                                             <router-link class="page-link" to="/politics">التالي</router-link>
                                         </li>
                                     </ul>
@@ -93,57 +93,37 @@
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="sidebar">
                             <div class="widget">
-                                <h2 class="widget-title">Search</h2>
+                                <h2 class="widget-title">بحث</h2>
                                 <form class="form-inline search-form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search on the site">
+                                        <input type="text" v-model="textSearch" class="form-control" placeholder="Search on the site">
                                     </div>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                                 </form>
                             </div><!-- end widget -->
 
                             <div class="widget">
-                                <h2 class="widget-title">Recent Posts</h2>
+                                <h2 class="widget-title">المشاركات الاخيرة</h2>
                                 <div class="blog-list-widget">
                                     <div class="list-group">
-                                        <a href="single.html"
+                                        <div
                                             class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="../../public\frontend\assets\upload/blog_square_01.jpg" alt=""
+                                            <div class="w-100 justify-content-between" v-for="(item,index) in news.slice(0,5)" :key="index">
+                                                <img :src="item.imageUrl" alt=""
                                                     class="img-fluid float-left">
-                                                <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                                <small>12 Jan, 2016</small>
+                                                <h5 class="mb-1">{{item.title}}</h5>
+                                                <small>{{item.date}}</small>
                                             </div>
-                                        </a>
-
-                                        <a href="single.html"
-                                            class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="../../public\frontend\assets\upload/blog_square_02.jpg" alt=""
-                                                    class="img-fluid float-left">
-                                                <h5 class="mb-1">Let's make an introduction for creative life</h5>
-                                                <small>11 Jan, 2016</small>
-                                            </div>
-                                        </a>
-
-                                        <a href="single.html"
-                                            class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 last-item justify-content-between">
-                                                <img src="../../public\frontend\assets\upload/blog_square_03.jpg" alt=""
-                                                    class="img-fluid float-left">
-                                                <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
-                                                <small>07 Jan, 2016</small>
-                                            </div>
-                                        </a>
+                                        </div>
                                     </div>
                                 </div><!-- end blog-list -->
                             </div><!-- end widget -->
 
                             <div class="widget">
-                                <h2 class="widget-title">Advertising</h2>
+                                <h2 class="widget-title">دعاية</h2>
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="../../public\frontend\assets\upload/banner_03.jpg" alt=""
+                                        <img src="../../public\frontend\assets\upload/ramadan.jpg" alt=""
                                             class="img-fluid">
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
@@ -203,6 +183,7 @@ export default {
     data(){
         return{
             pagNumber:1,
+            textSearch:'',
             news : [
                 {
                     title:'المصادقة بالقراءة الأولى على عودة الاستيطان لشمال الضفة',
@@ -318,6 +299,7 @@ export default {
                 },
             ]
         }
-    }
+    },
+    
 }
 </script>
