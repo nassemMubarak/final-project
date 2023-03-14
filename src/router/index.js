@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
 import PoliticsPage from "../views/PoliticsPage.vue";
-import EducationApp from "../views/EducationPage.vue";
+import EconomicPage from "../views/EconomicPage.vue";
 import SportPage from "../views/SportPage.vue";
 import TravelPage from "../views/TravelPage.vue";
 import VlogsPage from "../views/VlogsPage.vue";
@@ -45,9 +45,9 @@ const routes = [
     component: PoliticsPage,
   },
   {
-    path: "/education",
-    name: "EducationApp",
-    component: EducationApp,
+    path: "/Economic",
+    name: "EconomicPage",
+    component: EconomicPage,
   },
   {
     path: "/about",

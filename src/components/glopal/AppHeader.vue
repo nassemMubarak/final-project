@@ -128,7 +128,11 @@
         <div class="row">
           <div class="col-md-12">
             <div class="logo">
-              <router-link to="/"><img src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
+              <router-link to="/"
+                ><img
+                  src="../../../public/frontend/assets/images/logo.png"
+                  alt=""
+              /></router-link>
             </div>
             <!-- end logo -->
           </div>
@@ -159,7 +163,9 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <router-link class="nav-link color-pink-hover" to="/">Home</router-link>
+                <router-link class="nav-link color-pink-hover" to="/"
+                  >Home</router-link
+                >
                 <!-- <a class="nav-link color-pink-hover" href="index.html">Home</a> -->
               </li>
               <li
@@ -400,7 +406,6 @@
                                 <!-- end media -->
                                 <div class="blog-meta">
                                   <h4>
-                                    
                                     <a href="single.html" title=""
                                       >Subscribe to these sites to keep an eye
                                       on the Politics</a
@@ -742,7 +747,7 @@
                                     />
                                     <div class="hovereffect"></div>
                                     <!-- end hover -->
-                                    <span class="menucat">Meat Educations</span>
+                                    <span class="menucat">Meat Economics</span>
                                   </a>
                                 </div>
                                 <!-- end media -->
@@ -914,7 +919,9 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link color-pink-hover" to="/politics">Politics</router-link>
+                <router-link class="nav-link color-pink-hover" to="/politics"
+                  >Politics</router-link
+                >
                 <!-- <a
                   class="nav-link color-pink-hover"
                   href="blog-category-01.html"
@@ -922,13 +929,17 @@
                 > -->
               </li>
               <li class="nav-item">
-                <router-link class="nav-link color-red-hover" to="/education">Education</router-link>
+                <router-link class="nav-link color-red-hover" to="/Economic"
+                  >Economic</router-link
+                >
                 <!-- <a class="nav-link color-red-hover" href="blog-category-02.html"
-                  >Education</a -->
+                  >Economic</a -->
                 <!-- > -->
               </li>
               <li class="nav-item">
-                <router-link class="nav-link color-aqua-hover" to="/sport">Sport</router-link>
+                <router-link class="nav-link color-aqua-hover" to="/sport"
+                  >Sport</router-link
+                >
                 <!-- <a
                   class="nav-link color-aqua-hover"
                   href="blog-category-03.html"
@@ -936,13 +947,19 @@
                 > -->
               </li>
               <li class="nav-item">
-                <router-link class="nav-link color-green-hover" to="/travel">Travel</router-link>
+                <router-link class="nav-link color-green-hover" to="/travel"
+                  >Travel</router-link
+                >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link color-yellow-hover" to="/vlogs">Vlogs</router-link>
+                <router-link class="nav-link color-yellow-hover" to="/vlogs"
+                  >Vlogs</router-link
+                >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link color-grey-hover" to="/health">Health</router-link>
+                <router-link class="nav-link color-grey-hover" to="/health"
+                  >Health</router-link
+                >
               </li>
             </ul>
           </div>
