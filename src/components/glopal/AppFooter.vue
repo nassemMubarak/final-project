@@ -111,7 +111,7 @@
                     <div class="col-lg-8 offset-lg-2">
                         <div class="widget">
                             <div class="footer-text text-center">
-                                <router-link to="/"><img src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
+                                <router-link to="/homePage"><img src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
                                 <!-- <a href="index.html" @click.><img src="../../../public/frontend/assets/images/logo.png" alt="" class="img-fluid"></a> -->
                                 <p>Cloapedia is a personal blog for handcrafted, cameramade photography content, fashion styles from independent creatives around the world.</p>
                                 <div class="social">
