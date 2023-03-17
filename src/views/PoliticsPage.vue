@@ -3,23 +3,19 @@
     <div class="page-title wb">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <h2>
-              <i class="fa fa-shopping-bag bg-red"></i> Politics<small
-                class="hidden-xs-down hidden-sm-down"
-              >
-              </small>
-            </h2>
-          </div>
-          <!-- end col -->
           <div
-            class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down"
+            class="col-lg-8 col-md-8 col-sm-12 col-xs-12"
           >
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Blog</a></li>
-              <li class="breadcrumb-item active">Politics</li>
+              <li class="breadcrumb-item"><a href="#">الاخبار السياسة</a></li>
+              <li class="breadcrumb-item"><a href="#">الصفحة الرئيسية</a></li>
             </ol>
+          </div>
+          <!-- end col -->
+          <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+            <h2>
+               الأخبار السياسية
+            </h2>
           </div>
           <!-- end col -->
         </div>
