@@ -1,6 +1,5 @@
 <template>
-    <div class="app-footer">
-        
+    <div :class="{'app-footer':true,'d-none':this.$route.path == '/'}">
         <footer class="footer">
             <div class="container">
                 <div class="row">

@@ -7,10 +7,16 @@ import TravelPage from "../views/TravelPage.vue";
 import VlogsPage from "../views/VlogsPage.vue";
 import HealthPage from "../views/HealthPage.vue";
 import DetailsNews from "../views/DetailsNews.vue";
+import AuthPage from "../views/AuthPage.vue";
 
 const routes = [
   {
     path: "/",
+    name: "AuthPage",
+    component: AuthPage,
+  },
+  {
+    path: "/homePage",
     name: "HomePage",
     component: HomePage,
   },

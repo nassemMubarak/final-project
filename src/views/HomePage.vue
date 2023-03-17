@@ -13,16 +13,16 @@
         <div class="masonry-blog clearfix">
           <div class="left-side">
             <div class="masonry-box post-media">
-              <img src="../../public/frontend/assets/upload/blog_masonry_01.jpg" alt="" class="img-fluid" />
+              <img :src="news.sport[0].imageUrl" alt="" class="img-fluid" />
               <div class="shadoweffect">
                 <div class="shadow-desc">
                   <div class="blog-meta">
-                    <span class="bg-aqua"><a href="blog-category-01.html" title="">Lifestyle</a></span>
+                    <span class="bg-aqua"><a href="blog-category-01.html" title="">{{ news.sport[0].type }}</a></span>
                     <h4>
-                      <router-link to="/details">The golden rules you need to know for a positive life</router-link>
+                      <router-link to="/details">{{ news.sport[0].title }}</router-link>
                     </h4>
-                    <small><a href="single.html" title="">24 July, 2017</a></small>
-                    <small><a href="blog-author.html" title="">by Amanda</a></small>
+                    <small><a href="single.html" title="">{{ news.sport[0].date }} </a></small>
+                    <small><a href="blog-author.html" title="">{{ news.sport[0].by }}</a></small>
                   </div>
                   <!-- end meta -->
                 </div>
@@ -36,16 +36,16 @@
 
           <div class="center-side">
             <div class="masonry-box post-media">
-              <img src="../../public/frontend/assets/upload/blog_masonry_02.jpg" alt="" class="img-fluid" />
+              <img :src="news.politics[0].imageUrl" alt="" class="img-fluid" />
               <div class="shadoweffect">
                 <div class="shadow-desc">
                   <div class="blog-meta">
-                    <span class="bg-green"><a href="blog-category-01.html" title="">Travel</a></span>
+                    <span class="bg-pink"><a href="blog-category-01.html" title="">{{ news.politics[0].type }}</a></span>
                     <h4>
-                      <router-link to="/details">5 places you should see</router-link>
+                      <router-link to="/details">{{ news.politics[0].title }}</router-link>
                     </h4>
-                    <small><a href="single.html" title="">24 July, 2017</a></small>
-                    <small><a href="blog-author.html" title="">by Amanda</a></small>
+                    <small><a href="single.html" title="">{{ news.politics[0].date }}</a></small>
+                    <small><a href="blog-author.html" title="">{{ news.politics[0].by }}</a></small>
                   </div>
                   <!-- end meta -->
                 </div>
@@ -55,14 +55,15 @@
             </div>
             <!-- end post-media -->
 
-            <div class="masonry-box small-box post-media">
-              <img src="../../public/frontend/assets/upload/blog_masonry_03.jpg" alt="" class="img-fluid" />
+            <div v-for="newsItem in [news.politics[1], news.politics[2]]" :key="newsItem"
+              class="masonry-box small-box post-media">
+              <img :src="newsItem.imageUrl" alt="" class="img-fluid" />
               <div class="shadoweffect">
                 <div class="shadow-desc">
                   <div class="blog-meta">
-                    <span class="bg-green"><a href="blog-category-01.html" title="">Travel</a></span>
+                    <span class="bg-pink"><a href="blog-category-01.html" title="">{{ newsItem.type }}</a></span>
                     <h4>
-                      <router-link to="/details">Separate your place with exotic hotels</router-link>
+                      <router-link to="/details">{{ newsItem.title }}</router-link>
                     </h4>
                   </div>
                   <!-- end meta -->
@@ -73,38 +74,23 @@
             </div>
             <!-- end post-media -->
 
-            <div class="masonry-box small-box post-media">
-              <img src="../../public/frontend/assets/upload/blog_masonry_04.jpg" alt="" class="img-fluid" />
-              <div class="shadoweffect">
-                <div class="shadow-desc">
-                  <div class="blog-meta">
-                    <span class="bg-green"><a href="blog-category-01.html" title="">Travel</a></span>
-                    <h4>
-                      <router-link to="/details">What you need to know for child health</router-link>
-                    </h4>
-                  </div>
-                  <!-- end meta -->
-                </div>
-                <!-- end shadow-desc -->
-              </div>
-              <!-- end shadow -->
-            </div>
+
             <!-- end post-media -->
           </div>
           <!-- end left-side -->
 
           <div class="right-side hidden-md-down">
             <div class="masonry-box post-media">
-              <img src="../../public/frontend/assets/upload/blog_masonry_05.jpg" alt="" class="img-fluid" />
+              <img :src="news.sport[1].imageUrl" alt="" class="img-fluid" />
               <div class="shadoweffect">
                 <div class="shadow-desc">
                   <div class="blog-meta">
-                    <span class="bg-aqua"><a href="blog-category-01.html" title="">Lifestyle</a></span>
+                    <span class="bg-aqua"><a href="blog-category-01.html" title="">{{ news.sport[1].type }}</a></span>
                     <h4>
-                      <router-link to="/details">The rules you need to know for a happy union</router-link>
+                      <router-link to="/details">{{ news.sport[1].title }}</router-link>
                     </h4>
-                    <small><a href="single.html" title="">03 July, 2017</a></small>
-                    <small><a href="blog-author.html" title="">by Jessica</a></small>
+                    <small><a href="single.html" title="">{{ news.sport[1].date }}</a></small>
+                    <small><a href="blog-author.html" title="">{{ news.sport[1].by }}</a></small>
                   </div>
                   <!-- end meta -->
                 </div>
@@ -126,17 +112,20 @@
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="section-title">
               <h3 class="color-aqua">
-                <a href="blog-category-01.html" title="">Lifestyle</a>
+                <a href="blog-category-01.html" title="">{{ news.sport[0].type }}</a>
               </h3>
             </div>
             <!-- end title -->
 
             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div v-for="newsItem in [news.sport[2], news.sport[3]]" :key="newsItem"
+                class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
                 <div class="blog-box">
                   <div class="post-media">
                     <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_05.jpg" alt="" class="img-fluid" />
+                      <img :src="newsItem.imageUrl" alt="" class="img-fluid" />
                       <div class="hovereffect">
                         <span></span>
                       </div>
@@ -146,52 +135,18 @@
                   <!-- end media -->
                   <div class="blog-meta big-meta">
                     <h4>
-                      <a href="single.html" title="">The golden rules you need to know for a positive
-                        life</a>
+                      <a href="single.html" title="">{{ newsItem.title }}</a>
                     </h4>
                     <p>
-                      Aenean interdum arcu blandit, vehicula magna non, placerat
-                      elit. Mauris et pharetratortor. Suspendissea sodales urna.
-                      In at augue elit. Vivamus enim nibh, maximus ac felis nec,
-                      maximus tempor odio.
+                      {{ newsItem.description }}
                     </p>
-                    <small><a href="blog-category-01.html" title="">Lifestyle</a></small>
-                    <small><a href="single.html" title="">24 July, 2017</a></small>
-                    <small><a href="blog-author.html" title="">by Amanda</a></small>
+                    <small><a href="blog-category-01.html" title="">{{ newsItem.type }}</a></small>
+                    <small><a href="single.html" title="">{{ newsItem.date }}</a></small>
+                    <small><a href="blog-author.html" title="">{{ newsItem.by }}</a></small>
                   </div>
                   <!-- end meta -->
                 </div>
-                <!-- end blog-box -->
-
                 <hr class="invis" />
-
-                <div class="blog-box">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_06.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect">
-                        <span></span>
-                      </div>
-                      <!-- end hover -->
-                    </a>
-                  </div>
-                  <!-- end media -->
-                  <div class="blog-meta big-meta">
-                    <h4>
-                      <a href="single.html" title="">I have a desert visit this summer</a>
-                    </h4>
-                    <p>
-                      Aenean interdum arcu blandit, vehicula magna non, placerat
-                      elit. Mauris et pharetratortor. Suspendissea sodales urna.
-                      In at augue elit. Vivamus enim nibh, maximus ac felis nec,
-                      maximus tempor odio.
-                    </p>
-                    <small><a href="blog-category-01.html" title="">Lifestyle</a></small>
-                    <small><a href="single.html" title="">22 July, 2017</a></small>
-                    <small><a href="blog-author.html" title="">by Martines</a></small>
-                  </div>
-                  <!-- end meta -->
-                </div>
                 <!-- end blog-box -->
               </div>
               <!-- end col -->
@@ -203,16 +158,18 @@
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="section-title">
               <h3 class="color-pink">
-                <a href="blog-category-01.html" title="">Fashion</a>
+                <a href="blog-category-01.html" title="">{{ news.politics[0].type }}</a>
               </h3>
             </div>
             <!-- end title -->
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div
+                v-for="newsItem in [news.politics[3], news.politics[4], news.politics[5], news.politics[6], news.politics[7], news.politics[8], news.politics[9], news.politics[10]]"
+                :key="newsItem" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="blog-box">
                   <div class="post-media">
                     <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_01.jpg" alt="" class="img-fluid" />
+                      <img :src="newsItem.imageUrl" alt="" class="img-fluid" />
                       <div class="hovereffect">
                         <span></span>
                       </div>
@@ -222,89 +179,16 @@
                   <!-- end media -->
                   <div class="blog-meta">
                     <h4>
-                      <a href="single.html" title="">What is your favorite leather jacket color</a>
+                      <a href="single.html" title="">{{ newsItem.title }}</a>
                     </h4>
-                    <small><a href="blog-category-01.html" title="">Fashion</a></small>
-                    <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
+                    <small><a href="blog-category-01.html" title="">{{ newsItem.type }}</a></small>
+                    <small><a href="blog-category-01.html" title="">{{ newsItem.date }}</a></small>
                   </div>
                   <!-- end meta -->
                 </div>
                 <!-- end blog-box -->
 
                 <hr class="invis" />
-
-                <div class="blog-box">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_02.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect">
-                        <span></span>
-                      </div>
-                      <!-- end hover -->
-                    </a>
-                  </div>
-                  <!-- end media -->
-                  <div class="blog-meta">
-                    <h4>
-                      <a href="single.html" title="">Is summer, have you bought a cane</a>
-                    </h4>
-                    <small><a href="blog-category-01.html" title="">Fashion</a></small>
-                    <small><a href="blog-category-01.html" title="">11 July, 2017</a></small>
-                  </div>
-                  <!-- end meta -->
-                </div>
-                <!-- end blog-box -->
-              </div>
-              <!-- end col -->
-
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="blog-box">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_03.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect">
-                        <span></span>
-                      </div>
-                      <!-- end hover -->
-                    </a>
-                  </div>
-                  <!-- end media -->
-                  <div class="blog-meta">
-                    <h4>
-                      <a href="single.html" title="">This year's fashionable long beard</a>
-                    </h4>
-                    <small><a href="blog-category-01.html" title="">Fashion</a>,
-                      <a href="blog-category-01.html" title="">Man</a></small>
-                    <small><a href="blog-category-01.html" title="">08 July, 2017</a></small>
-                  </div>
-                  <!-- end meta -->
-                </div>
-                <!-- end blog-box -->
-
-                <hr class="invis" />
-
-                <div class="blog-box">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_04.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect">
-                        <span></span>
-                      </div>
-                      <!-- end hover -->
-                    </a>
-                  </div>
-                  <!-- end media -->
-                  <div class="blog-meta">
-                    <h4>
-                      <a href="single.html" title="">How to be more cool with clothing</a>
-                    </h4>
-                    <small><a href="blog-category-01.html" title="">Fashion</a>,
-                      <a href="blog-category-01.html" title="">Style</a></small>
-                    <small><a href="blog-category-01.html" title="">04 July, 2017</a></small>
-                  </div>
-                  <!-- end meta -->
-                </div>
-                <!-- end blog-box -->
               </div>
               <!-- end col -->
             </div>
@@ -320,7 +204,9 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="banner-spot clearfix">
               <div class="banner-img">
-                <img src="../../public/frontend/assets/upload/banner_01.jpg" alt="" class="img-fluid" />
+                <img
+                  src="https://img.freepik.com/free-vector/ramadan-kareem-arabic-golden-banner_1017-31088.jpg?size=626&ext=jpg&ga=GA1.2.1958355492.1677405070&semt=ais"
+                  alt="" class="img-fluid" />
               </div>
               <!-- end banner-img -->
             </div>
@@ -337,16 +223,17 @@
             <div class="blog-list clearfix">
               <div class="section-title">
                 <h3 class="color-green">
-                  <a href="blog-category-01.html" title="">Travel</a>
+                  <a href="blog-category-01.html" title="">{{ news.economic[0].type }}</a>
                 </h3>
               </div>
               <!-- end title -->
 
-              <div class="blog-box row">
+              <div v-for="newsItem in [news.economic[0], news.economic[1], news.economic[2]]" :key="newsItem"
+                class="blog-box row">
                 <div class="col-md-4">
                   <div class="post-media">
                     <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_square_01.jpg" alt="" class="img-fluid" />
+                      <img :src="newsItem.imageUrl" alt="" class="img-fluid" />
                       <div class="hovereffect"></div>
                     </a>
                   </div>
@@ -356,84 +243,17 @@
 
                 <div class="blog-meta big-meta col-md-8">
                   <h4>
-                    <a href="single.html" title="">5 Beautiful buildings you need to visit without dying</a>
+                    <a href="single.html" title="">{{ newsItem.title }}</a>
                   </h4>
                   <p>
-                    Aenean interdum arcu blandit, vehicula magna non, placerat
-                    elit. Mauris et pharetratortor. Suspendissea sodales urna.
-                    In at augue elit. Vivamus enim nibh, maximus ac felis nec,
-                    maximus tempor odio.
+                    {{ newsItem.description }}
                   </p>
-                  <small><a href="blog-category-01.html" title="">Travel</a></small>
-                  <small><a href="single.html" title="">21 July, 2017</a></small>
-                  <small><a href="blog-author.html" title="">by Boby</a></small>
+                  <small><a href="blog-category-01.html" title="">{{ newsItem.type }}</a></small>
+                  <small><a href="single.html" title="">{{ newsItem.date }}</a></small>
+                  <small><a href="blog-author.html" title="">{{ newsItem.by }}</a></small>
                 </div>
                 <!-- end meta -->
-              </div>
-              <!-- end blog-box -->
-
-              <hr class="invis" />
-
-              <div class="blog-box row">
-                <div class="col-md-4">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_square_02.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect"></div>
-                    </a>
-                  </div>
-                  <!-- end media -->
-                </div>
-                <!-- end col -->
-
-                <div class="blog-meta big-meta col-md-8">
-                  <h4>
-                    <a href="single.html" title="">Let's make an introduction to the glorious world of
-                      history</a>
-                  </h4>
-                  <p>
-                    Aenean interdum arcu blandit, vehicula magna non, placerat
-                    elit. Mauris et pharetratortor. Suspendissea sodales urna.
-                    In at augue elit. Vivamus enim nibh, maximus ac felis nec,
-                    maximus tempor odio.
-                  </p>
-                  <small><a href="blog-category-01.html" title="">Travel</a></small>
-                  <small><a href="single.html" title="">20 July, 2017</a></small>
-                  <small><a href="blog-author.html" title="">by Samanta</a></small>
-                </div>
-                <!-- end meta -->
-              </div>
-              <!-- end blog-box -->
-
-              <hr class="invis" />
-
-              <div class="blog-box row">
-                <div class="col-md-4">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_square_03.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect"></div>
-                    </a>
-                  </div>
-                  <!-- end media -->
-                </div>
-                <!-- end col -->
-
-                <div class="blog-meta big-meta col-md-8">
-                  <h4>
-                    <a href="single.html" title="">Did you see the most beautiful sea in the world?</a>
-                  </h4>
-                  <p>
-                    Aenean interdum arcu blandit, vehicula magna non, placerat
-                    elit. Mauris et pharetratortor. Suspendissea sodales urna.
-                    In at augue elit. Vivamus enim nibh, maximus ac felis nec,
-                    maximus tempor odio.
-                  </p>
-                  <small><a href="blog-category-01.html" title="">Travel</a></small>
-                  <small><a href="single.html" title="">19 July, 2017</a></small>
-                  <small><a href="blog-author.html" title="">by Jackie</a></small>
-                </div>
-                <!-- end meta -->
+                <hr class="invis" />
               </div>
               <!-- end blog-box -->
             </div>
@@ -441,267 +261,12 @@
 
             <hr class="invis" />
 
-            <div class="blog-list clearfix">
-              <div class="section-title">
-                <h3 class="color-red">
-                  <a href="blog-category-01.html" title="">Food</a>
-                </h3>
-              </div>
-              <!-- end title -->
-
-              <div class="blog-box row">
-                <div class="col-md-4">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_square_05.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect"></div>
-                    </a>
-                  </div>
-                  <!-- end media -->
-                </div>
-                <!-- end col -->
-
-                <div class="blog-meta big-meta col-md-8">
-                  <h4>
-                    <a href="single.html" title="">Banana-chip chocolate cake recipe</a>
-                  </h4>
-                  <p>
-                    Aenean interdum arcu blandit, vehicula magna non, placerat
-                    elit. Mauris et pharetratortor. Suspendissea sodales urna.
-                    In at augue elit. Vivamus enim nibh, maximus ac felis nec,
-                    maximus tempor odio.
-                  </p>
-                  <small><a href="blog-category-01.html" title="">Food</a></small>
-                  <small><a href="single.html" title="">11 July, 2017</a></small>
-                  <small><a href="blog-author.html" title="">by Matilda</a></small>
-                </div>
-                <!-- end meta -->
-              </div>
-              <!-- end blog-box -->
-
-              <hr class="invis" />
-
-              <div class="blog-box row">
-                <div class="col-md-4">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_square_06.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect"></div>
-                    </a>
-                  </div>
-                  <!-- end media -->
-                </div>
-                <!-- end col -->
-
-                <div class="blog-meta big-meta col-md-8">
-                  <h4>
-                    <a href="single.html" title="">10 practical ways to choose organic vegetables</a>
-                  </h4>
-                  <p>
-                    Aenean interdum arcu blandit, vehicula magna non, placerat
-                    elit. Mauris et pharetratortor. Suspendissea sodales urna.
-                    In at augue elit. Vivamus enim nibh, maximus ac felis nec,
-                    maximus tempor odio.
-                  </p>
-                  <small><a href="blog-category-01.html" title="">Food</a></small>
-                  <small><a href="single.html" title="">10 July, 2017</a></small>
-                  <small><a href="blog-author.html" title="">by Matilda</a></small>
-                </div>
-                <!-- end meta -->
-              </div>
-              <!-- end blog-box -->
-
-              <hr class="invis" />
-
-              <div class="blog-box row">
-                <div class="col-md-4">
-                  <div class="post-media">
-                    <a href="single.html" title="">
-                      <img src="../../public/frontend/assets/upload/blog_square_07.jpg" alt="" class="img-fluid" />
-                      <div class="hovereffect"></div>
-                    </a>
-                  </div>
-                  <!-- end media -->
-                </div>
-                <!-- end col -->
-
-                <div class="blog-meta big-meta col-md-8">
-                  <h4>
-                    <a href="single.html" title="">We are making homemade ravioli</a>
-                  </h4>
-                  <p>
-                    Aenean interdum arcu blandit, vehicula magna non, placerat
-                    elit. Mauris et pharetratortor. Suspendissea sodales urna.
-                    In at augue elit. Vivamus enim nibh, maximus ac felis nec,
-                    maximus tempor odio.
-                  </p>
-                  <small><a href="blog-category-01.html" title="">Food</a></small>
-                  <small><a href="single.html" title="">09 July, 2017</a></small>
-                  <small><a href="blog-author.html" title="">by Matilda</a></small>
-                </div>
-                <!-- end meta -->
-              </div>
-              <!-- end blog-box -->
-            </div>
+            
             <!-- end blog-list -->
           </div>
           <!-- end col -->
 
-          <div class="col-lg-3">
-            <div class="section-title">
-              <h3 class="color-yellow">
-                <a href="blog-category-01.html" title="">Vlogs</a>
-              </h3>
-            </div>
-            <!-- end title -->
-
-            <div class="blog-box">
-              <div class="post-media">
-                <a href="single.html" title="">
-                  <img src="../../public/frontend/assets/upload/blog_10.jpg" alt="" class="img-fluid" />
-                  <div class="hovereffect">
-                    <span class="videohover"></span>
-                  </div>
-                  <!-- end hover -->
-                </a>
-              </div>
-              <!-- end media -->
-              <div class="blog-meta">
-                <h4>
-                  <a href="single.html" title="">We are guests of ABC Design Studio - Vlog</a>
-                </h4>
-                <small><a href="blog-category-01.html" title="">Videos</a></small>
-                <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
-              </div>
-              <!-- end meta -->
-            </div>
-            <!-- end blog-box -->
-
-            <hr class="invis" />
-
-            <div class="blog-box">
-              <div class="post-media">
-                <a href="single.html" title="">
-                  <img src="../../public/frontend/assets/upload/blog_11.jpg" alt="" class="img-fluid" />
-                  <div class="hovereffect">
-                    <span class="videohover"></span>
-                  </div>
-                  <!-- end hover -->
-                </a>
-              </div>
-              <!-- end media -->
-              <div class="blog-meta">
-                <h4><a href="single.html" title="">Nostalgia at work</a></h4>
-                <small><a href="blog-category-01.html" title="">Videos</a></small>
-                <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-              </div>
-              <!-- end meta -->
-            </div>
-            <!-- end blog-box -->
-
-            <hr class="invis" />
-
-            <div class="blog-box">
-              <div class="post-media">
-                <a href="single.html" title="">
-                  <img src="../../public/frontend/assets/upload/blog_12.jpg" alt="" class="img-fluid" />
-                  <div class="hovereffect">
-                    <span class="videohover"></span>
-                  </div>
-                  <!-- end hover -->
-                </a>
-              </div>
-              <!-- end media -->
-              <div class="blog-meta">
-                <h4>
-                  <a href="single.html" title="">How to become a good vlogger</a>
-                </h4>
-                <small><a href="blog-category-01.html" title="">Beauty</a></small>
-                <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-              </div>
-              <!-- end meta -->
-            </div>
-            <!-- end blog-box -->
-
-            <hr class="invis" />
-
-            <div class="section-title">
-              <h3 class="color-grey">
-                <a href="blog-category-01.html" title="">Health</a>
-              </h3>
-            </div>
-            <!-- end title -->
-
-            <div class="blog-box">
-              <div class="post-media">
-                <a href="single.html" title="">
-                  <img src="../../public/frontend/assets/upload/blog_07.jpg" alt="" class="img-fluid" />
-                  <div class="hovereffect">
-                    <span></span>
-                  </div>
-                  <!-- end hover -->
-                </a>
-              </div>
-              <!-- end media -->
-              <div class="blog-meta">
-                <h4>
-                  <a href="single.html" title="">Opened the doors of the Istanbul spa center</a>
-                </h4>
-                <small><a href="blog-category-01.html" title="">Spa</a></small>
-                <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
-              </div>
-              <!-- end meta -->
-            </div>
-            <!-- end blog-box -->
-
-            <hr class="invis" />
-
-            <div class="blog-box">
-              <div class="post-media">
-                <a href="single.html" title="">
-                  <img src="../../public/frontend/assets/upload/blog_08.jpg" alt="" class="img-fluid" />
-                  <div class="hovereffect">
-                    <span></span>
-                  </div>
-                  <!-- end hover -->
-                </a>
-              </div>
-              <!-- end media -->
-              <div class="blog-meta">
-                <h4>
-                  <a href="single.html" title="">2017 trends in health tourism</a>
-                </h4>
-                <small><a href="blog-category-01.html" title="">Health</a></small>
-                <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-              </div>
-              <!-- end meta -->
-            </div>
-            <!-- end blog-box -->
-
-            <hr class="invis" />
-
-            <div class="blog-box">
-              <div class="post-media">
-                <a href="single.html" title="">
-                  <img src="../../public/frontend/assets/upload/blog_09.jpg" alt="" class="img-fluid" />
-                  <div class="hovereffect">
-                    <span></span>
-                  </div>
-                  <!-- end hover -->
-                </a>
-              </div>
-              <!-- end media -->
-              <div class="blog-meta">
-                <h4>
-                  <a href="single.html" title="">Experience the effects of miraculous stones</a>
-                </h4>
-                <small><a href="blog-category-01.html" title="">Beauty</a></small>
-                <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-              </div>
-              <!-- end meta -->
-            </div>
-            <!-- end blog-box -->
-          </div>
+        
           <!-- end col -->
         </div>
         <!-- end row -->
@@ -712,7 +277,7 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="banner-spot clearfix">
               <div class="banner-img">
-                <img src="../../public/frontend/assets/upload/banner_02.jpg" alt="" class="img-fluid" />
+                <img height="1" src="https://img.freepik.com/free-vector/ramadan-kareem-arabic-golden-banner_1017-31088.jpg?size=626&ext=jpg&ga=GA1.2.1958355492.1677405070&semt=ais" alt="" class="img-fluid" />
               </div>
               <!-- end banner-img -->
             </div>
@@ -727,4 +292,252 @@
     <div class="dmtop">Scroll to Top</div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      news: {
+        sport: [
+          {
+            title: 'قرعة ربع نهائي دوري أبطال أوروبا 2022-2023 ومواعيد مبارياتها',
+            type: 'Sport',
+            date: '17/3/2023',
+            by: 'الجزيرة',
+            imageUrl: 'https://www.aljazeera.net/wp-content/uploads/2023/03/00-9.jpg?resize=770%2C513&quality=80',
+            description: `استأنف برشلونة تدريباته، اليوم الإثنين، بعد أقل من 24 ساعة من إسقاط أتلتيك بيلباو، على ملعب سان ماميس، والحفاظ على فارق ال9 نقاط مع غريمه ريال مدريد . ويستعد برشلونة لمواجهة الكلاسيكو أمام الريال، يوم الأحد المقبل، على ملعب كامب نو، ضمن لقاءات الجولة 26 لليجا
+
+`
+          },
+          {
+            title: 'تشافي يريح لاعبي برشلونة قبل الكلاسيكو',
+            type: 'Sport',
+            date: 'الأربعاء 14 مارس 2023 11:38 ص ',
+            by: 'موقع كووورة',
+            imageUrl: 'https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-11%2f2023-03-11-10514871_epa.jpg',
+            description: `يمثل سيرجي روبرتو أحد أكبر الألغاز لعشاق برشلونة، الراغبين في معرفة السبب وراء تمسك المدرب تشافي بلاعب لم يقدم المردود المنتظر لسنوات عديدة.
+`
+          },
+          {
+            title: 'قرعة ربع نهائي دوري أبطال أوروبا 2022-2023 ومواعيد مبارياتها',
+            type: 'Sport',
+            date: '17/3/2023',
+            by: 'الجزيرة',
+            imageUrl: 'https://www.aljazeera.net/wp-content/uploads/2023/03/00-9.jpg?resize=770%2C513&quality=80',
+            description: `استأنف برشلونة تدريباته، اليوم الإثنين، بعد أقل من 24 ساعة من إسقاط أتلتيك بيلباو، على ملعب سان ماميس، والحفاظ على فارق ال9 نقاط مع غريمه ريال مدريد . ويستعد برشلونة لمواجهة الكلاسيكو أمام الريال، يوم الأحد المقبل، على ملعب كامب نو، ضمن لقاءات الجولة 26 لليجا
+
+`
+          },
+          {
+            title: 'تشافي يريح لاعبي برشلونة قبل الكلاسيكو',
+            type: 'Sport',
+            date: 'الأربعاء 14 مارس 2023 11:38 ص ',
+            by: 'موقع كووورة',
+            imageUrl: 'https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-11%2f2023-03-11-10514871_epa.jpg',
+            description: `يمثل سيرجي روبرتو أحد أكبر الألغاز لعشاق برشلونة، الراغبين في معرفة السبب وراء تمسك المدرب تشافي بلاعب لم يقدم المردود المنتظر لسنوات عديدة.
+`
+          },
+
+        ],
+        politics: [
+          {
+            title: 'المصادقة بالقراءة الأولى على عودة الاستيطان لشمال الضفة',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 10:29 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads/images/23cdf7627a9e1ebcdc1172bb343a26fc.jpg&w=780&h=450',
+          },
+          {
+            title: 'العاروري: صبرنا ينفد وسنكون عند ثقة شعبنا بنا',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 11:38 ص ',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/2722f6be123ba49b7fdca6b5978cc013.jpeg&w=780&h=450',
+          },
+          {
+            title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 08:18 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
+          },
+          {
+            title: 'الذكرى الـ19 لعملية أسدود البطولية المشتركة',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 08:30 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/5f361459bffefbf3f8b4148594a18369.jpg&w=780&h=450',
+          },
+          {
+            title: 'فؤاد الشوبكي فور الإفراج عنه: أسرانا شهداء مع وقف التنفيذ',
+            type: 'Politics',
+            date: 'الإثنين 13 مارس 2023 03:54 م ',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1d453f4357afeb0f95be26418ec5a8e7.jpg&w=780&h=450',
+          },
+          {
+            title: 'المصادقة بالقراءة الأولى على عودة الاستيطان لشمال الضفة',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 10:29 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads/images/23cdf7627a9e1ebcdc1172bb343a26fc.jpg&w=780&h=450',
+          },
+          {
+            title: 'العاروري: صبرنا ينفد وسنكون عند ثقة شعبنا بنا',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 11:38 ص ',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/2722f6be123ba49b7fdca6b5978cc013.jpeg&w=780&h=450',
+          },
+          {
+            title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 08:18 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
+          },
+          {
+            title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 08:18 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
+          },
+          {
+            title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 08:18 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
+          },
+          {
+            title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 08:18 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
+          },
+          {
+            title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 08:18 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
+          },
+          {
+            title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
+            type: 'Politics',
+            date: 'الثلاثاء 14 مارس 2023 08:18 ص',
+            by: 'قناة الأقصى',
+            imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
+          },
+        ],
+        economic: [
+          {
+            title: 'البنك الإسلامي الفلسطيني يرعى إطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 10:29 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/ba73ec5f-fb58-4f59-ad94-f185c8838990.jfif',
+            description: `
+الاقتصادي: قدم البنك الإسلامي الفلسطيني رعايته لإطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول" والذي يلخص وقائع المؤتمر الأكاديمي السادس الذي نظمته الهيئة الإسلامية العليا في القدس بمشاركة العديد من الباحثين المهتمين بالصيرفة الإسلامية في فلسطين والعالم، وذلك كجزء من جهود البنك لتطوير الصناعة المالية الإسلامية في فلسطين.`
+          },
+          {
+            title: 'رسمياً.. شركة البركة للتأمين الإسلامي تدخل السوق المحلية',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 11:38 ص ',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%203/334102704_909752506832878_8918314473661822180_n.jpg',
+            description: `الاقتصادي: ارتفع عدد شركات التأمين التكافلي العاملة وفق أحكام الشريعة الإسلامية، إلى ثلاث شركات في فلسطين، بعد دخول شركة جديدة إلى السوق مطلع العام الجاري .وأدرجت شركة البركة للتأمين الإسلامي، في قائمة شركات التأمين المرخصة لعام 2023، الصادرة عن هيئة سوق رأس المال الفلسطينية.`
+          },
+          {
+            title: 'غرفة تجارة رام الله والبيرة: اجتماعات مع موردي المواد الغذائية لخفض الأسعار قبل رمضان',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 08:18 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/334983868_1240786543523357_1805672528567298355_n.jpg',
+            description: `الاقتصادي: بثينة سفاريني- قال محمد زيد النبالي، نائب رئيس الغرفة التجارية لمحافظة رام الله والبيرة إن أسعار المواد الغذائية ستكون مناسبة في شهر رمضان، مضيفًا أنه سيتم عقد اجتماع لمستوردي المواد الغذائية من أجل خفض الأسعار خلال الشهر.`
+          },
+          {
+            title: 'محادثات فلسطينية ليتوانية لتطوير علاقات التعاون الاقتصادية بين البلدين',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 08:30 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/c62c9972-575f-4ff9-9b51-f92aae2cf0ec.jfif',
+            description: `
+الاقتصادي: أجرى وزير الاقتصاد الوطني خالد عسيلي محادثات مع المسؤولين في جمهورية ليتوانيا لتعزيز وتوطيد علاقات التعاون الاقتصادية والتجارية بين البلدين وإقامة شراكات استثمارية بين القطاع الخاص الفلسطيني ونظيره الليتواني.`
+          },
+          {
+            title: 'البنك الإسلامي الفلسطيني يرعى إطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 10:29 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/ba73ec5f-fb58-4f59-ad94-f185c8838990.jfif',
+            description: `
+الاقتصادي: قدم البنك الإسلامي الفلسطيني رعايته لإطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول" والذي يلخص وقائع المؤتمر الأكاديمي السادس الذي نظمته الهيئة الإسلامية العليا في القدس بمشاركة العديد من الباحثين المهتمين بالصيرفة الإسلامية في فلسطين والعالم، وذلك كجزء من جهود البنك لتطوير الصناعة المالية الإسلامية في فلسطين.`
+          },
+          {
+            title: 'رسمياً.. شركة البركة للتأمين الإسلامي تدخل السوق المحلية',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 11:38 ص ',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%203/334102704_909752506832878_8918314473661822180_n.jpg',
+            description: `الاقتصادي: ارتفع عدد شركات التأمين التكافلي العاملة وفق أحكام الشريعة الإسلامية، إلى ثلاث شركات في فلسطين، بعد دخول شركة جديدة إلى السوق مطلع العام الجاري .وأدرجت شركة البركة للتأمين الإسلامي، في قائمة شركات التأمين المرخصة لعام 2023، الصادرة عن هيئة سوق رأس المال الفلسطينية.`
+          },
+          {
+            title: 'غرفة تجارة رام الله والبيرة: اجتماعات مع موردي المواد الغذائية لخفض الأسعار قبل رمضان',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 08:18 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/334983868_1240786543523357_1805672528567298355_n.jpg',
+            description: `الاقتصادي: بثينة سفاريني- قال محمد زيد النبالي، نائب رئيس الغرفة التجارية لمحافظة رام الله والبيرة إن أسعار المواد الغذائية ستكون مناسبة في شهر رمضان، مضيفًا أنه سيتم عقد اجتماع لمستوردي المواد الغذائية من أجل خفض الأسعار خلال الشهر.`
+          },
+          {
+            title: 'محادثات فلسطينية ليتوانية لتطوير علاقات التعاون الاقتصادية بين البلدين',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 08:30 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/c62c9972-575f-4ff9-9b51-f92aae2cf0ec.jfif',
+            description: `
+الاقتصادي: أجرى وزير الاقتصاد الوطني خالد عسيلي محادثات مع المسؤولين في جمهورية ليتوانيا لتعزيز وتوطيد علاقات التعاون الاقتصادية والتجارية بين البلدين وإقامة شراكات استثمارية بين القطاع الخاص الفلسطيني ونظيره الليتواني.`
+          },
+          {
+            title: 'البنك الإسلامي الفلسطيني يرعى إطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 10:29 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/ba73ec5f-fb58-4f59-ad94-f185c8838990.jfif',
+            description: `
+الاقتصادي: قدم البنك الإسلامي الفلسطيني رعايته لإطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول" والذي يلخص وقائع المؤتمر الأكاديمي السادس الذي نظمته الهيئة الإسلامية العليا في القدس بمشاركة العديد من الباحثين المهتمين بالصيرفة الإسلامية في فلسطين والعالم، وذلك كجزء من جهود البنك لتطوير الصناعة المالية الإسلامية في فلسطين.`
+          },
+          {
+            title: 'رسمياً.. شركة البركة للتأمين الإسلامي تدخل السوق المحلية',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 11:38 ص ',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%203/334102704_909752506832878_8918314473661822180_n.jpg',
+            description: `الاقتصادي: ارتفع عدد شركات التأمين التكافلي العاملة وفق أحكام الشريعة الإسلامية، إلى ثلاث شركات في فلسطين، بعد دخول شركة جديدة إلى السوق مطلع العام الجاري .وأدرجت شركة البركة للتأمين الإسلامي، في قائمة شركات التأمين المرخصة لعام 2023، الصادرة عن هيئة سوق رأس المال الفلسطينية.`
+          },
+          {
+            title: 'غرفة تجارة رام الله والبيرة: اجتماعات مع موردي المواد الغذائية لخفض الأسعار قبل رمضان',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 08:18 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/334983868_1240786543523357_1805672528567298355_n.jpg',
+            description: `الاقتصادي: بثينة سفاريني- قال محمد زيد النبالي، نائب رئيس الغرفة التجارية لمحافظة رام الله والبيرة إن أسعار المواد الغذائية ستكون مناسبة في شهر رمضان، مضيفًا أنه سيتم عقد اجتماع لمستوردي المواد الغذائية من أجل خفض الأسعار خلال الشهر.`
+          },
+          {
+            title: 'محادثات فلسطينية ليتوانية لتطوير علاقات التعاون الاقتصادية بين البلدين',
+            type: 'Economic',
+            date: 'الأربعاء 14 مارس 2023 08:30 ص',
+            by: 'موقع الأقتصادي',
+            imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/c62c9972-575f-4ff9-9b51-f92aae2cf0ec.jfif',
+            description: `
+الاقتصادي: أجرى وزير الاقتصاد الوطني خالد عسيلي محادثات مع المسؤولين في جمهورية ليتوانيا لتعزيز وتوطيد علاقات التعاون الاقتصادية والتجارية بين البلدين وإقامة شراكات استثمارية بين القطاع الخاص الفلسطيني ونظيره الليتواني.`
+          },
+        ]
+      }
+    }
+  }
+}
+</script>
 
