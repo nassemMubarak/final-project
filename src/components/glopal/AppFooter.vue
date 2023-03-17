@@ -5,32 +5,17 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
-                            <h2 class="widget-title">Recent Posts</h2>
+                            <h2 class="widget-title">المشاركات الاخيرة</h2>
                             <div class="blog-list-widget">
                                 <div class="list-group">
-                                    <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <a v-for="items in news.slice(0, 3)" :key="items" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
-                                            <img src="../../../public/frontend/assets/upload/blog_square_01.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                            <small>12 Jan, 2016</small>
+                                            <img :src="items.imageUrl" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">{{ items.title }}</h5>
+                                            <small>{{ items.date }}</small>
                                         </div>
                                     </a>
 
-                                    <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 justify-content-between">
-                                            <img src="../../../public/frontend/assets/upload/blog_square_02.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">Let's make an introduction for creative life</h5>
-                                            <small>11 Jan, 2016</small>
-                                        </div>
-                                    </a>
-
-                                    <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 last-item justify-content-between">
-                                            <img src="../../../public/frontend/assets/upload/blog_square_03.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
-                                            <small>07 Jan, 2016</small>
-                                        </div>
-                                    </a>
                                 </div>
                             </div><!-- end blog-list -->
                         </div><!-- end widget -->
@@ -38,41 +23,13 @@
 
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
-                            <h2 class="widget-title">Popular Posts</h2>
+                            <h2 class="widget-title">منشورات شائعة</h2>
                             <div class="blog-list-widget">
                                 <div class="list-group">
-                                    <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <a v-for="items in news.slice(0, 3)" :key="items" href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
-                                            <img src="../../../public/frontend/assets/upload/blog_square_04.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">Banana-chip chocolate cake recipe with customs</h5>
-                                            <span class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </span>
-                                        </div>
-                                    </a>
-
-                                    <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 justify-content-between">
-                                            <img src="../../../public/frontend/assets/upload/blog_square_07.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">10 practical ways to choose organic vegetables</h5>
-                                            <span class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </span>
-                                        </div>
-                                    </a>
-
-                                    <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="w-100 last-item justify-content-between">
-                                            <img src="../../../public/frontend/assets/upload/blog_square_06.jpg" alt="" class="img-fluid float-left">
-                                            <h5 class="mb-1">We are making homemade ravioli, nice and good</h5>
+                                            <img :src="items.imageUrl" alt="" class="img-fluid float-left">
+                                            <h5 class="mb-1">{{ items.title }}</h5>
                                             <span class="rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -149,6 +106,130 @@
 </template>
 <script>
 export default {
-    name: 'AppFooter'
-}
-</script>
+    name: "AppFooter",
+    data() {
+      return {
+        pagNumber: 1,
+        textSearch: "",
+        news: [
+          {
+            title: "المصادقة بالقراءة الأولى على عودة الاستيطان لشمال الضفة",
+            body: 'صادقت الكنيست الصهيونية مساء الإثنين وبالقراءة الأولى على مشروع قانون إلغاء "قانون الانسحاب من شمال الضفة الغربية"، والذي يفتح الباب أمام عودة 4 مستوطنات بين نابلس وجنين.',
+            blogCategory: "سياسة",
+            date: "الثلاثاء 14 مارس 2023 10:29 ص",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads/images/23cdf7627a9e1ebcdc1172bb343a26fc.jpg&w=780&h=450",
+          },
+          {
+            title: "العاروري: صبرنا ينفد وسنكون عند ثقة شعبنا بنا",
+            body: 'أكد نائب رئيس المكتب السياسي لحركة "حماس" الشيخ صالح العاروري أن محاولة الاحتلال توظيف شهر رمضان لفرض سياسته في التقسيم الزماني والمكاني والسماح للمستوطنين بأداء الطقوس التلمودية سيواجه بردة فعل شعبنا بكل تأكيد.',
+            blogCategory: "سياسة",
+            date: " الثلاثاء 14 مارس 2023 11:38 ص ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/2722f6be123ba49b7fdca6b5978cc013.jpeg&w=780&h=450",
+          },
+          {
+            title: "مواجهات واعتقالات بالقدس والضفة المحتلتين",
+            body: "شنّت قوات الاحتلال الصهيوني، فجر اليوم الثلاثاء، حملة مداهمات واقتحامات واسعة في الضفة والقدس المحتلتين، تخللتها مواجهات واعتقالات طالت عددًا من الفلسطينيين.",
+            blogCategory: "سياسة",
+            date: "الثلاثاء 14 مارس 2023 08:18 ص",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450",
+          },
+          {
+            title: "الذكرى الـ19 لعملية أسدود البطولية المشتركة",
+            body: "الرابع عشر من مارس، تاريخٌ يحفظه الصهاينة جيداً، لأنه يحمل معه ذكرى تحطيم نظرية أمنهم على صخرة أبناء المقاومة الذين مرغوا أنف الحكومة النازية بالتراب وأثبتوا أن كل التحصينات التي يتغنى بها العدو لا تمنع استشهادياً من بلوغ مرامه أو تحقيق هدفه.",
+            blogCategory: "سياسة",
+            date: " الثلاثاء 14 مارس 2023 08:30 ص",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/5f361459bffefbf3f8b4148594a18369.jpg&w=780&h=450",
+          },
+          {
+            title: "فؤاد الشوبكي فور الإفراج عنه: أسرانا شهداء مع وقف التنفيذ",
+            body: "شنّت قوات الاحتلال الصهيوني، فجر اليوم أكد شيخ الأسرى اللواء فؤاد الشوبكي، فور الإفراج عنه اليوم الإثنين، أن الأسرى في سجون الاحتلال الصهيوني شهداء مع وقف التنفيذ.",
+            blogCategory: "سياسة",
+            date: " الإثنين 13 مارس 2023 03:54 م ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/1d453f4357afeb0f95be26418ec5a8e7.jpg&w=780&h=450",
+          },
+          {
+            title:
+              "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
+            body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
+            blogCategory: "سياسة",
+            date: "الأحد 12 مارس 2023 06:44 م ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
+          },
+          {
+            title:
+              "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
+            body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
+            blogCategory: "سياسة",
+            date: "الأحد 12 مارس 2023 06:44 م ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
+          },
+          {
+            title:
+              "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
+            body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
+            blogCategory: "سياسة",
+            date: "الأحد 12 مارس 2023 06:44 م ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
+          },
+          {
+            title:
+              "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
+            body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
+            blogCategory: "سياسة",
+            date: "الأحد 12 مارس 2023 06:44 م ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
+          },
+          {
+            title:
+              "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
+            body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
+            blogCategory: "سياسة",
+            date: "الأحد 12 مارس 2023 06:44 م ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
+          },
+          {
+            title:
+              "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
+            body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
+            blogCategory: "سياسة",
+            date: "الأحد 12 مارس 2023 06:44 م ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
+          },
+          {
+            title:
+              "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
+            body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
+            blogCategory: "سياسة",
+            date: "الأحد 12 مارس 2023 06:44 م ",
+            blogAuthor: "قناة الأقصى",
+            imageUrl:
+              "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
+          },
+        ],
+      };
+    },
+  };
+  </script>
+  
