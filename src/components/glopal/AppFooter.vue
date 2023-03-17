@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'app-footer':true,'d-none':this.$route.path == '/'}">
+    <div :class="{'app-footer':true,'d-none':this.$route.path == '/' || '/ourTeam'}">
         <footer class="footer">
             <div class="container">
                 <div class="row">

@@ -8,6 +8,7 @@ import VlogsPage from "../views/VlogsPage.vue";
 import HealthPage from "../views/HealthPage.vue";
 import DetailsNews from "../views/DetailsNews.vue";
 import AuthPage from "../views/AuthPage.vue";
+import OurTeam from "../views/OurTeam.vue";
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path: "/Economic",
     name: "EconomicPage",
     component: EconomicPage,
+  },
+  {
+    path: "/ourTeam",
+    name: "OurTeam",
+    component: OurTeam,
   },
   {
     path: "/about",

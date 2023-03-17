@@ -1,7 +1,7 @@
 <template>
 	<p></p>
 	<p></p>
-<div :class="{'container':true, 'd-flex':true, 'justify-content-center':true, 'align-items-center':true,'right-panel-active':isRegister}" style="height: 80vh;" id="container">
+<div class="container d-flex justify-content-center align-items-center" :class="{'right-panel-active':isRegister}" style="height: 80vh;" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create Account</h1>
