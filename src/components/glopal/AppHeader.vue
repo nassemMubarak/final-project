@@ -75,7 +75,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="logo">
-              <router-link to="/"><img src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
+              <router-link to="/homePage"><img src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
             </div>
             <!-- end logo -->
           </div>
@@ -96,7 +96,7 @@
           <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <router-link class="nav-link color-pink-hover" to="/">Home</router-link>
+                <router-link class="nav-link color-pink-hover" to="/homePage">Home</router-link>
                 <!-- <a class="nav-link color-pink-hover" href="index.html">Home</a> -->
               </li>
               <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">

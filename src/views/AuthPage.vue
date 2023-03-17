@@ -18,7 +18,6 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-
 		<form action="#">
 			<h1>Sign in</h1>
 			<div class="social-container">
