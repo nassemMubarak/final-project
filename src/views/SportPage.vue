@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <h2>
-              <i class="fa fa-shopping-bag bg-red"></i> sport<small
+              <i class="fa fa-sport-bag bg-red"></i> sport<small
                 class="hidden-xs-down hidden-sm-down"
               >
               </small>
