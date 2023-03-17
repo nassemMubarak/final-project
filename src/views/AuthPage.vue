@@ -1,7 +1,7 @@
 <template>
 	<p></p>
 	<p></p>
-<div class="container d-flex justify-content-center align-items-center" style="height: 80vh;" id="container">
+<div :class="{'container':true, 'd-flex':true, 'justify-content-center':true, 'align-items-center':true,'right-panel-active':isRegister}" style="height: 80vh;" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create Account</h1>
@@ -38,12 +38,12 @@
 			<div class="overlay-panel overlay-left">
 				<h1>Welcome Back!</h1>
 				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
+				<button @click="isRegister = !isRegister" class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
+				<button @click="isRegister = !isRegister" class="ghost" id="signUp">Sign Up</button>
 			</div>
 		</div>
 	</div>
@@ -52,5 +52,11 @@
 <style scoped src="@/../public/frontend/assets/css/auth.css">
 </style>
 <script>
-
+	export default{
+		data(){
+			return {
+				isRegister:false
+			}
+		}
+	}
 </script>
