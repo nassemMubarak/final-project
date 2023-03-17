@@ -26,19 +26,14 @@
                             <h2 class="widget-title">منشورات شائعة</h2>
                             <div class="blog-list-widget">
                                 <div class="list-group">
-                                    <a v-for="items in news.slice(0, 3)" :key="items" href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <a v-for="items in news.slice(0, 3)" :key="items" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
                                             <img :src="items.imageUrl" alt="" class="img-fluid float-left">
                                             <h5 class="mb-1">{{ items.title }}</h5>
-                                            <span class="rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </span>
+                                            <small>{{ items.date }}</small>
                                         </div>
                                     </a>
+
                                 </div>
                             </div><!-- end blog-list -->
                         </div><!-- end widget -->
