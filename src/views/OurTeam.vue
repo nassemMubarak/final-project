@@ -128,7 +128,7 @@
                 <div class="col-md-3 single-item">
                     <div class="item">
                         <div class="thumb">
-                            <img class="img-fluid" src="https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png"
+                            <img class="img-fluid" src="../../public/frontend/assets/images/our-team/ahmed.jpeg"
                                 alt="Thumb">
 
                             <div class="overlay">
@@ -254,13 +254,14 @@ export default {
             ourTeam: [
                 {
                     name: 'Baraa M Mubarak',
-                    shortName: 'Baraa',
+                    shortName: 'Baraa Mubarak',
                     imageUrl: '../../public/frontend/assets/images/our-team/baraa.jpg',
                     linkedIn: 'https://www.linkedin.com/in/baraammubarak/',
                     facebook: 'https://www.facebook.com/Baraa.M.Mubarak',
                     github: 'https://github.com/baraaMubarak',
                     instagram: 'https://www.instagram.com/abu.hamza2002/',
-                    specialized: 'Backend Programmer'
+                    specialized: 'Backend Programmer',
+                    description:'I am currently working as a mobile programmer, and about to start in the web world'
                 },
                 {
                     name: 'Nassem A Mubarak',
@@ -270,17 +271,19 @@ export default {
                     facebook: 'https://www.facebook.com/nassemMubarak',
                     github: 'https://github.com/nassemMubarak',
                     instagram: 'https://www.instagram.com/invites/contact/?i=d64x9hm5saub&utm_content=3tjaut0‎',
-                    specialized: 'Flutter Programmer'
+                    specialized: 'backend developer',
+                    description:'I have never hesitated to do everything in my power to be the best, and here I am presenting what I dreamed of'
                 },
                 {
-                    name: 'Ahmed Z Shekh El-Eed',
-                    shortName: 'Ahmed',
+                    name: 'Ahmed Ziad',
+                    shortName: 'Ahmed Ziad',
                     imageUrl: 'https://i.ibb.co/JC4skS0/team-animate.jpg',
                     linkedIn: 'https://www.linkedin.com/in/ahmed-ziad-5a3b89268',
                     facebook: 'https://www.facebook.com/DevAhmedZiad',
                     github: 'https://github.com/DevAhmedZiad',
                     instagram: 'https://www.instagram.com/devahmedziad/',
-                    specialized: 'backend developer'
+                    specialized: 'backend developer',
+                    description:'My university lectures and courses may have had the largest volume of my time, but I never stopped developing myself'
                 },
                 {
                     name: 'Mohammed K Qofa',
@@ -290,7 +293,8 @@ export default {
                     facebook: 'https://www.facebook.com/profile.php?id=100089041681485',
                     github: 'https://github.com/MohammedkQofa',
                     instagram: 'https://www.instagram.com/mohammed.k.qofa/',
-                    specialized: 'frontend developer'
+                    specialized: 'frontend developer',
+                    description:'I am working on developing myself in the field of frontend and always trying to be the best I can be'
                 },
             ]
         }
