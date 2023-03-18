@@ -264,7 +264,7 @@ export default {
                 },
                 {
                     name: 'Nassem A Mubarak',
-                    shortName: 'Nassem',
+                    shortName: 'Nassem Mubarak',
                     imageUrl: '../../public/frontend/assets/images/our-team/nassem.jpeg',
                     linkedIn: 'https://www.linkedin.com/in/naseem-mubarak-71b8ab226',
                     facebook: 'https://www.facebook.com/nassemMubarak',
