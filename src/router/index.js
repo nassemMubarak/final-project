@@ -9,10 +9,16 @@ import HealthPage from "../views/HealthPage.vue";
 import DetailsNews from "../views/DetailsNews.vue";
 import AuthPage from "../views/AuthPage.vue";
 import OurTeam from "../views/OurTeam.vue";
+import LoadingPage from "../views/LoadingPage.vue";
 
 const routes = [
   {
     path: "/",
+    name: "LoadingPage",
+    component: LoadingPage,
+  },
+  {
+    path: "/authPage",
     name: "AuthPage",
     component: AuthPage,
   },

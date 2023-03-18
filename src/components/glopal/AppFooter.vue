@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'app-footer':true,'d-none':(this.$route.path == '/' || this.$route.path == '/ourTeam')}">
+    <div :class="{'app-footer':true,'d-none':(this.$route.path == '/' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage')}">
         <footer class="footer">
             <div class="container">
                 <div class="row">

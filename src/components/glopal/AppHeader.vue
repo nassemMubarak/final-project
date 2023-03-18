@@ -1,5 +1,5 @@
 <template>
-  <div  :class="{'app-header':true,'d-none':(this.$route.path == '/' || this.$route.path ==  '/ourTeam')}">
+  <div  :class="{'app-header':true,'d-none':(this.$route.path == '/' || this.$route.path ==  '/ourTeam' || this.$route.path == '/authPage')}">
     <div class="collapse top-search" id="collapseExample">
       <div class="card card-block">
         <div class="newsletter-widget text-center">
@@ -88,7 +88,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="logo">
-              <router-link to="/homePage"><img src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
+              <router-link to="/homePage"><img height="200" src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
             </div>
             <!-- end logo -->
           </div>
