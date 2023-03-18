@@ -60,7 +60,9 @@
                         </div>
                         <div class="info">
                             <span class="message">
-                                <a href="#"><i class="fas fa-envelope-open"></i></a>
+                                <a href="mailto: praa.m.2002@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                  </svg></a>
                             </span>
                             <h4>{{ ourTeam[0].name }}</h4>
                             <span>{{ ourTeam[0].specialized }}</span>
@@ -118,7 +120,9 @@
                         </div>
                         <div class="info">
                             <span class="message">
-                                <a href="#"><i class="fas fa-envelope-open"></i></a>
+                                <a href="mailto: nassem.a.mubarak@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                  </svg></a>
                             </span>
                             <h4>{{ ourTeam[1].name }}</h4>
                             <span>{{ ourTeam[1].specialized }}</span>
@@ -176,7 +180,9 @@
                         </div>
                         <div class="info">
                             <span class="message">
-                                <a href="#"><i class="fas fa-envelope-open"></i></a>
+                                <a href="mailto: ahmed2588798@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                  </svg></a>
                             </span>
                             <h4>{{ ourTeam[2].name }}</h4>
                             <span>{{ ourTeam[2].specialized }}</span>
@@ -234,7 +240,9 @@
                         </div>
                         <div class="info">
                             <span class="message">
-                                <a href="#"><i class="fas fa-envelope-open"></i></a>
+                                <a href="mailto: mohammed.k.qofa@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                                  </svg></a>
                             </span>
                             <h4>{{ ourTeam[3].name }}</h4>
                             <span>{{ ourTeam[3].specialized }}</span>
