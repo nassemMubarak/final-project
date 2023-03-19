@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'app-footer':true,'d-none':(this.$route.path == '/' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage')}">
+    <div dir="rtl" lang="ar"  :class="{'app-footer':true,'d-none':(this.$route.path == '/' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage')}">
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -41,16 +41,12 @@
 
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div class="widget">
-                            <h2 class="widget-title">Popular Categories</h2>
+                            <h2 class="widget-title">الفئات الشعبية</h2>
                             <div class="link-widget">
                                 <ul>
-                                    <li><a href="#">Fahsion <span>(21)</span></a></li>
-                                    <li><a href="#">Lifestyle <span>(15)</span></a></li>
-                                    <li><a href="#">Art & Design <span>(31)</span></a></li>
-                                    <li><a href="#">Health Beauty <span>(22)</span></a></li>
-                                    <li><a href="#">Clothing <span>(66)</span></a></li>
-                                    <li><a href="#">Entertaintment <span>(11)</span></a></li>
-                                    <li><a href="#">Food & Drink <span>(87)</span></a></li>
+                                    <li><a href="#"> الأخبار السياسية  (21)</a> </li>
+                                    <li><a href="#">الاخبار الرياضية  (15)</a></li>
+                                    <li><a href="#">الاخبار الاقتصادية  (31)</a></li>
                                 </ul>
                             </div><!-- end link-widget -->
                         </div><!-- end widget -->
@@ -59,13 +55,13 @@
 
                 <hr class="invis1">
 
-                <div class="row">
+                <div dir="ltr" lang="en" class="row">
                     <div class="col-lg-8 offset-lg-2">
                         <div class="widget">
                             <div class="footer-text text-center">
                                 <router-link to="/homePage"><img src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
                                 <!-- <a href="index.html" @click.><img src="../../../public/frontend/assets/images/logo.png" alt="" class="img-fluid"></a> -->
-                                <p>Cloapedia is a personal blog for handcrafted, cameramade photography content, fashion styles from independent creatives around the world.</p>
+                                <p>هو موقع اخبار يهتم بالاخبار السياسية والاقتصادية والرياضية يحتوي على العديد من الميزات</p>
                                 <div class="social">
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
                                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
@@ -76,22 +72,22 @@
 
                                 <hr class="invis">
 
-                                <div class="newsletter-widget text-center">
+                                <!-- <div class="newsletter-widget text-center">
                                     <form class="form-inline">
-                                        <input type="text" class="form-control" placeholder="Enter your email address">
+                                        <input type="text" class="form-control" placeholder="أدخل عنوان بريدك الالكتروني">
                                         <button type="submit" class="btn btn-primary">Subscribe <i class="fa fa-envelope-open-o"></i></button>
                                     </form>
-                                </div><!-- end newsletter -->
+                                </div> -->
                             </div><!-- end footer-text -->
-                        </div><!-- end widget -->
-                    </div><!-- end col -->
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-12 text-center">
                         <br>
                         <div class="copyright">&copy; Cloapedia. Design: <a href="http://html.design">HTML Design</a>.</div>
                     </div>
-                </div>
+                </div> -->
             </div><!-- end container -->
         </footer><!-- end footer -->
 

@@ -1,5 +1,5 @@
 <template>
-  <div  :class="{'app-header':true,'d-none':(this.$route.path == '/' || this.$route.path ==  '/ourTeam' || this.$route.path == '/authPage')}">
+  <div dir="rtl" lang="ar"  :class="{'app-header':true,'d-none':(this.$route.path == '/' || this.$route.path ==  '/ourTeam' || this.$route.path == '/authPage')}">
     <div class="collapse top-search" id="collapseExample">
       <div class="card card-block">
         <div class="newsletter-widget text-center">
@@ -109,18 +109,18 @@
           <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <router-link class="nav-link color-pink-hover" to="/homePage">Home</router-link>
+                <router-link class="nav-link color-pink-hover" to="/homePage">الرئيسية</router-link>
                 <!-- <a class="nav-link color-pink-hover" href="index.html">Home</a> -->
               </li>
               <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">Categories</a>
+                  aria-expanded="false">الفئات</a>
                 <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
                   <li>
                     <div class="mega-menu-content clearfix">
                       <div class="tab">
                         <button class="tablinks active" onclick="openCategory(event, 'politics')">
-                          Politics
+                          السياسة
                         </button>
                         <button class="tablinks" onclick="openCategory(event, 'economic')">
                           Economic
@@ -294,7 +294,7 @@
                 </ul>
               </li> -->
               <li class="nav-item">
-                <router-link class="nav-link color-pink-hover" to="/politics">Politics</router-link>
+                <router-link class="nav-link color-pink-hover" to="/politics">السياسية</router-link>
                 <!-- <a
                   class="nav-link color-pink-hover"
                   href="blog-category-01.html"
@@ -302,13 +302,13 @@
                 > -->
               </li>
               <li class="nav-item">
-                <router-link class="nav-link color-red-hover" to="/Economic">Economic</router-link>
+                <router-link class="nav-link color-red-hover" to="/Economic">الاقتصادية</router-link>
                 <!-- <a class="nav-link color-red-hover" href="blog-category-02.html"
                   >Economic</a -->
                 <!-- > -->
               </li>
               <li class="nav-item">
-                <router-link class="nav-link color-aqua-hover" to="/sport">Sport</router-link>
+                <router-link class="nav-link color-aqua-hover" to="/sport">الرياضية</router-link>
                 <!-- <a
                   class="nav-link color-aqua-hover"
                   href="blog-category-03.html"
