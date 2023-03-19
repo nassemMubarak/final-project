@@ -1,20 +1,20 @@
 <template>
-    <div class="details-news">
+    <div dir="rtl" lang="ar" class="details-news">
         <section class="section wb">
             <div class="container">
                 <div class="row">
+
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
                             <div class="blog-title-area">
                                 <ol class="breadcrumb hidden-xs-down">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Blog</a></li>
-                                    <li class="breadcrumb-item active">The golden rules you need to know for a positive life</li>
+                                    <li class="breadcrumb-item"><a href="#">{{ detailsNews.title }}</a></li>
+                                    <li class="breadcrumb-item"><a href="#">السياسة</a></li>
                                 </ol>
 
-                                <span class="color-aqua"><a href="blog-category-01.html" title="">Lifestyle</a></span>
+                                <span class="color-aqua"><a href="blog-category-01.html" title="">سياية</a></span>
 
-                                <h3>The golden rules you need to know for a positive life</h3>
+                                <h3>{{ detailsNews.title }}</h3>
 
                                 <div class="blog-meta big-meta">
                                     <small><a href="single.html" title="">21 July, 2017</a></small>
@@ -24,56 +24,57 @@
 
                                 <div class="post-sharing">
                                     <ul class="list-inline">
-                                        <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                        <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                        <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i>
+                                                <span class="down-mobile">Share on Facebook</span></a></li>
+                                        <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i>
+                                                <span class="down-mobile">Tweet on Twitter</span></a></li>
+                                        <li><a href="#" class="gp-button btn btn-primary"><i
+                                                    class="fa fa-google-plus"></i></a></li>
                                     </ul>
                                 </div><!-- end post-sharing -->
                             </div><!-- end title -->
 
                             <div class="single-post-media">
-                                <img src="../../public\frontend\assets\upload/menu_08.jpg" alt="" class="img-fluid">
+                                <img :src="detailsNews.imageUrl" alt="" class="img-fluid">
                             </div><!-- end media -->
 
-                            <div class="blog-content">  
+                            <div class="blog-content">
                                 <div class="pp">
-                                    <p>In lobortis pharetra mattis. Morbi nec nibh iaculis, <a href="#">bibendum augue a</a>, ultrices nulla. Nunc velit ante, lacinia id tincidunt eget, faucibus nec nisl. In mauris purus, bibendum et gravida dignissim, venenatis commodo lacus. Duis consectetur quis nisi nec accumsan. Pellentesque enim velit, ut tempor turpis. Mauris felis neque, egestas in lobortis et,iaculis at nunc ac, rhoncus sagittis ipsum. </p>
+                                    <!-- <p>In lobortis pharetra mattis. Morbi nec nibh iaculis, <a href="#">bibendum augue a</a>, ultrices nulla. Nunc velit ante, lacinia id tincidunt eget, faucibus nec nisl. In mauris purus, bibendum et gravida dignissim, venenatis commodo lacus. Duis consectetur quis nisi nec accumsan. Pellentesque enim velit, ut tempor turpis. Mauris felis neque, egestas in lobortis et,iaculis at nunc ac, rhoncus sagittis ipsum. </p>
 
                                     <h3><strong>Maecenas non convallis quam, eu sodales justo. Pellentesque quis lectus elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></h3>
 
-                                    <p>Donec nec metus sed leo sollicitudin ornare sed consequat neque. Aliquam iaculis neque quis dui venenatis, eget posuere felis viverra. Ut sit amet feugiat elit, nec elementum velit. Sed eu nisl convallis, efficitur turpis eu, euismod nunc. Proin neque enim, malesuada non lobortis nec, facilisis et lectus. Ie consectetur. Nam eget neque ac ex fringilla dignissim eu ac est. Nunc et nisl vel odio posuere. </p>
+                                    <p>Donec nec metus sed leo sollicitudin ornare sed consequat neque. Aliquam iaculis neque quis dui venenatis, eget posuere felis viverra. Ut sit amet feugiat elit, nec elementum velit. Sed eu nisl convallis, efficitur turpis eu, euismod nunc. Proin neque enim, malesuada non lobortis nec, facilisis et lectus. Ie consectetur. Nam eget neque ac ex fringilla dignissim eu ac est. Nunc et nisl vel odio posuere. </p> -->
 
-                                    <p>Vivamus non condimentum orci. Pellentesque venenatis nibh sit amet est vehicula lobortis. Cras eget aliquet eros. Nunc lectus elit, suscipit at nunc sed, finibus imperdiet ipsum. Maecenas dapibus neque sodales nulla finibus volutpat. Integer pulvinar massa vitae ultrices posuere. Proin ut tempor turpis. Mauris felis neque, egestas in lobortis et, sodales non ante. Ut vestibulum libero quis luctus tempus. Nullam eget dignissim massa. Vivamus id condimentum orci. Nunc ac sem urna. Aliquam et hendrerit nisl massa nunc. </p>
+                                    <p>{{ detailsNews.body }} </p>
 
                                 </div><!-- end pp -->
 
 
-                               
+
                             </div><!-- end content -->
 
                             <div class="blog-title-area">
                                 <div class="tag-cloud-single">
-                                    <span>Tags</span>
-                                    <small><a href="#" title="">lifestyle</a></small>
-                                    <small><a href="#" title="">colorful</a></small>
-                                    <small><a href="#" title="">trending</a></small>
-                                    <small><a href="#" title="">another tag</a></small>
+                                    <span>الكلمات المفتاحية</span>
+                                    <small><a href="#" title=""> #التنسيق الأمني</a></small>
+                                    <small><a href="#" title=""> #السلطة</a></small>
+                                    <small><a href="#" title=""> #قمة العقبة</a></small>
+                                    <small><a href="#" title=""> #شرم الشيخ</a></small>
+                                    <small><a href="#" title=""> #الضفة المحتلة</a></small>
+                                    <small><a href="#" title=""> #قطاع غزة</a></small>
+                                    <small><a href="#" title=""> #فلسطين</a></small>
                                 </div><!-- end meta -->
 
-                                <div class="post-sharing">
-                                    <ul class="list-inline">
-                                        <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                        <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                        <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
-                                    </ul>
-                                </div><!-- end post-sharing -->
+
                             </div><!-- end title -->
 
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="banner-spot clearfix">
                                         <div class="banner-img">
-                                            <img src="../../public\frontend\assets\upload/banner_01.jpg" alt="" class="img-fluid">
+                                            <img src="../../public\frontend\assets\upload/ramadan1.jpg" alt=""
+                                                class="img-fluid">
                                         </div><!-- end banner-img -->
                                     </div><!-- end banner -->
                                 </div><!-- end col -->
@@ -86,48 +87,58 @@
                                     <div class="col-lg-6">
                                         <div class="blog-list-widget">
                                             <div class="list-group">
-                                                <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                                <a href="single.html"
+                                                    class="list-group-item list-group-item-action flex-column align-items-start">
                                                     <div class="w-100 justify-content-between text-right">
-                                                        <img src="../../public\frontend\assets\upload/blog_square_02.jpg" alt="" class="img-fluid float-right">
-                                                        <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                                        <small>Prev Post</small>
+                                                        <img src="https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%202/image123231232.jpeg"
+                                                            alt="" class="img-fluid float-right">
+                                                        <h5 class="mb-1">النفط يواصل الهبوط وسط مخاوف من أزمة مالية جديدة
+                                                        </h5>
+                                                        <small>الخبر السابق</small>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div><!-- end col -->
+                                    <div class="col-lg-6">
+                                        <div class="blog-list-widget">
+                                            <div class="list-group">
+                                                <a href="single.html"
+                                                    class="list-group-item list-group-item-action flex-column align-items-start">
+                                                    <div class="w-100 justify-content-between text-right">
+                                                        <img src="https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450"
+                                                            alt="" class="img-fluid float-right">
+                                                        <h5 class="mb-1">عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع
+                                                            ذئابنا المنفردة</h5>
+                                                        <small>الخبر التالي</small>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
                                     </div><!-- end col -->
 
-                                    <div class="col-lg-6">
-                                        <div class="blog-list-widget">
-                                            <div class="list-group">
-                                                <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                                    <div class="w-100 justify-content-between">
-                                                        <img src="../../public\frontend\assets\upload/blog_square_03.jpg" alt="" class="img-fluid float-left">
-                                                        <h5 class="mb-1">Let's make an introduction to the glorious world of history</h5>
-                                                        <small>Next Post</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col -->
                                 </div><!-- end row -->
                             </div><!-- end author-box -->
 
                             <hr class="invis1">
 
                             <div class="custombox authorbox clearfix">
-                                <h4 class="small-title">About author</h4>
+                                <h4 class="small-title">نبذة عن الكاتب</h4>
                                 <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                        <img src="../../public\frontend\assets\upload/author.jpg" alt="" class="img-fluid rounded-circle"> 
+                                        <img src="https://seraj.tv/style/atyaf/assets/images/logo.png" alt=""
+                                            class="img-fluid rounded-circle">
                                     </div><!-- end col -->
 
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                                        <h4><a href="#">Jessica</a></h4>
-                                        <p>Quisque sed tristique felis. Lorem <a href="#">visit my website</a> amet, consectetur adipiscing elit. Phasellus quis mi auctor, tincidunt nisl eget, finibus odio. Duis tempus elit quis risus congue feugiat. Thanks for stop Cloapedia!</p>
+                                        <h4><a href="#">قناة الأقصى</a></h4>
+                                        <p>قناة الأقصى قناة فضائية فلسطينية تبث من غزة، أُسست سنة 2006، وفرع من شبكة الأقصى
+                                            الإعلامية، تابعة لحركة المقاومة الإسلامية وتعبّر عن موقفها، وموقف المقاومة
+                                            الفلسطينية. وقد احتلت قناة الأقصى نسبة مشاهدة كبيرة في أوساط العالم العربي
+                                            والإسلامي وفي دول المغرب العربي بالخصوص. <a href="https://seraj.tv/live"
+                                                target="_blank">visit my website</a> </p>
 
                                         <div class="topsocial">
-                                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Website"><i class="fa fa-link"></i></a>
                                         </div><!-- end social -->
 
                                     </div><!-- end col -->
@@ -137,88 +148,51 @@
                             <hr class="invis1">
 
                             <div class="custombox clearfix">
-                                <h4 class="small-title">You may also like</h4>
+                                <h4 class="small-title">ربما يعجبك أيضا</h4>
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6" v-for="items in youMayAlsLike" :key="items">
                                         <div class="blog-box">
                                             <div class="post-media">
                                                 <a href="single.html" title="">
-                                                    <img src="../../public\frontend\assets\upload/menu_06.jpg" alt="" class="img-fluid">
+                                                    <img :src="items.imageUrl" alt="" class="img-fluid">
                                                     <div class="hovereffect">
                                                         <span class=""></span>
                                                     </div><!-- end hover -->
                                                 </a>
                                             </div><!-- end media -->
                                             <div class="blog-meta">
-                                                <h4><a href="single.html" title="">We are guests of ABC Design Studio</a></h4>
-                                                <small><a href="blog-category-01.html" title="">Trends</a></small>
-                                                <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
+                                                <h4><a href="single.html" title="">{{ items.title }}</a></h4>
+                                                <small><a href="blog-category-01.html" title="">{{ items.date }}</a></small>
+                                                <small><a href="blog-category-01.html" title="">ترند</a></small>
                                             </div><!-- end meta -->
                                         </div><!-- end blog-box -->
                                     </div><!-- end col -->
 
-                                    <div class="col-lg-6">
-                                        <div class="blog-box">
-                                            <div class="post-media">
-                                                <a href="single.html" title="">
-                                                    <img src="../../public\frontend\assets\upload/menu_07.jpg" alt="" class="img-fluid">
-                                                    <div class="hovereffect">
-                                                        <span class=""></span>
-                                                    </div><!-- end hover -->
-                                                </a>
-                                            </div><!-- end media -->
-                                            <div class="blog-meta">
-                                                <h4><a href="single.html" title="">Nostalgia at work with family</a></h4>
-                                                <small><a href="blog-category-01.html" title="">News</a></small>
-                                                <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
-                                            </div><!-- end meta -->
-                                        </div><!-- end blog-box -->
-                                    </div><!-- end col -->
+
                                 </div><!-- end row -->
                             </div><!-- end custom-box -->
 
                             <hr class="invis1">
 
                             <div class="custombox clearfix">
-                                <h4 class="small-title">3 Comments</h4>
+                                <h4 class="small-title"> التعليقات</h4>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="comments-list">
-                                            <div class="media">
+                                            <div v-for="items in commints" :key="items" class="media">
+                                                <!-- <div class="media-body"></div> -->
                                                 <a class="media-left" href="#">
-                                                    <img src="../../public\frontend\assets\upload/author.jpg" alt="" class="rounded-circle">
+                                                    <img :src="items.image" alt="" class="rounded-circle">
                                                 </a>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading user_name">Amanda Martines <small>5 days ago</small></h4>
-                                                    <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar jean.</p>
+                                                <div dir="rtl" lang="ar" class="media-body">
+                                                    <h4 class="media-heading user_name">{{ items.name }}<small> قبل ولا اشي
+                                                        </small></h4>
                                                     <!-- <a href="#" class="btn btn-primary btn-sm">Reply</a> -->
+                                                    <p>{{ items.text }}</p>
                                                 </div>
+
                                             </div>
-                                            <div class="media">
-                                                <a class="media-left" href="#">
-                                                    <img src="../../public\frontend\assets\upload/author_01.jpg" alt="" class="rounded-circle">
-                                                </a>
-                                                <div class="media-body">
 
-                                                    <h4 class="media-heading user_name">Baltej Singh <small>5 days ago</small></h4>
-
-                                                    <p>Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small.</p>
-
-                                                    <!-- <a href="#" class="btn btn-primary btn-sm">Reply</a> -->
-                                                </div>
-                                            </div>
-                                            <div class="media last-child">
-                                                <a class="media-left" href="#">
-                                                    <img src="../../public\frontend\assets\upload/author_02.jpg" alt="" class="rounded-circle">
-                                                </a>
-                                                <div class="media-body">
-
-                                                    <h4 class="media-heading user_name">Marie Johnson <small>5 days ago</small></h4>
-                                                    <p>Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small.</p>
-
-                                                    <!-- <a href="#" class="btn btn-primary btn-sm">Reply</a> -->
-                                                </div>
-                                            </div>
                                         </div>
                                     </div><!-- end col -->
                                 </div><!-- end row -->
@@ -227,56 +201,39 @@
                             <hr class="invis1">
 
                             <div class="custombox clearfix">
-                                <h4 class="small-title">Leave a Reply</h4>
+                                <h4 class="small-title">تعليق</h4>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <form class="form-wrapper">
-                                            <textarea class="form-control" placeholder="Your comment"></textarea>
-                                            <button type="submit" class="btn btn-primary">Submit Comment</button>
+                                            <textarea class="form-control" placeholder="أكتب التعليق"></textarea>
+                                            <button type="submit" class="btn btn-primary">أرسال</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div><!-- end page-wrapper -->
                     </div><!-- end col -->
-
                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                         <div class="sidebar">
                             <div class="widget">
-                                <h2 class="widget-title">Search</h2>
+                                <h2 class="widget-title">بحث</h2>
                                 <form class="form-inline search-form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search on the site">
+                                        <input type="text" class="form-control" placeholder="البحث في الخبر">
                                     </div>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
                                 </form>
                             </div><!-- end widget -->
-
                             <div class="widget">
-                                <h2 class="widget-title">Recent Posts</h2>
+                                <h2 class="widget-title">المشاركات الاخيرة</h2>
                                 <div class="blog-list-widget">
                                     <div class="list-group">
-                                        <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a v-for="items in recentPosts" :key="items"
+                                            class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                                <img src="../../public\frontend\assets\upload/blog_square_01.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                                <small>12 Jan, 2016</small>
-                                            </div>
-                                        </a>
-
-                                        <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img src="../../public\frontend\assets\upload/blog_square_02.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Let's make an introduction for creative life</h5>
-                                                <small>11 Jan, 2016</small>
-                                            </div>
-                                        </a>
-
-                                        <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 last-item justify-content-between">
-                                                <img src="../../public\frontend\assets\upload/blog_square_03.jpg" alt="" class="img-fluid float-left">
-                                                <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
-                                                <small>07 Jan, 2016</small>
+                                                <img :src="items.imageUrl" alt="" class="img-fluid float-right">
+                                                <h5 class="mb-1">{{ items.title }}</h5>
+                                                <small>{{ items.date }}</small>
                                             </div>
                                         </a>
                                     </div>
@@ -287,7 +244,7 @@
                                 <h2 class="widget-title">Advertising</h2>
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
-                                        <img src="../../public\frontend\assets\upload/banner_03.jpg" alt="" class="img-fluid">
+                                        <img src="../../public\frontend\assets\upload/ramadan.jpg" alt="" class="img-fluid">
                                     </div><!-- end banner-img -->
                                 </div><!-- end banner -->
                             </div><!-- end widget -->
@@ -308,10 +265,11 @@
                                 </div>
                             </div>
                         -->
-                           
+
 
                         </div><!-- end sidebar -->
                     </div><!-- end col -->
+
                 </div><!-- end row -->
             </div><!-- end container -->
         </section>
@@ -320,11 +278,98 @@
 <script>
 export default {
     name: "DetailsNews",
-    data(){
-        return{
-            detailsNews:{
-                title:'وفد قيادي برئاسة العاروري يلتقي نصر الله'
-            }
+    data() {
+        return {
+            recentPosts: [
+                {
+                    title:
+                        "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
+                    body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
+                    blogCategory: "سياسة",
+                    date: "الأحد 12 مارس 2023 06:44 م ",
+                    blogAuthor: "قناة الأقصى",
+                    imageUrl:
+                        "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
+                },
+                {
+                    title: " النفط يواصل الهبوط وسط مخاوف من أزمة مالية جديدة ",
+                    body: "الاقتصادي - رويترز: انخفضت أسعار النفط أكثر من دولار اليوم الثلاثاء، لتواصل خسائرها للجلسة الثانية، إذ أدى انهيار بنك وادي السيليكون (سيليكون فالي SVB) إلى هزة في أسواق الأسهم وأثار مخاوف من وقوع أزمة مالية جديدة. وتراجعت العقود الآجلة لخام برنت 1.1% إلى 79.90 دولارا للبرميل بحلول الساعة 03:45 بتوقيت غرينتش.",
+                    blogCategory: "اقتصاد",
+                    date: "الأحد 12 مارس 2023 06:44 م ",
+                    blogAuthor: "موقع الأقتصادي",
+                    imageUrl:
+                        "https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%202/image123231232.jpeg",
+                },
+                {
+                    title: "قبل الكلاسيكو.. 'كامب نو' حصن منيع لبرشلونة في الليجا",
+                    body: "يتطلع برشلونة ومدربه تشافي هيرنانديز، لاستعادة لقب الدوري الإسباني الغائب منذ آخر تتويج للفريق في 2019. ويسير برشلونة بخطى جيدة للغاية هذا الموسم على المستوى المحلي، بينما تعثر كثيرًا على المستوى القاري، بالخروج من مسابقتي دوري أبطال أوروبا، والدوري الأوروبي.",
+                    blogCategory: "رياضة",
+                    date: " الإثنين 13 مارس 2023 03:54 م ",
+                    blogAuthor: "موقع كووورة",
+                    imageUrl:
+                        "https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-05%2f2023-03-05-10504908_epa.jpg",
+                },
+            ],
+            youMayAlsLike: [
+                {
+                    title: "قبل الكلاسيكو.. 'كامب نو' حصن منيع لبرشلونة في الليجا",
+                    body: "يتطلع برشلونة ومدربه تشافي هيرنانديز، لاستعادة لقب الدوري الإسباني الغائب منذ آخر تتويج للفريق في 2019. ويسير برشلونة بخطى جيدة للغاية هذا الموسم على المستوى المحلي، بينما تعثر كثيرًا على المستوى القاري، بالخروج من مسابقتي دوري أبطال أوروبا، والدوري الأوروبي.",
+                    blogCategory: "رياضة",
+                    date: " الإثنين 13 مارس 2023 03:54 م ",
+                    blogAuthor: "موقع كووورة",
+                    imageUrl:
+                        "https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-05%2f2023-03-05-10504908_epa.jpg",
+                },
+                {
+                    title: "النفط يواصل الهبوط وسط مخاوف من أزمة مالية جديدة",
+                    body: "الاقتصادي - رويترز: انخفضت أسعار النفط أكثر من دولار اليوم الثلاثاء، لتواصل خسائرها للجلسة الثانية، إذ أدى انهيار بنك وادي السيليكون (سيليكون فالي SVB) إلى هزة في أسواق الأسهم وأثار مخاوف من وقوع أزمة مالية جديدة. وتراجعت العقود الآجلة لخام برنت 1.1% إلى 79.90 دولارا للبرميل بحلول الساعة 03:45 بتوقيت غرينتش.",
+                    blogCategory: "اقتصاد",
+                    date: "الأحد 12 مارس 2023 06:44 م ",
+                    blogAuthor: "موقع الأقتصادي",
+                    imageUrl:
+                        "https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%202/image123231232.jpeg",
+                },
+            ],
+            commints: [
+                {
+                    name: 'نسيم أحمد مبارك',
+                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmeM9WcGVQfoqGsZiCAls3W5oJFhiWiG1VVQ&usqp=CAU',
+                    text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
+                },
+                {
+                    name: 'براء محمد مبارك',
+                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmeM9WcGVQfoqGsZiCAls3W5oJFhiWiG1VVQ&usqp=CAU',
+                    text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
+                },
+                {
+                    name: 'احمد زياد الشيخ عيد',
+                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmeM9WcGVQfoqGsZiCAls3W5oJFhiWiG1VVQ&usqp=CAU',
+                    text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
+                },
+                {
+                    name: 'محمد كمال قفة',
+                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmeM9WcGVQfoqGsZiCAls3W5oJFhiWiG1VVQ&usqp=CAU',
+                    text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
+                },
+            ],
+            detailsNews: {
+                title:
+                    "الشباب الثائر ينظّم فعالية شرق غزة رفضًا لاجتماع شرم الشيخ",
+                body: `نظّم الشباب الفلسطيني الثائر بعد ظهر اليوم الأحد، فعالية في مخيم ملكة شرق غزة، رفضًا لاجتماع شرم الشيخ الذي يضم السلطة والاحتلال ومصر والأردن والولايات المتحدة.
+
+وقال مراسلنا، إن المئات من الشباب الثائر تجمعوا في تمام الساعة الواحدة بعد ظهر اليوم بفعالية إحراق اطارات في مخيم ملكة شرق مدينة غزة، احتجاجًا على عقد قمة شرم الشيخ.
+
+وأضاف مراسلنا، أن الشباب الثائر أحرقوا الإطارات، ورددوا شعارات غاضبة منددة بمشاركة السلطة في اجتماع شرم الشيخ، معتبرين القمة تآمر على دماء وتضحيات الشعب الفلسطيني وشهدائه.
+
+ويأتي اجتماع شرم الشيخ استكمالًا لاجتماع عقد في السادس والعشرين من الشهر الماضي في العقبة الأردنية لبحث إنقاذ الاحتلال المأزوم من خلال محاولة وقف التصعيد وحالة المقاومة المتصاعدة بالضفة والقدس، قبل رمضان.
+
+الكلمات المفتاحية`,
+                blogCategory: "سياسة",
+                date: " الأحد 19 مارس 2023 02:16 م",
+                blogAuthor: "قناة الأقصى",
+                imageUrl:
+                    "https://seraj.tv/thumb.php?src=uploads/images/e24b3c623aef9ac02d01c67bf72e4c95.jpg&w=780&h=450",
+            },
         }
     }
 }

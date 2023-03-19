@@ -1,24 +1,25 @@
 <template>
-  <div id="politics" class="politics-page">
+  <div dir="rtl" lang="ar"  id="politics" class="politics-page">
     <div class="page-title wb">
       <div class="container">
         <div class="row">
-          <div
-            class="col-lg-8 col-md-8 col-sm-12 col-xs-12"
-          >
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="#">الاخبار السياسة</a></li>
-              <li class="breadcrumb-item">   <router-link to="/homePage">الصفحة الرئيسية</router-link></li>
-            </ol>
-          </div>
-          <!-- end col -->
-          <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <h2>
                الأخبار السياسية
             </h2>
           </div>
           <!-- end col -->
+          <div
+            class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down"
+          >
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">الصفحة الرئيسئة</a></li>
+              <li class="breadcrumb-item"><a href="#"></a></li>
+              <li class="breadcrumb-item active">السياسة</li>
+            </ol>
+          </div>
+          <!-- end col -->
+         
         </div>
         <!-- end row -->
       </div>
@@ -42,17 +43,15 @@
                 <div class="blog-box row">
                   <div class="col-md-4">
                     <div class="post-media">
-                      <a href="single.html" title="">
-                        <img :src="item.imageUrl" alt="" class="img-fluid" />
-                        <div class="hovereffect"></div>
-                      </a>
+                        <router-link to="/details"> <img :src="item.imageUrl" alt="" class="img-fluid" />
+                        <div class="hovereffect"></div></router-link>
                     </div>
                     <!-- end media -->
                   </div>
                   <!-- end col -->
                   <div class="blog-meta big-meta col-md-8">
                     <h4>
-                      <a href="single.html" title="">{{ item.title }}</a>
+                      <router-link to="/details">{{ item.title  }}</router-link>
                     </h4>
                     <p>{{ item.body }}</p>
                     <small
@@ -155,7 +154,7 @@
                       type="text"
                       v-model="textSearch"
                       class="form-control"
-                      placeholder="Search on the site"
+                      placeholder="             البحث في الموقع"
                     />
                   </div>
                   <button type="submit" class="btn btn-primary">
@@ -205,99 +204,6 @@
                   <!-- end banner-img -->
                 </div>
                 <!-- end banner -->
-              </div>
-              <!-- end widget -->
-
-              <div class="widget">
-                <h2 class="widget-title">Instagram Feed</h2>
-                <div class="instagram-wrapper clearfix">
-                  <a class="" href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_01.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_02.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_03.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_04.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_05.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_06.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_07.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_08.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="../../public\frontend\assets\upload/insta_09.jpeg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                </div>
-                <!-- end Instagram wrapper -->
-              </div>
-              <!-- end widget -->
-
-              <div class="widget">
-                <h2 class="widget-title">Popular Categories</h2>
-                <div class="link-widget">
-                  <ul>
-                    <li>
-                      <a href="#">Fahsion <span>(21)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Lifestyle <span>(15)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Art & Design <span>(31)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Health Beauty <span>(22)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Clothing <span>(66)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Entertaintment <span>(11)</span></a>
-                    </li>
-                    <li>
-                      <a href="#">Politics & Drink <span>(87)</span></a>
-                    </li>
-                  </ul>
-                </div>
-                <!-- end link-widget -->
               </div>
               <!-- end widget -->
             </div>
