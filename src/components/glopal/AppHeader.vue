@@ -20,7 +20,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
             <div class="topsocial">
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i
+              <!-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i
                   class="fa fa-facebook"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Youtube"><i class="fa fa-youtube"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i
@@ -30,7 +30,13 @@
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i
                   class="fa fa-instagram"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i
-                  class="fa fa-google-plus"></i></a>
+                  class="fa fa-google-plus"></i></a> -->
+                  <li class="list-inline-item">
+                    <router-link to="/profile">
+                      <i class="fa fa-user-circle-o" style="font-size: 25px;"></i>
+                      <span style="font-size: 20px;">Profile</span></router-link>
+                  </li>
+
             </div>
             <!-- end social -->
           </div>
@@ -49,9 +55,6 @@
                 </li>
                 <li class="list-inline-item">
                   <a href="blog-category-02.html"><i class="fa fa-bolt"></i> Hot Topics</a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="page-contact.html"><i class="fa fa-user-circle-o"></i> Write for us</a>
                 </li>
                 <li class="list-inline-item">
                   <router-link to="/ourTeam">
