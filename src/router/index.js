@@ -7,6 +7,8 @@ import DetailsNews from "../views/DetailsNews.vue";
 import AuthPage from "../views/AuthPage.vue";
 import OurTeam from "../views/OurTeam.vue";
 import LoadingPage from "../views/LoadingPage.vue";
+import EditProfileView from "../views/EditProfile.vue";
+import ProfileView from "../views/Profile.vue";
 
 const routes = [
   {
@@ -48,6 +50,16 @@ const routes = [
     path: "/ourTeam",
     name: "OurTeam",
     component: OurTeam,
+  },
+  {
+    path: "/profile",
+    name: "ProfileView",
+    component: ProfileView,
+  },
+  {
+    path: "/editProfile",
+    name: "EditProfileView",
+    component: EditProfileView,
   },
 ];
 
