@@ -30,38 +30,28 @@
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i
                   class="fa fa-instagram"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i
-                  class="fa fa-google-plus"></i></a> -->
-                  <li class="list-inline-item">
-                    <router-link to="/profile">
-                      <i class="fa fa-user-circle-o" style="font-size: 25px;"></i>
-                      <span style="font-size: 20px;">     الملف الشخصي     </span></router-link>
-                  </li>
+                    class="fa fa-google-plus"></i></a> -->
+                    <li class="list-inline-item">
+                      <router-link to="/profile">
+                        <i class="fa fa-user-circle-o" style="font-size: 25px;"></i>
+                        <span style="font-size: 20px;">     الملف الشخصي     </span></router-link>
+                    </li>
 
-            </div>
-            <!-- end social -->
+              </div>
+              <!-- end social -->
           </div>
           <!-- end col -->
 
           <div class="col-lg-4 hidden-md-down">
             <div class="topmenu text-center">
               <ul class="list-inline">
-                <li class="list-inline-item">
-                  <router-link to="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gold" class="bi bi-star-fill" viewBox="0 0 16 16">
-                      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                    </svg>
-                     Trends
-                    </router-link>
-                </li>
-                <li class="list-inline-item">
-                  <a href="blog-category-02.html"><i class="fa fa-bolt"></i> Hot Topics</a>
-                </li>
+                
                 <li class="list-inline-item">
                   <router-link to="/ourTeam">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-people-fill" viewBox="0 0 16 16">
                       <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
                     </svg>
-                    Our Team</router-link>
+                         فريق العمل    </router-link>
                 </li>
                 
               </ul>
