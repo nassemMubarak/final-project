@@ -30,10 +30,13 @@
                                 <div class="list-group">
                                     <a v-for="items in popularPosts" :key="items" class="list-group-item list-group-item-action flex-column align-items-start">
                                         <div class="w-100 justify-content-between">
+                                            <router-link to="/details">
                                             <img :src="items.imageUrl" alt="" class="img-fluid float-left">
                                             <h5 class="mb-1">{{ items.title }}</h5>
                                             <small>{{ items.date }}</small>
+                                        </router-link>
                                         </div>
+
                                     </a>
 
                                 </div>
