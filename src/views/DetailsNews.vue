@@ -333,22 +333,22 @@ export default {
             commints: [
                 {
                     name: 'نسيم أحمد مبارك',
-                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmeM9WcGVQfoqGsZiCAls3W5oJFhiWiG1VVQ&usqp=CAU',
+                    image: 'https://bootdey.com/img/Content/avatar/avatar7.png',
                     text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
                 },
                 {
                     name: 'براء محمد مبارك',
-                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmeM9WcGVQfoqGsZiCAls3W5oJFhiWiG1VVQ&usqp=CAU',
+                    image: 'https://bootdey.com/img/Content/avatar/avatar7.png',
                     text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
                 },
                 {
                     name: 'احمد زياد الشيخ عيد',
-                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmeM9WcGVQfoqGsZiCAls3W5oJFhiWiG1VVQ&usqp=CAU',
+                    image: 'https://bootdey.com/img/Content/avatar/avatar7.png',
                     text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
                 },
                 {
                     name: 'محمد كمال قفة',
-                    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmeM9WcGVQfoqGsZiCAls3W5oJFhiWiG1VVQ&usqp=CAU',
+                    image: 'https://bootdey.com/img/Content/avatar/avatar7.png',
                     text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
                 },
             ],

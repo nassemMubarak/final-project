@@ -4,10 +4,10 @@
       <div class="card card-block">
         <div class="newsletter-widget text-center">
           <form class="form-inline">
-            <input type="text" class="form-control" placeholder="What you are looking for?" />
-            <button type="submit" class="btn btn-primary">
+            <input type="text" class="form-control" placeholder=" ما الذي تبحث عنه؟ " />
+            <!-- <button type="submit" class="btn btn-primary">
               <i class="fa fa-search"></i>
-            </button>
+            </button> -->
           </form>
         </div>
         <!-- end newsletter -->
@@ -34,7 +34,7 @@
                   <li class="list-inline-item">
                     <router-link to="/profile">
                       <i class="fa fa-user-circle-o" style="font-size: 25px;"></i>
-                      <span style="font-size: 20px;">Profile</span></router-link>
+                      <span style="font-size: 20px;">     الملف الشخصي     </span></router-link>
                   </li>
 
             </div>
@@ -74,7 +74,7 @@
           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
             <div class="topsearch text-right">
               <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i
-                  class="fa fa-search"></i> Search</a>
+                  class="fa fa-search"></i>  بحث   </a>
             </div>
             <!-- end search -->
           </div>
