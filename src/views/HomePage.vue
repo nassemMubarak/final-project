@@ -289,7 +289,6 @@
       </div>
       <!-- end container -->
     </section>
-    <div class="dmtop">Scroll to Top</div>
   </div>
 </template>
 <script>

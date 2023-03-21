@@ -139,12 +139,13 @@
                   <hr />
                   <div class="row">
                     <div class="col-sm-12">
-                      <a
+                      <router-link class="btn btn-primary" to="/EditProfile" >Edit</router-link>
+                      <!-- <a
                       class="btn btn-primary"
                         target="__blank"
                         href="/editProfile"
                         >Edit</a
-                      >
+                      > -->
                     </div>
                   </div>
                 </div>
