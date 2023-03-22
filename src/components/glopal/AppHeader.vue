@@ -1,5 +1,6 @@
 <template>
-  <div dir="rtl" lang="ar"  :class="{'app-header':true,'d-none':(this.$route.path == '/' || this.$route.path ==  '/ourTeam' || this.$route.path == '/authPage')}">
+  <div dir="rtl" lang="ar"
+    :class="{ 'app-header': true, 'd-none': (this.$route.path == '/' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage') }">
     <div class="collapse top-search" id="collapseExample">
       <div class="card card-block">
         <div class="newsletter-widget text-center">
@@ -31,29 +32,38 @@
                   class="fa fa-instagram"></i></a>
               <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i
                     class="fa fa-google-plus"></i></a> -->
-                    <li class="list-inline-item">
-                      <router-link to="/profile">
-                        <i class="fa fa-user-circle-o" style="font-size: 25px;"></i>
-                        <span style="font-size: 20px;">     الملف الشخصي     </span></router-link>
-                    </li>
-
+              <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="topsearch text-right">
+                  <a data-toggle="collapse" href="#collapseExample" aria-expanded="false"
+                    aria-controls="collapseExample"><i class="fa fa-search"></i> بحث </a>
+                </div>
+                <!-- end search -->
               </div>
-              <!-- end social -->
+              <!-- end col -->
+
+            </div>
+            <!-- end social -->
           </div>
           <!-- end col -->
 
           <div class="col-lg-4 hidden-md-down">
             <div class="topmenu text-center">
               <ul class="list-inline">
-                
                 <li class="list-inline-item">
                   <router-link to="/ourTeam">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-people-fill" viewBox="0 0 16 16">
-                      <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-people-fill"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
                     </svg>
-                         فريق العمل    </router-link>
+                    <span style="font-size: 16px;">     فريقنا    </span></router-link>
                 </li>
-                
+                <li class="list-inline-item">
+                      <router-link to="/profile">
+                        <i class="fa fa-user-circle-o" style="font-size: 20px;"></i>
+                        <span style="font-size: 16px;">     الملف الشخصي     </span></router-link>
+                    </li>
+
               </ul>
               <!-- end ul -->
             </div>
@@ -61,14 +71,7 @@
           </div>
           <!-- end col -->
 
-          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="topsearch text-right">
-              <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i
-                  class="fa fa-search"></i>  بحث   </a>
-            </div>
-            <!-- end search -->
-          </div>
-          <!-- end col -->
+
         </div>
         <!-- end row -->
       </div>
@@ -81,7 +84,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="logo">
-              <router-link to="/homePage"><img height="200" src="../../../public/frontend/assets/images/logo.png" alt="" /></router-link>
+              <router-link to="/homePage"><img height="200" src="../../../public/frontend/assets/images/logo.png"
+                  alt="" /></router-link>
             </div>
             <!-- end logo -->
           </div>
@@ -116,10 +120,10 @@
                           السياسة
                         </button>
                         <button class="tablinks" onclick="openCategory(event, 'economic')">
-                          Economic
+                          الأقتصاد
                         </button>
                         <button class="tablinks" onclick="openCategory(event, 'sport')">
-                          Sport
+                          الرياضة
                         </button>
                         <!-- <button class="tablinks" onclick="openCategory(event, 'cat04')">
                           Architecture
@@ -132,7 +136,8 @@
                       <div class="tab-details clearfix">
                         <div id="politics" class="tabcontent active">
                           <div class="row">
-                            <div v-for="newsItem in news.politics" :key="newsItem" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                            <div v-for="newsItem in news.politics" :key="newsItem"
+                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                               <div class="blog-box">
                                 <div class="post-media">
                                   <a href="single.html" title="">
@@ -157,7 +162,8 @@
                         </div>
                         <div id="economic" class="tabcontent">
                           <div class="row">
-                            <div v-for="newsItem in news.economic" :key="newsItem" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                            <div v-for="newsItem in news.economic" :key="newsItem"
+                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                               <div class="blog-box">
                                 <div class="post-media">
                                   <a href="single.html" title="">
@@ -182,7 +188,8 @@
                         </div>
                         <div id="sport" class="tabcontent">
                           <div class="row">
-                            <div v-for="newsItem in news.sport" :key="newsItem" class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                            <div v-for="newsItem in news.sport" :key="newsItem"
+                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
                               <div class="blog-box">
                                 <div class="post-media">
                                   <a href="single.html" title="">
@@ -329,7 +336,7 @@
 <script>
 export default {
   name: "AppHeader",
-  data(){
+  data() {
     return {
       news: {
         sport: [
