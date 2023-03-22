@@ -6,7 +6,7 @@
   <!-- end loader -->
   <!-- END LOADER -->
 
-  <div id="master-app">
+  <div dir="rtl" lang="ar" id="master-app">
     <!-- end header -->
     <section class="section first-section">
       <div class="container-fluid">
@@ -17,7 +17,7 @@
               <div class="shadoweffect">
                 <div class="shadow-desc">
                   <div class="blog-meta">
-                    <span class="bg-aqua"><a href="blog-category-01.html" title="">{{ news.sport[0].type }}</a></span>
+                    <span class="bg-pink"><router-link to="/sport"><a href="" title="">{{ news.sport[0].type }}</a> </router-link></span>
                     <h4>
                       <router-link to="/details">{{ news.sport[0].title }}</router-link>
                     </h4>
@@ -40,7 +40,9 @@
               <div class="shadoweffect">
                 <div class="shadow-desc">
                   <div class="blog-meta">
-                    <span class="bg-pink"><a href="blog-category-01.html" title="">{{ news.politics[0].type }}</a></span>
+                    
+                    <!-- <span class="bg-pink"><a href="blog-category-01.html" title="">{{ news.politics[0].type }}</a></span> -->
+                    <span class="bg-pink"><router-link to="/politics"><a href="" title="">{{ news.politics[0].type }}</a> </router-link></span>
                     <h4>
                       <router-link to="/details">{{ news.politics[0].title }}</router-link>
                     </h4>
@@ -112,7 +114,7 @@
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="section-title">
               <h3 class="color-aqua">
-                <a href="blog-category-01.html" title="">{{ news.sport[0].type }}</a>
+                <router-link to="/sport"><a href="" title="">{{ news.sport[0].type }}</a> </router-link>
               </h3>
             </div>
             <!-- end title -->
@@ -158,7 +160,8 @@
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="section-title">
               <h3 class="color-pink">
-                <a href="blog-category-01.html" title="">{{ news.politics[0].type }}</a>
+                <router-link to="/politics"><a href="" title="">{{ news.politics[0].type }}</a> </router-link>
+                <!-- <a href="blog-category-01.html" title="">{{ news.politics[0].type }}</a> -->
               </h3>
             </div>
             <!-- end title -->
@@ -223,7 +226,8 @@
             <div class="blog-list clearfix">
               <div class="section-title">
                 <h3 class="color-green">
-                  <a href="blog-category-01.html" title="">{{ news.economic[0].type }}</a>
+                  <router-link to="/Economic"><a href="" title="">{{ news.economic[0].type }}</a> </router-link>
+                  <!-- <a href="blog-category-01.html" title="">{{ news.economic[0].type }}</a> -->
                 </h3>
               </div>
               <!-- end title -->
@@ -299,7 +303,7 @@ export default {
         sport: [
           {
             title: 'قرعة ربع نهائي دوري أبطال أوروبا 2022-2023 ومواعيد مبارياتها',
-            type: 'Sport',
+            type: 'الرياضة',
             date: '17/3/2023',
             by: 'الجزيرة',
             imageUrl: 'https://www.aljazeera.net/wp-content/uploads/2023/03/00-9.jpg?resize=770%2C513&quality=80',
@@ -309,7 +313,7 @@ export default {
           },
           {
             title: 'تشافي يريح لاعبي برشلونة قبل الكلاسيكو',
-            type: 'Sport',
+            type: 'الرياضة',
             date: 'الأربعاء 14 مارس 2023 11:38 ص ',
             by: 'موقع كووورة',
             imageUrl: 'https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-11%2f2023-03-11-10514871_epa.jpg',
@@ -318,7 +322,7 @@ export default {
           },
           {
             title: 'قرعة ربع نهائي دوري أبطال أوروبا 2022-2023 ومواعيد مبارياتها',
-            type: 'Sport',
+            type: 'الرياضة',
             date: '17/3/2023',
             by: 'الجزيرة',
             imageUrl: 'https://www.aljazeera.net/wp-content/uploads/2023/03/00-9.jpg?resize=770%2C513&quality=80',
@@ -328,7 +332,7 @@ export default {
           },
           {
             title: 'تشافي يريح لاعبي برشلونة قبل الكلاسيكو',
-            type: 'Sport',
+            type: 'الرياضة',
             date: 'الأربعاء 14 مارس 2023 11:38 ص ',
             by: 'موقع كووورة',
             imageUrl: 'https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-11%2f2023-03-11-10514871_epa.jpg',
@@ -340,91 +344,91 @@ export default {
         politics: [
           {
             title: 'المصادقة بالقراءة الأولى على عودة الاستيطان لشمال الضفة',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 10:29 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads/images/23cdf7627a9e1ebcdc1172bb343a26fc.jpg&w=780&h=450',
           },
           {
             title: 'العاروري: صبرنا ينفد وسنكون عند ثقة شعبنا بنا',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 11:38 ص ',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/2722f6be123ba49b7fdca6b5978cc013.jpeg&w=780&h=450',
           },
           {
             title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 08:18 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
           },
           {
             title: 'الذكرى الـ19 لعملية أسدود البطولية المشتركة',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 08:30 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/5f361459bffefbf3f8b4148594a18369.jpg&w=780&h=450',
           },
           {
             title: 'فؤاد الشوبكي فور الإفراج عنه: أسرانا شهداء مع وقف التنفيذ',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الإثنين 13 مارس 2023 03:54 م ',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1d453f4357afeb0f95be26418ec5a8e7.jpg&w=780&h=450',
           },
           {
             title: 'المصادقة بالقراءة الأولى على عودة الاستيطان لشمال الضفة',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 10:29 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads/images/23cdf7627a9e1ebcdc1172bb343a26fc.jpg&w=780&h=450',
           },
           {
             title: 'العاروري: صبرنا ينفد وسنكون عند ثقة شعبنا بنا',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 11:38 ص ',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/2722f6be123ba49b7fdca6b5978cc013.jpeg&w=780&h=450',
           },
           {
             title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 08:18 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
           },
           {
             title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 08:18 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
           },
           {
             title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 08:18 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
           },
           {
             title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 08:18 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
           },
           {
             title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 08:18 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
           },
           {
             title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
-            type: 'Politics',
+            type: 'السياسة',
             date: 'الثلاثاء 14 مارس 2023 08:18 ص',
             by: 'قناة الأقصى',
             imageUrl: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
@@ -433,7 +437,7 @@ export default {
         economic: [
           {
             title: 'البنك الإسلامي الفلسطيني يرعى إطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 10:29 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/ba73ec5f-fb58-4f59-ad94-f185c8838990.jfif',
@@ -442,7 +446,7 @@ export default {
           },
           {
             title: 'رسمياً.. شركة البركة للتأمين الإسلامي تدخل السوق المحلية',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 11:38 ص ',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%203/334102704_909752506832878_8918314473661822180_n.jpg',
@@ -450,7 +454,7 @@ export default {
           },
           {
             title: 'غرفة تجارة رام الله والبيرة: اجتماعات مع موردي المواد الغذائية لخفض الأسعار قبل رمضان',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 08:18 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/334983868_1240786543523357_1805672528567298355_n.jpg',
@@ -458,7 +462,7 @@ export default {
           },
           {
             title: 'محادثات فلسطينية ليتوانية لتطوير علاقات التعاون الاقتصادية بين البلدين',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 08:30 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/c62c9972-575f-4ff9-9b51-f92aae2cf0ec.jfif',
@@ -467,7 +471,7 @@ export default {
           },
           {
             title: 'البنك الإسلامي الفلسطيني يرعى إطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 10:29 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/ba73ec5f-fb58-4f59-ad94-f185c8838990.jfif',
@@ -476,7 +480,7 @@ export default {
           },
           {
             title: 'رسمياً.. شركة البركة للتأمين الإسلامي تدخل السوق المحلية',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 11:38 ص ',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%203/334102704_909752506832878_8918314473661822180_n.jpg',
@@ -484,7 +488,7 @@ export default {
           },
           {
             title: 'غرفة تجارة رام الله والبيرة: اجتماعات مع موردي المواد الغذائية لخفض الأسعار قبل رمضان',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 08:18 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/334983868_1240786543523357_1805672528567298355_n.jpg',
@@ -492,7 +496,7 @@ export default {
           },
           {
             title: 'محادثات فلسطينية ليتوانية لتطوير علاقات التعاون الاقتصادية بين البلدين',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 08:30 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/c62c9972-575f-4ff9-9b51-f92aae2cf0ec.jfif',
@@ -501,7 +505,7 @@ export default {
           },
           {
             title: 'البنك الإسلامي الفلسطيني يرعى إطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 10:29 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/ba73ec5f-fb58-4f59-ad94-f185c8838990.jfif',
@@ -510,7 +514,7 @@ export default {
           },
           {
             title: 'رسمياً.. شركة البركة للتأمين الإسلامي تدخل السوق المحلية',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 11:38 ص ',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%203/334102704_909752506832878_8918314473661822180_n.jpg',
@@ -518,7 +522,7 @@ export default {
           },
           {
             title: 'غرفة تجارة رام الله والبيرة: اجتماعات مع موردي المواد الغذائية لخفض الأسعار قبل رمضان',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 08:18 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/334983868_1240786543523357_1805672528567298355_n.jpg',
@@ -526,7 +530,7 @@ export default {
           },
           {
             title: 'محادثات فلسطينية ليتوانية لتطوير علاقات التعاون الاقتصادية بين البلدين',
-            type: 'Economic',
+            type: 'الأقتصاد',
             date: 'الأربعاء 14 مارس 2023 08:30 ص',
             by: 'موقع الأقتصادي',
             imageUrl: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/c62c9972-575f-4ff9-9b51-f92aae2cf0ec.jfif',

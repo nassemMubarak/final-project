@@ -49,9 +49,9 @@
                             <h2 class="widget-title">الفئات الشعبية</h2>
                             <div class="link-widget">
                                 <ul>
-                                    <li><a href="#"> الأخبار السياسية  (21)</a> </li>
-                                    <li><a href="#">الاخبار الرياضية  (15)</a></li>
-                                    <li><a href="#">الاخبار الاقتصادية  (31)</a></li>
+                                    <li><router-link to="/politics"><a href="" title=""> الأخبار السياسية  (21)</a> </router-link></li>
+                                    <li><router-link to="/sport"><a href="" title="">الاخبار الرياضية  (15)</a> </router-link></li>
+                                    <li><router-link to="/Economic"><a href="">الاخبار الاقتصادية  (31)</a> </router-link></li>
                                 </ul>
                             </div><!-- end link-widget -->
                         </div><!-- end widget -->
