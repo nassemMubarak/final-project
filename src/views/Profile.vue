@@ -1,5 +1,5 @@
 <template>
-    <div dir="rtl" class="container">
+    <div dir="rtl" lang="ar" class="container">
         <div class="main-body">  
           <div class="row gutters-sm">
             <div class="col-md-4">

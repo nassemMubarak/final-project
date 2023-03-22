@@ -1,36 +1,36 @@
 <template>
 	<p></p>
 	<p></p>
-<div class="container d-flex justify-content-center align-items-center" :class="{'right-panel-active':isRegister}" style="height: 80vh;" id="container">
-	<div class="form-container sign-up-container">
+<div class=" container d-flex justify-content-center align-items-center" :class="{'right-panel-active':isRegister}" style="height: 80vh;" id="container">
+	<div dir="rtl" lang="ar" class="form-container sign-up-container">
 		<form action="#">
-			<h1>انشاء حساب جديد</h1>
+			<h1 mb-5>انشاء حساب جديد</h1>
 			<!-- <div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div> -->
-			<span>يبدو أنك ذو حظ سيء لانك خلال كل هذه المدة لم يكن لديك حساب على موقعنا</span>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<router-link to="/homePage"><button>Sign Up</button></router-link>
+			<span>يبدو أنك ذو حظ سيء لانك خلال كل هذه المدة لم يكن لديك حساب على موقعنا...</span>
+			<input type="text" placeholder="الإسم الكامل" />
+			<input type="email" placeholder="البريد الإلكتروني" />
+			<input type="password" placeholder="كلمة المرور" />
+			<router-link to="/homePage"><button>إنشاء حساب</button></router-link>
 		</form>
 	</div>
-	<div class="form-container sign-in-container">
+	<div dir="rtl" lang="ar" class="form-container sign-in-container">
 		<form action="#">
-			<h1>Sign in</h1>
-			<div class="social-container">
+			<h1>تسجيل دخول</h1>
+			<!-- <div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
+			</div> -->
+			<span>أهلا بك من جديد، لقد أعددنا من أجلك أحدث ما يجري في وطننا العربي</span>
+			<input type="email" placeholder="البريد الإلكتروني" />
+			<input type="password" placeholder="كلمة المرور" />
+			<!-- <a href="#">نسيت كلمة المرور</a> -->
 			
-			<router-link to="/homePage"><button>Sign In</button></router-link>
+			<router-link to="/homePage"><button>تسجيل دخول</button></router-link>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -41,9 +41,9 @@
 				<button @click="isRegister = !isRegister" class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button @click="isRegister = !isRegister" class="ghost" id="signUp">Sign Up</button>
+				<h1 style="color: white;">أهلاً صديقي</h1>
+				<p style="color: white;">صديقي العزيز خلال غيابك عملنا على جمع جميع الاخبار من مصادرها الموثوقة وقمنا بترتيبها وتنظيمها في مكان واحد من أجلك يا صديقي</p>
+				<button @click="isRegister = !isRegister" class="ghost" id="signUp">انشاء حساب</button>
 			</div>
 		</div>
 	</div>
