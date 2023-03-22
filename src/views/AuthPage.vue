@@ -4,13 +4,13 @@
 <div class="container d-flex justify-content-center align-items-center" :class="{'right-panel-active':isRegister}" style="height: 80vh;" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">
-			<h1>Create Account</h1>
-			<div class="social-container">
+			<h1>انشاء حساب جديد</h1>
+			<!-- <div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
+			</div> -->
+			<span>يبدو أنك ذو حظ سيء لانك خلال كل هذه المدة لم يكن لديك حساب على موقعنا</span>
 			<input type="text" placeholder="Name" />
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div dir="rtl" class="container">
     <form action="">
     <div class="main-body">
       <div class="row">
@@ -11,11 +11,11 @@
                   src="https://bootdey.com/img/Content/avatar/avatar6.png"
                   alt="Admin"
                   class="rounded-circle p-1 bg-primary"
-                  width="110"
+                  width="200"
                 />
                 
                 <div class="mt-3">
-                  <h4>Mohammed Kamal</h4>
+                  <h4>BNMA NEWS</h4>
                 </div>
               </div>
             </div>
@@ -26,19 +26,19 @@
             <div class="card-body">
               <div class="row mb-3">
                 <div class="col-sm-3">
-                  <h6 class="mb-0">Full Name</h6>
+                  <h6 class="mb-0">الإسم الكامل</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
                   <input
                     type="text"
                     class="form-control"
-                    value="Mohammed Kamal"
+                    value="BNMA NEWS"
                   />
                 </div>
               </div>
               <div class="row mb-3">
                 <div class="col-sm-3">
-                  <h6 class="mb-0">Email</h6>
+                  <h6 class="mb-0">البريد الإلكتروني</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
                   <input
@@ -51,7 +51,7 @@
 
               <div class="row mb-3">
                 <div class="col-sm-3">
-                  <h6 class="mb-0">Mobile</h6>
+                  <h6 class="mb-0">رقم الهاتف</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
                   <input
@@ -63,7 +63,7 @@
               </div>
               <div class="row mb-3">
                 <div class="col-sm-3">
-                  <h6 class="mb-0">Address</h6>
+                  <h6 class="mb-0">العنوان</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
                   <input
@@ -76,11 +76,11 @@
               <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-9 text-secondary">
-                  <input
-                    type="submit"
-                    class="btn btn-primary px-4"
-                    value="Save Changes"
-                  />
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <router-link class="btn btn-primary" to="/homePage" >حفظ</router-link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

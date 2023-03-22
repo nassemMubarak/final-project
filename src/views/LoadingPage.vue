@@ -19,7 +19,7 @@
     mounted() {
       this.intervalId = setInterval(() => {
         this.counter++;
-        if (this.counter >= 101) {
+        if (this.counter >= 0) {/////////////////////////////////////////////////////mack 101
           clearInterval(this.intervalId);
           this.$router.push('/authPage');
         }
