@@ -36,12 +36,12 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button @click="isRegister = !isRegister" class="ghost" id="signIn">Sign In</button>
+				<h1 style="color:white">أهلاً بك صديقي</h1>
+				<p style="color:white">من الرائع انك قد قررت الانضمام الى مجتمعنا، انت لا تعلم كم نحن متحمسين لخدمتك في موقنا</p>
+				<button @click="isRegister = !isRegister" class="ghost" id="signIn">تسجيل دخول</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1 style="color: white;">أهلاً صديقي</h1>
+				<h1 style="color: white;">أهلاً بك مرة أخرى</h1>
 				<p style="color: white;">صديقي العزيز خلال غيابك عملنا على جمع جميع الاخبار من مصادرها الموثوقة وقمنا بترتيبها وتنظيمها في مكان واحد من أجلك يا صديقي</p>
 				<button @click="isRegister = !isRegister" class="ghost" id="signUp">انشاء حساب</button>
 			</div>

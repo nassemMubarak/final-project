@@ -15,23 +15,12 @@
       </div>
     </div>
     <!-- end top-search -->
-
+    
     <div class="topbar-section">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
             <div class="topsocial">
-              <!-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i
-                  class="fa fa-facebook"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Youtube"><i class="fa fa-youtube"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i
-                  class="fa fa-pinterest"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Flickr"><i class="fa fa-flickr"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i
-                  class="fa fa-instagram"></i></a>
-              <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i
-                    class="fa fa-google-plus"></i></a> -->
               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="topsearch text-right">
                   <a data-toggle="collapse" href="#collapseExample" aria-expanded="false"
@@ -51,7 +40,7 @@
               <ul class="list-inline">
                 <li class="list-inline-item">
                   <router-link to="/ourTeam">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-people-fill"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="blue" class="bi bi-people-fill"
                       viewBox="0 0 16 16">
                       <path
                         d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
@@ -60,7 +49,7 @@
                 </li>
                 <li class="list-inline-item">
                       <router-link to="/profile">
-                        <i class="fa fa-user-circle-o" style="font-size: 20px;"></i>
+                        <i class="fa fa-user-circle-o" style="font-size: 15px;"></i>
                         <span style="font-size: 16px;">     الملف الشخصي     </span></router-link>
                     </li>
 
@@ -219,80 +208,7 @@
                   </li>
                 </ul>
               </li>
-              <!-- <li class="nav-item dropdown has-submenu">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">Features</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                  <li>
-                    <a class="dropdown-item" href="single.html">Single Blog
-                      <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i
-                          class="fa fa-angle-right"></i></span></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="single.html">Single Default</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="single-fullwidth.html">Single Fullwidth</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="single-slider.html">Single Gallery</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="single-video.html">Single Video</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="single-audio.html">Single Audio</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="single-no-media.html">Single No Media</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="single.html">Blog Category
-                      <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i
-                          class="fa fa-angle-right"></i></span></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="blog-category-01.html">Blog Category A</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-category-02.html">Blog Category B</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-category-03.html">Blog Category C</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-category-04.html">Blog Category D</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-category-05.html">Blog Category E</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="blog-category-06.html">Blog Category F</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="blog-author.html">Blog Author</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="page-contact.html">Contact Page</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="page.html">Default Page</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="page-fullwidth.html">Fullwidth Page</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="page-404.html">Not Found Page</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="page-sitemap.html">Sitemap & Archives</a>
-                  </li>
-                </ul>
-              </li> -->
+              
               <li class="nav-item">
                 <router-link class="nav-link color-pink-hover" to="/politics">السياسية</router-link>
                 <!-- <a
