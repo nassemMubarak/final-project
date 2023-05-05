@@ -61,7 +61,6 @@
 			</div>
 		</div>
 	</div>
-   
 </template>
 
 <style scoped src="@/../public/frontend/assets/css/auth.css">
@@ -73,8 +72,9 @@
 <script>
 
 import axios from 'axios';
+import { updateTransUser } from '@/reactive/transfer_user';
+
 export default {
-	
 	data() {
 		return {
 			email: '',
@@ -107,12 +107,18 @@ export default {
 				name: this.name,
 				phone: this.phone
 			}).then(response => {
-				console.log(response.data.email);
-				this.$router.push('/homePage');
+				updateTransUser({
+						_id: response.data.user._id,
+						name: response.data.user.name,
+						email: response.data.user.email,
+						phone: response.data.user.phone,
+						verifyEmail: response.data.user.verifyEmail,
+						token: response.data.user.token,
+					});
+				this.$router.push('/verifyEmail');
 			}).catch(error => {
 				this.alertMessagePassword = error.response.data.message;
 				this.showAlertPassword = true;
-				console.log('---------------------------');
 				console.log(error.response.data.message);
 			})
 			console.log(result);
@@ -124,7 +130,27 @@ export default {
 					password: this.password
 				}).then(response => {
 					console.log(response.data.email);
-					this.$router.push('/homePage');
+					if (response.data.verifyEmail == false) {
+						updateTransUser({
+						_id: response.data._id,
+						name: response.data.name,
+						email: response.data.email,
+						phone: response.data.phone,
+						verifyEmail: response.data.verifyEmail,
+						token: response.data.token,
+					});
+						this.$router.push('/verifyEmail');
+					} else {
+						updateTransUser({
+						_id: response.data._id,
+						name: response.data.name,
+						email: response.data.email,
+						phone: response.data.phone,
+						verifyEmail: response.data.verifyEmail,
+						token: response.data.token,
+					});
+						this.$router.push('/verifyEmail');
+					}
 					// this.$router.push({ name: 'login', query: { redirect: '/homePage' } })
 				}).catch(error => {
 					this.alertMessagePassword = error.response.data.message;

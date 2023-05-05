@@ -1,6 +1,6 @@
 <template>
   <div dir="rtl" lang="ar"
-    :class="{ 'app-header': true, 'd-none': (this.$route.path == '/' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage') }">
+    :class="{ 'app-header': true, 'd-none': (this.$route.path == '/'||this.$route.path == '/verifyEmail' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage') }">
     <div class="collapse top-search" id="collapseExample">
       <div class="card card-block">
         <div class="newsletter-widget text-center">

@@ -9,12 +9,18 @@ import OurTeam from "../views/OurTeam.vue";
 import LoadingPage from "../views/LoadingPage.vue";
 import EditProfileView from "../views/EditProfile.vue";
 import ProfileView from "../views/Profile.vue";
+import VerifyEmail from "../views/verifyEmail.vue";
 
 const routes = [
   {
     path: "/",
     name: "LoadingPage",
     component: LoadingPage,
+  },
+  {
+    path: "/verifyEmail",
+    name: "verifyEmail",
+    component: VerifyEmail,
   },
   {
     path: "/authPage",

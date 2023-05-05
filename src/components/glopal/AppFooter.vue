@@ -1,5 +1,5 @@
 <template>
-    <div dir="rtl" lang="ar"  :class="{'app-footer':true,'d-none':(this.$route.path == '/' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage'|| this.$route.path == '/profile' || this.$route.path == '/editProfile')}">
+    <div dir="rtl" lang="ar"  :class="{'app-footer':true,'d-none':(this.$route.path == '/'||this.$route.path == '/verifyEmail'  || this.$route.path == '/ourTeam' || this.$route.path == '/authPage'|| this.$route.path == '/profile' || this.$route.path == '/editProfile')}">
         <footer class="footer">
             <div class="container">
                 <div class="row">
