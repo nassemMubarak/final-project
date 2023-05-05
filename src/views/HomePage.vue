@@ -296,7 +296,7 @@
   </div>
 </template>
 <script>
-import { transNEWS } from '../store.js'
+// import { transNEWS } from '../store.js'
 
 export default {
   data() {
