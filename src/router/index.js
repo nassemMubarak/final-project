@@ -8,7 +8,7 @@ import AuthPage from "../views/AuthPage.vue";
 import OurTeam from "../views/OurTeam.vue";
 import LoadingPage from "../views/LoadingPage.vue";
 import EditProfileView from "../views/EditProfile.vue";
-import ProfileView from "../views/Profile.vue";
+import ProfileView from "../views/ProfilePage.vue";
 import VerifyEmail from "../views/verifyEmail.vue";
 
 const routes = [
