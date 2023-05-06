@@ -108,13 +108,13 @@ export default {
 				phone: this.phone
 			}).then(response => {
 				updateTransUser({
-						_id: response.data.user._id,
-						name: response.data.user.name,
-						email: response.data.user.email,
-						phone: response.data.user.phone,
-						verifyEmail: response.data.user.verifyEmail,
-						token: response.data.user.token,
-					});
+					_id: response.data.user._id,
+					name: response.data.user.name,
+					email: response.data.user.email,
+					phone: response.data.user.phone,
+					verifyEmail: response.data.user.verifyEmail,
+					token: response.data.user.token,
+				});
 				this.$router.push('/verifyEmail');
 			}).catch(error => {
 				this.alertMessagePassword = error.response.data.message;
@@ -128,111 +128,124 @@ export default {
 				let result = await axios.post('http://localhost:8000/api/users/login', {
 					email: this.email,
 					password: this.password
-				}).then(response => {
+				}).then(async response => {
 					console.log(response.data.email);
 					if (response.data.verifyEmail == false) {
 						updateTransUser({
-						_id: response.data._id,
-						name: response.data.name,
-						email: response.data.email,
-						phone: response.data.phone,
-						verifyEmail: response.data.verifyEmail,
-						token: response.data.token,
+							_id: response.data._id,
+							name: response.data.name,
+							email: response.data.email,
+							phone: response.data.phone,
+							verifyEmail: response.data.verifyEmail,
+							token: response.data.token,
+						});
+						const headers = {'Authorization': `Bearer ${response.data.token}`}
+						let result = await axios.get('http://localhost:8000/api/users/verifyEmail', {headers} )
+					.then(response => {
+						this.alertMessageCode = 'We have re-sent the code to your email address';
+						console.log(response.data.email);
+						this.minutes = 3;
+					}).catch(error => {
+						console.log('---------------------------');
+						this.alertMessageCode = error.response.data.message;
+						this.showAlertCode = true;
+						console.log(error.response.data.message);
 					});
-						this.$router.push('/verifyEmail');
-					} else {
-						updateTransUser({
-						_id: response.data._id,
-						name: response.data.name,
-						email: response.data.email,
-						phone: response.data.phone,
-						verifyEmail: response.data.verifyEmail,
-						token: response.data.token,
-					});
-						this.$router.push('/verifyEmail');
-					}
-					// this.$router.push({ name: 'login', query: { redirect: '/homePage' } })
-				}).catch(error => {
-					this.alertMessagePassword = error.response.data.message;
-					this.showAlertPassword = true;
-					console.log('---------------------------');
-					console.log(error.response.data.message);
-				})
 				console.log(result);
-			}
-		},
-		checkEmail() {
-			if (this.email === '') {
-				this.alertMessageEmail = "Please enter your email.";
-				this.showAlertEmail = true;
-			} else if (!this.emailPattern()) {
-				this.alertMessageEmail = "The email address is invalid.";
-				this.showAlertEmail = true;
-			} else if (!this.email.endsWith('@gmail.com')) {
-				this.alertMessageEmail = "Please enter a valid Gmail address end @gmail.com.";
-				this.showAlertEmail = true;
+				this.$router.push('/verifyEmail');
 			} else {
-				this.showAlertEmail = false;
+				updateTransUser({
+					_id: response.data._id,
+					name: response.data.name,
+					email: response.data.email,
+					phone: response.data.phone,
+					verifyEmail: response.data.verifyEmail,
+					token: response.data.token,
+				});
+				this.$router.push('/homePage');
 			}
-		},
-		emailPattern() {
-			const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-			return regex.test(this.email);
-		},
-		checkPassword() {
-			const minLength = 8;
-			const maxLength = 50;
-			const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-			if (this.password === '') {
-				return "Please enter a password.";
-			} else if (this.password.length < minLength) {
-				this.alertMessagePassword = `Your password must be at least ${minLength} characters long.`;
-				this.showAlertPassword = true;
-			} else if (this.password.length > maxLength) {
-				this.alertMessagePassword = `Your password must be less than ${maxLength} characters long.`;
-				this.showAlertPassword = true;
-			} else if (!passwordRegex.test(this.password)) {
-				this.alertMessagePassword = "Your password must contain at least one uppercase letter, one lowercase letter, and one number.";
-				this.showAlertPassword = true;
-			}
-			else {
-				console.log('-----------------------------------');
-				this.showAlertPassword = false;
-			}
+			// this.$router.push({ name: 'login', query: { redirect: '/homePage' } })
+		}).catch(error => {
+			this.alertMessagePassword = error.response.data.message;
+			this.showAlertPassword = true;
+			console.log('---------------------------');
+			console.log(error.response.data.message);
+		})
+				console.log(result);
+	}
+},
+checkEmail() {
+	if (this.email === '') {
+		this.alertMessageEmail = "Please enter your email.";
+		this.showAlertEmail = true;
+	} else if (!this.emailPattern()) {
+		this.alertMessageEmail = "The email address is invalid.";
+		this.showAlertEmail = true;
+	} else if (!this.email.endsWith('@gmail.com')) {
+		this.alertMessageEmail = "Please enter a valid Gmail address end @gmail.com.";
+		this.showAlertEmail = true;
+	} else {
+		this.showAlertEmail = false;
+	}
+},
+emailPattern() {
+	const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	return regex.test(this.email);
+},
+checkPassword() {
+	const minLength = 8;
+	const maxLength = 50;
+	const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+	if (this.password === '') {
+		return "Please enter a password.";
+	} else if (this.password.length < minLength) {
+		this.alertMessagePassword = `Your password must be at least ${minLength} characters long.`;
+		this.showAlertPassword = true;
+	} else if (this.password.length > maxLength) {
+		this.alertMessagePassword = `Your password must be less than ${maxLength} characters long.`;
+		this.showAlertPassword = true;
+	} else if (!passwordRegex.test(this.password)) {
+		this.alertMessagePassword = "Your password must contain at least one uppercase letter, one lowercase letter, and one number.";
+		this.showAlertPassword = true;
+	}
+	else {
+		console.log('-----------------------------------');
+		this.showAlertPassword = false;
+	}
 
-		},
-		checkName() {
-			const minLength = 8;
-			const maxLength = 50;
-			if (this.name === '') {
-				this.alertMessageName = "Please enter your name.";
-				this.showAlertName = true;
-			} else if (this.name.length < minLength) {
-				this.alertMessageName = `Your name must be at least ${minLength} characters long.`;
-				this.showAlertName = true;
-			} else if (this.name.length > maxLength) {
-				this.alertMessageName = `Your name must be less than ${maxLength} characters long.`;
-				this.showAlertName = true;
-			}
-			else {
-				this.showAlertName = false;
-			}
-		},
-		checkPhone() {
-			if (this.phone === '') {
-				this.alertMessagePhone = "Please enter a phone number.";
-				this.showAlertPhone = true;
-			} else {
-				const regex = /^\+[0-9]{12}$/; // Regular expression for a valid phone number
-				const isValidate = regex.test(this.phone);
-				if (!isValidate) {
-					this.alertMessagePhone = "Phone number is invalid. hent number +970592815701";
-					this.showAlertPhone = true;
-				} else {
-					this.showAlertPhone = false;
-				}
-			}
+},
+checkName() {
+	const minLength = 8;
+	const maxLength = 50;
+	if (this.name === '') {
+		this.alertMessageName = "Please enter your name.";
+		this.showAlertName = true;
+	} else if (this.name.length < minLength) {
+		this.alertMessageName = `Your name must be at least ${minLength} characters long.`;
+		this.showAlertName = true;
+	} else if (this.name.length > maxLength) {
+		this.alertMessageName = `Your name must be less than ${maxLength} characters long.`;
+		this.showAlertName = true;
+	}
+	else {
+		this.showAlertName = false;
+	}
+},
+checkPhone() {
+	if (this.phone === '') {
+		this.alertMessagePhone = "Please enter a phone number.";
+		this.showAlertPhone = true;
+	} else {
+		const regex = /^\+[0-9]{12}$/; // Regular expression for a valid phone number
+		const isValidate = regex.test(this.phone);
+		if (!isValidate) {
+			this.alertMessagePhone = "Phone number is invalid. hent number +970592815701";
+			this.showAlertPhone = true;
+		} else {
+			this.showAlertPhone = false;
 		}
+	}
+}
 
 
 
