@@ -35,7 +35,7 @@
                             </div><!-- end title -->
 
                             <div class="single-post-media">
-                                <img :src="detailsNews.imageUrl" alt="" class="img-fluid">
+                                <img :src="detailsNews.image" alt="" class="img-fluid">
                             </div><!-- end media -->
 
                             <div class="blog-content">
@@ -47,6 +47,7 @@
                                     <p>Donec nec metus sed leo sollicitudin ornare sed consequat neque. Aliquam iaculis neque quis dui venenatis, eget posuere felis viverra. Ut sit amet feugiat elit, nec elementum velit. Sed eu nisl convallis, efficitur turpis eu, euismod nunc. Proin neque enim, malesuada non lobortis nec, facilisis et lectus. Ie consectetur. Nam eget neque ac ex fringilla dignissim eu ac est. Nunc et nisl vel odio posuere. </p> -->
 
                                     <p>{{ detailsNews.body }} </p>
+                                    <p>{{ detailsNews.description }} </p>
 
                                 </div><!-- end pp -->
 
@@ -276,6 +277,8 @@
     </div>
 </template>
 <script>
+import {transNEWS} from '@/reactive/transfer_news'
+
 export default {
     name: "DetailsNews",
     data() {
@@ -352,24 +355,7 @@ export default {
                     text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
                 },
             ],
-            detailsNews: {
-                title:
-                    "الشباب الثائر ينظّم فعالية شرق غزة رفضًا لاجتماع شرم الشيخ",
-                body: `نظّم الشباب الفلسطيني الثائر بعد ظهر اليوم الأحد، فعالية في مخيم ملكة شرق غزة، رفضًا لاجتماع شرم الشيخ الذي يضم السلطة والاحتلال ومصر والأردن والولايات المتحدة.
-
-وقال مراسلنا، إن المئات من الشباب الثائر تجمعوا في تمام الساعة الواحدة بعد ظهر اليوم بفعالية إحراق اطارات في مخيم ملكة شرق مدينة غزة، احتجاجًا على عقد قمة شرم الشيخ.
-
-وأضاف مراسلنا، أن الشباب الثائر أحرقوا الإطارات، ورددوا شعارات غاضبة منددة بمشاركة السلطة في اجتماع شرم الشيخ، معتبرين القمة تآمر على دماء وتضحيات الشعب الفلسطيني وشهدائه.
-
-ويأتي اجتماع شرم الشيخ استكمالًا لاجتماع عقد في السادس والعشرين من الشهر الماضي في العقبة الأردنية لبحث إنقاذ الاحتلال المأزوم من خلال محاولة وقف التصعيد وحالة المقاومة المتصاعدة بالضفة والقدس، قبل رمضان.
-
-الكلمات المفتاحية`,
-                blogCategory: "سياسة",
-                date: " الأحد 19 مارس 2023 02:16 م",
-                blogAuthor: "قناة الأقصى",
-                imageUrl:
-                    "https://seraj.tv/thumb.php?src=uploads/images/e24b3c623aef9ac02d01c67bf72e4c95.jpg&w=780&h=450",
-            },
+            detailsNews: transNEWS,
         }
     }
 }
