@@ -41,16 +41,7 @@
                 <div class="col-sm-3">
                   <h6 class="mb-0">رقم الهاتف</h6>
                 </div>
-                <div class="col-sm-9 text-secondary"> {{ phone }} </div>
-              </div>
-              <hr />
-              <div class="row">
-                <div class="col-sm-3">
-                  <h6 class="mb-0">التوثيق</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  {{ verifyEmail }}
-                </div>
+                <div class="col-sm-9 text-secondary">{{ phone }}</div>
               </div>
               <hr />
               <div class="row">
@@ -67,7 +58,8 @@
     </div>
   </div>
 </template>
-<script>
+
+<!-- <script>
 import axios from "axios";
 import { transUser } from "@/reactive/transfer_user";
 export default {
@@ -84,7 +76,7 @@ export default {
       email: "",
       phone: "",
       image: "",
-      verifyEmail: ""
+      verifyEmail: "true"
     };
   },
   created() {
@@ -110,6 +102,69 @@ export default {
       } catch (error) {
         console.error(error);
       }
+    },
+  },
+};
+</script> -->
+
+<script>
+import axios from "axios";
+import { transUser } from "@/reactive/transfer_user";
+
+export default {
+  name: "ProfileView",
+
+  setup() {
+    const user = transUser;
+
+    return {
+      user,
+    };
+  },
+
+  data() {
+    return {
+      name: "",
+      email: "",
+      phone: "",
+      image: "",
+    };
+  },
+
+  created() {
+    const cachedUserData = localStorage.getItem("userProfile");
+
+    if (cachedUserData) {
+      this.updateUserData(JSON.parse(cachedUserData));
+    } else {
+      this.fetchUserProfile();
+    }
+  },
+
+  methods: {
+    async fetchUserProfile() {
+      try {
+        const headers = {
+          Authorization: `Bearer ${this.user.token}`,
+        };
+
+        const response = await axios.get(
+          "http://localhost:8000/api/profile/getProfile",
+          { headers }
+        );
+
+        this.updateUserData(response.data);
+        localStorage.setItem("userProfile", JSON.stringify(response.data));
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
+    updateUserData(userData) {
+      this.name = userData.name;
+      this.email = userData.email;
+      this.phone = userData.phone;
+      this.image = userData.image;
     },
   },
 };
