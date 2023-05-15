@@ -367,6 +367,7 @@
 </template>
 <script>
 import {transNEWS} from '@/reactive/transfer_news'
+import {transUser} from '@/reactive/transfer_user'
 // import {newsCache} from '@/reactive/transfer_news'
 import {baseUrl} from '@/reactive/api.js'
 import axios from 'axios';
@@ -552,10 +553,15 @@ export default {
     mounted() {
         // Call the method to fetch data when the component is mounted
 
+        this.reRoutUser();
         this.getData();
     },
     methods: {
-
+        reRoutUser(){
+            if(!transUser.token){
+                this.$router.push('/authPage');
+            }
+        },
         getData() {
             console.log(555555555)
             axios.get(`${baseUrl.url}/api/news/home`)

@@ -37,7 +37,18 @@
                 <input type="email" v-model="email" @input="checkEmail" placeholder="البريد الإلكتروني"/>
                 <input type="password" v-model="password" @input="checkPassword" placeholder="كلمة المرور"/>
                 <!-- <a href="#">نسيت كلمة المرور</a> -->
-                <button type="submit">تسجيل دخول</button>
+                <!--                <button type="submit">تسجيل دخول</button>-->
+
+
+                <button style="margin: 3em;" type="submit" class="btn btn-primary btn-lg" id="load"
+                        :class="{ 'is-loading': loading }">
+                            <span v-if="loading">
+                              <i class="fa fa-circle-o-notch fa-spin"></i>جار تسجيل الدخول
+                            </span>
+                    <span v-else> تسجيل دخول</span>
+                </button>
+
+
                 <b-form-input v-model="number" ref="refText"></b-form-input>
                 <!-- <div :class="{ 'pointer': isCursorPointer }" @mouseover="setCursorPointer" @mouseleave="setCursorDefault" style="width: 200px; height: 200px; background-color: lightblue;"></div> -->
                 <span v-if="showAlertEmail" class="alert" style=" color:Tomato;">{{ alertMessageEmail }}</span>
@@ -81,6 +92,7 @@ import {baseUrl} from '@/reactive/api.js';
 export default {
     data() {
         return {
+            loading: false,
             email: '',
             password: '',
             name: '',
@@ -99,10 +111,12 @@ export default {
         }
     },
     mounted() {
-        this.scrape();
+        // this.scrape();
+
     },
     methods: {
         async signUp() {
+
             this.checkEmail();
             this.checkPassword();
             this.checkName();
@@ -131,6 +145,8 @@ export default {
             console.log(result);
         },
         async logIn() {
+            this.loading = true
+
             if (!this.showAlertEmail && !this.showAlertPassword) {
                 let result = await axios.post('http://localhost:8000/api/users/login', {
                     email: this.email,
@@ -171,15 +187,19 @@ export default {
                         });
                         this.$router.push('/homePage');
                     }
+                    this.loading = false
                     // this.$router.push({ name: 'login', query: { redirect: '/homePage' } })
                 }).catch(error => {
                     this.alertMessagePassword = error.response.data.message;
                     this.showAlertPassword = true;
                     console.log('---------------------------');
                     console.log(error.response.data.message);
+                    this.loading = false
                 })
                 console.log(result);
+                this.loading = false
             }
+            this.loading = false
         },
         checkEmail() {
             if (this.email === '') {
@@ -254,10 +274,10 @@ export default {
         async scrape() {
             console.log(`${baseUrl.url}/api/news/policy`)
             try {
-                await axios.post(`${baseUrl.url}/api/news/policy`,{})
-                await axios.post(baseUrl.url + '/api/news/economy',{})
-                await axios.post(baseUrl.url + '/api/news/sports',{})
-            }catch (e) {
+                await axios.post(`${baseUrl.url}/api/news/policy`, {})
+                await axios.post(baseUrl.url + '/api/news/economy', {})
+                await axios.post(baseUrl.url + '/api/news/sports', {})
+            } catch (e) {
                 console.log(e)
             }
             console.log('2')
@@ -268,3 +288,9 @@ export default {
 }
 
 </script>
+<style>
+.is-loading {
+    pointer-events: none;
+    opacity: 0.6;
+}
+</style>
