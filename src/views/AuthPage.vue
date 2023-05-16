@@ -86,7 +86,7 @@
 <script>
 
 import axios from 'axios';
-import {updateTransUser} from '@/reactive/transfer_user';
+import {updateUser} from '@/reactive/save_user';
 import {baseUrl} from '@/reactive/api.js';
 
 export default {
@@ -128,7 +128,7 @@ export default {
                 name: this.name,
                 phone: this.phone
             }).then(response => {
-                updateTransUser({
+                updateUser({
                     _id: response.data.user._id,
                     name: response.data.user.name,
                     email: response.data.user.email,
@@ -154,7 +154,7 @@ export default {
                 }).then(async response => {
                     console.log(response.data.email);
                     if (response.data.verifyEmail == false) {
-                        updateTransUser({
+                        updateUser({
                             _id: response.data._id,
                             name: response.data.name,
                             email: response.data.email,
@@ -177,7 +177,7 @@ export default {
                         console.log(result);
                         this.$router.push('/verifyEmail');
                     } else {
-                        updateTransUser({
+                        updateUser({
                             _id: response.data._id,
                             name: response.data.name,
                             email: response.data.email,
@@ -185,7 +185,7 @@ export default {
                             verifyEmail: response.data.verifyEmail,
                             token: response.data.token,
                         });
-                        this.$router.push('/homePage');
+                        this.$router.push('/loadingHome');
                     }
                     this.loading = false
                     // this.$router.push({ name: 'login', query: { redirect: '/homePage' } })

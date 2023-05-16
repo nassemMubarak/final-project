@@ -7,11 +7,13 @@
   <!-- END LOADER -->
 
     <div dir="rtl" lang="ar" id="master-app">
+
         <!-- end header -->
         <section class="section first-section">
             <div class="container-fluid">
                 <div class="masonry-blog clearfix">
                     <div class="left-side">
+
                         <div class="masonry-box post-media">
                             <img :src="news.economic[0].image" alt="" class="img-fluid"/>
                             <div class="shadoweffect">
@@ -20,20 +22,13 @@
                                         <span class="bg-pink"><router-link to="/sport"><a href="" title="">{{
                                             news.sport[0].type
                                             }}</a> </router-link></span>
-                                        <h4>
-                                            <router-link to="/details" @click="
-                                            transNEWS.type = news.sport[0].type;
-                                            transNEWS.date = news.sport[0].date;
-                                            transNEWS.image = news.sport[0].image;
-                                            transNEWS.author = news.sport[0].author;
-                                            transNEWS.title = news.sport[0].title;
-                                            transNEWS.details = news.sport[0].details;
-                                            transNEWS.body = news.sport[0].body;
-                                            transNEWS.link = news.sport[0].link;
-                                            ">{{ news.sport[0].title }}</router-link>
+                                        <h4 style="cursor: pointer">
+                                            <a @click="goToDetails(this.news.sport[0])">{{ news.sport[0].title }}</a>
                                         </h4>
-                                        <small><a href="single.html" title="">{{ news.sport[0].date }} </a></small>
-                                        <small><a href="blog-author.html" title="">{{ news.sport[0].author }}</a></small>
+                                        <small><a>{{ news.sport[0].date }} </a></small>
+                                        <small><a href="blog-author.html" title="">{{
+                                            news.sport[0].author
+                                            }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                 </div>
@@ -56,20 +51,15 @@
                                         <span class="bg-pink"><router-link to="/politics"><a href="" title="">{{
                                             news.politics[0].type
                                             }}</a> </router-link></span>
-                                        <h4>
-                                            <router-link to="/details" @click="
-                                            transNEWS.type = news.politics[0].type;
-                                            transNEWS.date = news.politics[0].date;
-                                            transNEWS.image = news.politics[0].image;
-                                            transNEWS.author = news.politics[0].author;
-                                            transNEWS.title = news.politics[0].title;
-                                            transNEWS.details = news.politics[0].details;
-                                            transNEWS.body = news.politics[0].body;
-                                            transNEWS.link = news.politics[0].link;
-                                            ">{{ news.politics[0].title }}</router-link>
+                                        <h4 style="cursor: pointer">
+                                            <a @click="goToDetails(this.news.politics[0])">{{
+                                                news.politics[0].title
+                                                }}</a>
                                         </h4>
-                                        <small><a href="single.html" title="">{{ news.politics[0].date }}</a></small>
-                                        <small><a href="blog-author.html" title="">{{ news.politics[0].author }}</a></small>
+                                        <small><a >{{ news.politics[0].date }}</a></small>
+                                        <small><a>{{
+                                            news.politics[0].author
+                                            }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                 </div>
@@ -88,17 +78,8 @@
                                         <span class="bg-pink"><a href="blog-category-01.html" title="">{{
                                             newsItem.type
                                             }}</a></span>
-                                        <h4>
-                                            <router-link to="/details" @click="
-                                            transNEWS.type = newsItem.type;
-                                            transNEWS.date = newsItem.date;
-                                            transNEWS.image = newsItem.image;
-                                            transNEWS.author = newsItem.author;
-                                            transNEWS.title = newsItem.title;
-                                            transNEWS.details = newsItem.details;
-                                            transNEWS.body = newsItem.body;
-                                            transNEWS.link = newsItem.link;
-                                            ">{{ newsItem.title }}</router-link>
+                                        <h4 style="cursor: pointer">
+                                            <a @click="goToDetails(newsItem)">{{ newsItem.title }}</a>
                                         </h4>
                                     </div>
                                     <!-- end meta -->
@@ -122,20 +103,13 @@
                                     <div class="blog-meta">
                                         <span class="bg-aqua"><a href="blog-category-01.html"
                                                                  title="">{{ news.sport[1].type }}</a></span>
-                                        <h4>
-                                            <router-link to="/details" @click="
-                                            transNEWS.type = news.sport[1].type;
-                                            transNEWS.date = news.sport[1].date;
-                                            transNEWS.image = news.sport[1].image;
-                                            transNEWS.author = news.sport[1].author;
-                                            transNEWS.title = news.sport[1].title;
-                                            transNEWS.details = news.sport[1].details;
-                                            transNEWS.body = news.sport[1].body;
-                                            transNEWS.link = news.sport[1].link;
-                                            ">{{ news.sport[1].title }}</router-link>
+                                        <h4 style="cursor: pointer">
+                                            <a @click="goToDetails(this.news.sport[1])">{{ news.sport[1].title }}</a>
                                         </h4>
-                                        <small><a href="single.html" title="">{{ news.sport[1].date }}</a></small>
-                                        <small><a href="blog-author.html" title="">{{ news.sport[1].author }}</a></small>
+                                        <small><a >{{ news.sport[1].date }}</a></small>
+                                        <small><a >{{
+                                            news.sport[1].author
+                                            }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                 </div>
@@ -167,39 +141,34 @@
                                  class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 
-                                <router-link to="/details" @click="
-                                            transNEWS.type = newsItem.type;
-                                            transNEWS.date = newsItem.date;
-                                            transNEWS.image = newsItem.image;
-                                            transNEWS.author = newsItem.author;
-                                            transNEWS.title = newsItem.title;
-                                            transNEWS.details = newsItem.details;
-                                            transNEWS.body = newsItem.body;
-                                            transNEWS.link = newsItem.link;
-                                            " class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img :src="newsItem.image" alt="" class="img-fluid"/>
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta big-meta">
-                                        <h4>
-                                            <a href="single.html" title="">{{ newsItem.title }}</a>
-                                        </h4>
-                                        <p>
-                                            {{ newsItem.details }}
-                                        </p>
-                                        <small><a href="blog-category-01.html" title="">{{ newsItem.type }}</a></small>
-                                        <small><a href="single.html" title="">{{ newsItem.date }}</a></small>
-                                        <small><a href="blog-author.html" title="">{{ newsItem.author }}</a></small>
-                                    </div>
-                                    <!-- end meta -->
-                                </router-link>
+                                <h4 style="cursor: pointer">
+                                    <a @click="goToDetails(newsItem)">
+                                        <div class="post-media">
+                                            <a>
+                                                <img :src="newsItem.image" alt="" class="img-fluid"/>
+                                                <div class="hovereffect">
+                                                    <span></span>
+                                                </div>
+                                                <!-- end hover -->
+                                            </a>
+                                        </div>
+                                        <!-- end media -->
+                                        <div class="blog-meta big-meta">
+                                            <h4>
+                                                <a>{{ newsItem.title }}</a>
+                                            </h4>
+                                            <p>
+                                                {{ newsItem.body }}
+                                            </p>
+                                            <small><a href="blog-category-01.html" title="">{{
+                                                newsItem.type
+                                                }}</a></small>
+                                            <small><a>{{ newsItem.date }}</a></small>
+                                            <small><a>{{ newsItem.author }}</a></small>
+                                        </div>
+                                        <!-- end meta -->
+                                    </a>
+                                </h4>
                                 <hr class="invis"/>
                                 <!-- end blog-box -->
                             </div>
@@ -222,35 +191,28 @@
                             <div
                                     v-for="newsItem in [news.politics[3], news.politics[4], news.politics[5], news.politics[6], news.politics[7], news.politics[8], news.politics[9], news.politics[10]]"
                                     :key="newsItem" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <router-link to="/details" @click="
-                                            transNEWS.type = newsItem.type;
-                                            transNEWS.date = newsItem.date;
-                                            transNEWS.image = newsItem.image;
-                                            transNEWS.author = newsItem.author;
-                                            transNEWS.title = newsItem.title;
-                                            transNEWS.details = newsItem.details;
-                                            transNEWS.body = newsItem.body;
-                                            transNEWS.link = newsItem.link;
-                                            " class="blog-box">
-                                    <div class="post-media">
-                                        <a   title="">
-                                            <img :src="newsItem.image" alt="" class="img-fluid"/>
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div>
-                                            <!-- end hover -->
-                                        </a>
-                                    </div>
-                                    <!-- end media -->
-                                    <div class="blog-meta">
-                                        <h4>
-                                            <a title="">{{ newsItem.title }}</a>
-                                        </h4>
-                                        <small><a title="">{{ newsItem.type }}</a></small>
-                                        <small><a title="">{{ newsItem.date }}</a></small>
-                                    </div>
-                                    <!-- end meta -->
-                                </router-link>
+                                <h4 style="cursor: pointer">
+                                    <a @click="goToDetails(newsItem)">
+                                        <div class="post-media">
+                                            <a title="">
+                                                <img :src="newsItem.image" alt="" class="img-fluid"/>
+                                                <div class="hovereffect">
+                                                    <span></span>
+                                                </div>
+                                                <!-- end hover -->
+                                            </a>
+                                        </div>
+                                        <!-- end media -->
+                                        <div class="blog-meta">
+                                            <h4>
+                                                <a title="">{{ newsItem.title }}</a>
+                                            </h4>
+                                            <small><a title="">{{ newsItem.type }}</a></small>
+                                            <small><a title="">{{ newsItem.date }}</a></small>
+                                        </div>
+                                        <!-- end meta -->
+                                    </a>
+                                </h4>
                                 <!-- end blog-box -->
 
                                 <hr class="invis"/>
@@ -295,21 +257,14 @@
                             </div>
                             <!-- end title -->
 
-                            <div v-for="newsItem in [news.economic[0], news.economic[1], news.economic[2]]" :key="newsItem"
+                            <div v-for="newsItem in [news.economic[0], news.economic[1], news.economic[2]]"
+                                 :key="newsItem"
                                  class="blog-box row">
-                                <router-link class="row" to="/details" @click="
-                                            transNEWS.type = newsItem.type;
-                                            transNEWS.date = newsItem.date;
-                                            transNEWS.image = newsItem.image;
-                                            transNEWS.author = newsItem.author;
-                                            transNEWS.title = newsItem.title;
-                                            transNEWS.details = newsItem.details;
-                                            transNEWS.body = newsItem.body;
-                                            transNEWS.link = newsItem.link;
-                                            ">
+                                <h4 style="cursor: pointer">
+                                    <a  @click="goToDetails(newsItem)">
                                     <div class="col-md-4">
                                         <div class="post-media">
-                                            <a href="single.html" title="">
+                                            <a>
                                                 <img :src="newsItem.image" alt="" class="img-fluid"/>
                                                 <div class="hovereffect"></div>
                                             </a>
@@ -320,18 +275,19 @@
 
                                     <div class="blog-meta big-meta col-md-8">
                                         <h4>
-                                            <a href="single.html" title="">{{ newsItem.title }}</a>
+                                            <a>{{ newsItem.title }}</a>
                                         </h4>
                                         <p>
                                             {{ newsItem.details }}
                                         </p>
-                                        <small><a href="blog-category-01.html" title="">{{ newsItem.type }}</a></small>
-                                        <small><a href="single.html" title="">{{ newsItem.date }}</a></small>
-                                        <small><a href="blog-author.html" title="">{{ newsItem.author }}</a></small>
+                                        <small><a >{{ newsItem.type }}</a></small>
+                                        <small><a >{{ newsItem.date }}</a></small>
+                                        <small><a >{{ newsItem.author }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                     <hr class="invis"/>
-                                </router-link>
+                                    </a>
+                                </h4>
 
                             </div>
                             <!-- end blog-box -->
@@ -373,216 +329,36 @@
     </div>
 </template>
 <script>
-import {transNEWS} from '@/reactive/transfer_news'
-import {transUser} from '@/reactive/transfer_user'
+// import {localStorage} from '@/reactive/save_news'
+// import {transUser} from '@/reactive/transfer_user'
 // import {newsCache} from '@/reactive/transfer_news'
-import {baseUrl} from '@/reactive/api.js'
-import axios from 'axios';
+// import {baseUrl} from '@/reactive/api.js'
+// import axios from 'axios';
 
 export default {
     data() {
         return {
-            news: {
-                sport: [
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-
-                ],
-                politics: [
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-
-                ],
-                economic: [
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-                    {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    }, {
-                        title: 'جار التحميل',
-                        type: 'Loading',
-                        date: 'now',
-                        author: 'BNMA',
-                        image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        details: 'جار التحميل'
-                    },
-
-                ],
-            },
-            transNEWS,
+            news: JSON.parse(localStorage.getItem("homeNEWS")),
 
         }
     },
 
     mounted() {
         // Call the method to fetch data when the component is mounted
-
         this.reRoutUser();
-        this.getData();
+
+        // this.getData();
     },
     methods: {
-        reRoutUser(){
-            if(!transUser.token){
-                this.$router.push('/authPage');
+        reRoutUser() {
+            if (!this.news) {
+                this.$router.push('/loadingHome');
             }
         },
-        getData() {
-            axios.get(`${baseUrl.url}/api/news/home`)
-                .then(response => {
-                    console.log(response.data)
-                    this.news = response.data;
-                    // newsCache.news = response.data;
-                    // this.news = newsCache.news;
-                })
-
-                .catch(error => {
-                    console.log(error);
-                });
-        },
-
+        goToDetails(data) {
+            localStorage.setItem('detailsNews', JSON.stringify(data));
+            this.$router.push('/details');
+        }
     }
 
 }

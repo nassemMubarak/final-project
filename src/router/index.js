@@ -6,15 +6,15 @@ import SportPage from "../views/SportPage.vue";
 import DetailsNews from "../views/DetailsNews.vue";
 import AuthPage from "../views/AuthPage.vue";
 import OurTeam from "../views/OurTeam.vue";
-import LoadingPage from "../views/LoadingPage.vue";
+import LoadingPage from "../views/LoadingHomePage.vue";
 import EditProfileView from "../views/EditProfile.vue";
 import ProfileView from "../views/ProfilePage.vue";
 import VerifyEmail from "../views/verifyEmail.vue";
 
 const routes = [
   {
-    path: "/",
-    name: "LoadingPage",
+    path: "/loadingHome",
+    name: "LoadingHomePage",
     component: LoadingPage,
   },
   {
@@ -24,6 +24,11 @@ const routes = [
   },
   {
     path: "/authPage",
+    name: "AuthPage",
+    component: AuthPage,
+  },
+  {
+    path: "/",
     name: "AuthPage",
     component: AuthPage,
   },

@@ -109,7 +109,7 @@ export default {
 
 <script>
 import axios from "axios";
-import { transUser } from "@/reactive/transfer_user";
+import { transUser } from "@/reactive/save_user";
 
 export default {
   name: "ProfileView",

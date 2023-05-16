@@ -219,9 +219,8 @@
     </div>
 </template>
 <script>
-import {transNEWS} from '@/reactive/transfer_news'
+import {transNEWS} from '@/reactive/save_news'
 import axios from "axios";
-import {transUser} from "@/reactive/transfer_user";
 import {baseUrl} from "@/reactive/api";
 
 export default {
@@ -246,7 +245,7 @@ export default {
     },
     methods: {
         reRoutUser() {
-            if (!transUser.token) {
+            if (!localStorage.token) {
                 this.$router.push('/authPage');
             }
         },

@@ -231,10 +231,9 @@
   <!-- end wrapper -->
 </template>
 <script>
-import {transUser} from "@/reactive/transfer_user";
 import axios from "axios";
 import {baseUrl} from "@/reactive/api";
-import {transNEWS} from "@/reactive/transfer_news";
+import {transNEWS} from "@/reactive/save_news";
 
 export default {
     name: "PoliticsPage",
@@ -258,7 +257,7 @@ export default {
     },
     methods: {
         reRoutUser() {
-            if (!transUser.token) {
+            if (!localStorage.token) {
                 this.$router.push('/authPage');
             }
         },

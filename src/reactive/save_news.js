@@ -11,6 +11,7 @@ export const transNEWS = reactive({
     body: '',
     link: '',
 })
+
 export let newsCache = reactive({
     news: {
         sport: [

@@ -1,6 +1,6 @@
 <template>
     <div dir="rtl" lang="ar"
-         :class="{ 'app-header': true, 'd-none': (this.$route.path == '/'||this.$route.path == '/verifyEmail' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage') }">
+         :class="{ 'app-header': true, 'd-none': (this.$route.path === '/'||this.$route.path === '/loadingHome'||this.$route.path === '/verifyEmail' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage') }">
         <div class="collapse top-search" id="collapseExample">
             <div class="card card-block">
                 <div class="newsletter-widget text-center">
@@ -301,7 +301,7 @@
 <script>
 import axios from "axios";
 import {baseUrl} from "@/reactive/api.js";
-import {transNEWS} from "@/reactive/transfer_news";
+import {transNEWS} from "@/reactive/save_news";
 
 export default {
     name: "AppHeader",
