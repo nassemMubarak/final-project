@@ -25,14 +25,15 @@
                                             transNEWS.type = news.sport[0].type;
                                             transNEWS.date = news.sport[0].date;
                                             transNEWS.image = news.sport[0].image;
-                                            transNEWS.by = news.sport[0].by;
+                                            transNEWS.author = news.sport[0].author;
                                             transNEWS.title = news.sport[0].title;
-                                            transNEWS.description = news.sport[0].description;
+                                            transNEWS.details = news.sport[0].details;
                                             transNEWS.body = news.sport[0].body;
+                                            transNEWS.link = news.sport[0].link;
                                             ">{{ news.sport[0].title }}</router-link>
                                         </h4>
                                         <small><a href="single.html" title="">{{ news.sport[0].date }} </a></small>
-                                        <small><a href="blog-author.html" title="">{{ news.sport[0].by }}</a></small>
+                                        <small><a href="blog-author.html" title="">{{ news.sport[0].author }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                 </div>
@@ -60,14 +61,15 @@
                                             transNEWS.type = news.politics[0].type;
                                             transNEWS.date = news.politics[0].date;
                                             transNEWS.image = news.politics[0].image;
-                                            transNEWS.by = news.politics[0].by;
+                                            transNEWS.author = news.politics[0].author;
                                             transNEWS.title = news.politics[0].title;
-                                            transNEWS.description = news.politics[0].description;
+                                            transNEWS.details = news.politics[0].details;
                                             transNEWS.body = news.politics[0].body;
+                                            transNEWS.link = news.politics[0].link;
                                             ">{{ news.politics[0].title }}</router-link>
                                         </h4>
                                         <small><a href="single.html" title="">{{ news.politics[0].date }}</a></small>
-                                        <small><a href="blog-author.html" title="">{{ news.politics[0].by }}</a></small>
+                                        <small><a href="blog-author.html" title="">{{ news.politics[0].author }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                 </div>
@@ -91,10 +93,11 @@
                                             transNEWS.type = newsItem.type;
                                             transNEWS.date = newsItem.date;
                                             transNEWS.image = newsItem.image;
-                                            transNEWS.by = newsItem.by;
+                                            transNEWS.author = newsItem.author;
                                             transNEWS.title = newsItem.title;
-                                            transNEWS.description = newsItem.description;
+                                            transNEWS.details = newsItem.details;
                                             transNEWS.body = newsItem.body;
+                                            transNEWS.link = newsItem.link;
                                             ">{{ newsItem.title }}</router-link>
                                         </h4>
                                     </div>
@@ -124,14 +127,15 @@
                                             transNEWS.type = news.sport[1].type;
                                             transNEWS.date = news.sport[1].date;
                                             transNEWS.image = news.sport[1].image;
-                                            transNEWS.by = news.sport[1].by;
+                                            transNEWS.author = news.sport[1].author;
                                             transNEWS.title = news.sport[1].title;
-                                            transNEWS.description = news.sport[1].description;
+                                            transNEWS.details = news.sport[1].details;
                                             transNEWS.body = news.sport[1].body;
+                                            transNEWS.link = news.sport[1].link;
                                             ">{{ news.sport[1].title }}</router-link>
                                         </h4>
                                         <small><a href="single.html" title="">{{ news.sport[1].date }}</a></small>
-                                        <small><a href="blog-author.html" title="">{{ news.sport[1].by }}</a></small>
+                                        <small><a href="blog-author.html" title="">{{ news.sport[1].author }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                 </div>
@@ -167,10 +171,11 @@
                                             transNEWS.type = newsItem.type;
                                             transNEWS.date = newsItem.date;
                                             transNEWS.image = newsItem.image;
-                                            transNEWS.by = newsItem.by;
+                                            transNEWS.author = newsItem.author;
                                             transNEWS.title = newsItem.title;
-                                            transNEWS.description = newsItem.description;
+                                            transNEWS.details = newsItem.details;
                                             transNEWS.body = newsItem.body;
+                                            transNEWS.link = newsItem.link;
                                             " class="blog-box">
                                     <div class="post-media">
                                         <a href="single.html" title="">
@@ -187,11 +192,11 @@
                                             <a href="single.html" title="">{{ newsItem.title }}</a>
                                         </h4>
                                         <p>
-                                            {{ newsItem.description }}
+                                            {{ newsItem.details }}
                                         </p>
                                         <small><a href="blog-category-01.html" title="">{{ newsItem.type }}</a></small>
                                         <small><a href="single.html" title="">{{ newsItem.date }}</a></small>
-                                        <small><a href="blog-author.html" title="">{{ newsItem.by }}</a></small>
+                                        <small><a href="blog-author.html" title="">{{ newsItem.author }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                 </router-link>
@@ -221,10 +226,11 @@
                                             transNEWS.type = newsItem.type;
                                             transNEWS.date = newsItem.date;
                                             transNEWS.image = newsItem.image;
-                                            transNEWS.by = newsItem.by;
+                                            transNEWS.author = newsItem.author;
                                             transNEWS.title = newsItem.title;
-                                            transNEWS.description = newsItem.description;
+                                            transNEWS.details = newsItem.details;
                                             transNEWS.body = newsItem.body;
+                                            transNEWS.link = newsItem.link;
                                             " class="blog-box">
                                     <div class="post-media">
                                         <a   title="">
@@ -295,10 +301,11 @@
                                             transNEWS.type = newsItem.type;
                                             transNEWS.date = newsItem.date;
                                             transNEWS.image = newsItem.image;
-                                            transNEWS.by = newsItem.by;
+                                            transNEWS.author = newsItem.author;
                                             transNEWS.title = newsItem.title;
-                                            transNEWS.description = newsItem.description;
+                                            transNEWS.details = newsItem.details;
                                             transNEWS.body = newsItem.body;
+                                            transNEWS.link = newsItem.link;
                                             ">
                                     <div class="col-md-4">
                                         <div class="post-media">
@@ -316,11 +323,11 @@
                                             <a href="single.html" title="">{{ newsItem.title }}</a>
                                         </h4>
                                         <p>
-                                            {{ newsItem.description }}
+                                            {{ newsItem.details }}
                                         </p>
                                         <small><a href="blog-category-01.html" title="">{{ newsItem.type }}</a></small>
                                         <small><a href="single.html" title="">{{ newsItem.date }}</a></small>
-                                        <small><a href="blog-author.html" title="">{{ newsItem.by }}</a></small>
+                                        <small><a href="blog-author.html" title="">{{ newsItem.author }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                     <hr class="invis"/>
@@ -381,38 +388,38 @@ export default {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
 
                 ],
@@ -421,86 +428,86 @@ export default {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
 
                 ],
@@ -509,38 +516,38 @@ export default {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
                     {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     }, {
                         title: 'جار التحميل',
                         type: 'Loading',
                         date: 'now',
-                        by: 'BNMA',
+                        author: 'BNMA',
                         image: 'https://www.shutterstock.com/image-vector/loading-sign-doodle-260nw-742556110.jpg',
-                        description: 'جار التحميل'
+                        details: 'جار التحميل'
                     },
 
                 ],
@@ -563,7 +570,6 @@ export default {
             }
         },
         getData() {
-            console.log(555555555)
             axios.get(`${baseUrl.url}/api/news/home`)
                 .then(response => {
                     console.log(response.data)

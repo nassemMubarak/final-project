@@ -9,6 +9,7 @@ export const transNEWS = reactive({
     image: 'https://www.aljazeera.net/wp-content/uploads/2023/03/00-9.jpg?resize=770%2C513&quality=80',
     description: '',
     body: '',
+    link: '',
 })
 export let newsCache = reactive({
     news: {

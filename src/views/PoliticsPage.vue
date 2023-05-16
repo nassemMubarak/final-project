@@ -1,5 +1,5 @@
 <template>
-    <div dir="rtl" lang="ar"  id="politics" class="politics-page">
+    <div dir="rtl" lang="ar" id="politics" class="politics-page">
         <div class="page-title wb">
             <div class="container">
                 <div class="row">
@@ -10,7 +10,7 @@
                     </div>
                     <!-- end col -->
                     <div
-                        class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down"
+                            class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down"
                     >
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">الصفحة الرئيسئة</a></li>
@@ -33,52 +33,59 @@
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
                             <div
-                                v-for="(item, index) in news.slice(
+                                    v-for="(item, index) in news.slice(
                   pagNumber == 1 ? 0 : (pagNumber - 1) * 10,
                   pagNumber == 1 ? 10 : pagNumber * 10
                 )"
-                                :key="index"
-                                class="blog-list clearfix"
+                                    :key="index"
+                                    class="blog-list clearfix"
                             >
+                                <router-link class="row" to="/details" @click="
+                                            transNEWS.type = item.type;
+                                            transNEWS.date = item.date;
+                                            transNEWS.image = item.image;
+                                            transNEWS.author = item.author;
+                                            transNEWS.title = item.title;
+                                            transNEWS.details = item.details;
+                                            transNEWS.body = item.body;
+                                            ">
                                 <div class="blog-box row">
                                     <div class="col-md-4">
                                         <div class="post-media">
-                                            <router-link to="/details"> <img :src="item.imageUrl" alt="" class="img-fluid" />
-                                                <div class="hovereffect"></div></router-link>
+                                            <router-link to="/details"><img :src="item.image" alt=""
+                                                                            class="img-fluid"/>
+                                                <div class="hovereffect"></div>
+                                            </router-link>
                                         </div>
                                         <!-- end media -->
                                     </div>
                                     <!-- end col -->
                                     <div class="blog-meta big-meta col-md-8">
                                         <h4>
-                                            <router-link to="/details">{{ item.title  }}</router-link>
+                                            <router-link to="/details">{{ item.title }}</router-link>
                                         </h4>
                                         <p>{{ item.body }}</p>
                                         <small
                                         ><a href="blog-category-01.html" title="">{{
-                                                item.blogCategory
+                                            item.type
                                             }}</a></small
                                         >
                                         <small
-                                        ><a href="single.html" title="">{{ item.date }}</a></small
+                                        ><a href="" title="">{{ item.date }}</a></small
                                         >
-                                        <small
-                                        ><a href="blog-author.html" title="">{{
-                                                item.blogAuthor
-                                            }}</a></small
-                                        >
+                                        <small><a href="blog-author.html" title="">{{item.author }}</a></small>
                                     </div>
                                     <!-- end meta -->
                                     <div v-show="index == 2" class="row">
                                         <div>
-                                            <br />
+                                            <br/>
                                             <div class="col-lg-10 offset-lg-1">
                                                 <div class="banner-spot clearfix">
                                                     <div class="banner-img">
                                                         <img
-                                                            src="../../public\frontend\assets\upload/ramadan1.jpg"
-                                                            alt=""
-                                                            class="img-fluid"
+                                                                src="../../public\frontend\assets\upload/ramadan1.jpg"
+                                                                alt=""
+                                                                class="img-fluid"
                                                         />
                                                     </div>
                                                     <!-- end banner-img -->
@@ -91,48 +98,52 @@
                                     </div>
                                     <!-- end row -->
                                 </div>
+                                </router-link>
                                 <!-- end blog-box -->
 
-                                <hr class="invis" />
+                                <hr class="invis"/>
                             </div>
                             <!-- end blog-list -->
                         </div>
                         <!-- end page-wrapper -->
 
-                        <hr class="invis" />
+                        <hr class="invis"/>
 
                         <div class="row">
                             <div class="col-md-12">
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-start">
                                         <li
-                                            @click="pagNumber == 1 ? pagNumber : pagNumber--"
-                                            class="page-item"
+                                                @click="pagNumber == 1 ? pagNumber : pagNumber--"
+                                                class="page-item"
                                         >
                                             <router-link class="page-link" to="/politics"
-                                            >السابق</router-link
+                                            >السابق
+                                            </router-link
                                             >
                                         </li>
                                         <li
-                                            v-for="index in Math.ceil(news.length / 10)"
-                                            :key="index"
-                                            @click="pagNumber = index"
-                                            class="page-item"
+                                                v-for="index in Math.ceil(news.length / 10)"
+                                                :key="index"
+                                                @click="pagNumber = index"
+                                                class="page-item"
                                         >
                                             <router-link class="page-link" to="/politics">{{
-                                                    index
-                                                }}</router-link>
+                                                index
+                                                }}
+                                            </router-link>
                                         </li>
                                         <li
-                                            @click="
+                                                @click="
                         Math.ceil(news.length / 10) == pagNumber
                           ? pagNumber
                           : pagNumber++
                       "
-                                            class="page-item"
+                                                class="page-item"
                                         >
                                             <router-link class="page-link" to="/politics"
-                                            >التالي</router-link
+                                            >التالي
+                                            </router-link
                                             >
                                         </li>
                                     </ul>
@@ -151,10 +162,10 @@
                                 <form class="form-inline search-form">
                                     <div class="form-group">
                                         <input
-                                            type="text"
-                                            v-model="textSearch"
-                                            class="form-control"
-                                            placeholder="             البحث في الموقع"
+                                                type="text"
+                                                v-model="textSearch"
+                                                class="form-control"
+                                                placeholder="             البحث في الموقع"
                                         />
                                     </div>
                                     <button type="submit" class="btn btn-primary">
@@ -169,17 +180,17 @@
                                 <div class="blog-list-widget">
                                     <div class="list-group">
                                         <div
-                                            class="list-group-item list-group-item-action flex-column align-items-start"
+                                                class="list-group-item list-group-item-action flex-column align-items-start"
                                         >
                                             <div
-                                                class="w-100 justify-content-between"
-                                                v-for="(item, index) in news.slice(0, 5)"
-                                                :key="index"
+                                                    class="w-100 justify-content-between"
+                                                    v-for="(item, index) in news.slice(0, 5)"
+                                                    :key="index"
                                             >
                                                 <img
-                                                    :src="item.imageUrl"
-                                                    alt=""
-                                                    class="img-fluid float-left"
+                                                        :src="item.imageUrl"
+                                                        alt=""
+                                                        class="img-fluid float-left"
                                                 />
                                                 <h5 class="mb-1">{{ item.title }}</h5>
                                                 <small>{{ item.date }}</small>
@@ -196,9 +207,9 @@
                                 <div class="banner-spot clearfix">
                                     <div class="banner-img">
                                         <img
-                                            src="../../public\frontend\assets\upload/ramadan.jpg"
-                                            alt=""
-                                            class="img-fluid"
+                                                src="../../public\frontend\assets\upload/ramadan.jpg"
+                                                alt=""
+                                                class="img-fluid"
                                         />
                                     </div>
                                     <!-- end banner-img -->
@@ -217,133 +228,54 @@
         </section>
 
     </div>
-    <!-- end wrapper -->
+  <!-- end wrapper -->
 </template>
 <script>
+import {transUser} from "@/reactive/transfer_user";
+import axios from "axios";
+import {baseUrl} from "@/reactive/api";
+import {transNEWS} from "@/reactive/transfer_news";
+
 export default {
     name: "PoliticsPage",
+    computed: {
+        transNEWS() {
+            return transNEWS
+        }
+    },
     data() {
         return {
             pagNumber: 1,
             textSearch: "",
-            news: [
-                {
-                    title: "المصادقة بالقراءة الأولى على عودة الاستيطان لشمال الضفة",
-                    body: 'صادقت الكنيست الصهيونية مساء الإثنين وبالقراءة الأولى على مشروع قانون إلغاء "قانون الانسحاب من شمال الضفة الغربية"، والذي يفتح الباب أمام عودة 4 مستوطنات بين نابلس وجنين.',
-                    blogCategory: "سياسة",
-                    date: "الثلاثاء 14 مارس 2023 10:29 ص",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads/images/23cdf7627a9e1ebcdc1172bb343a26fc.jpg&w=780&h=450",
-                },
-                {
-                    title: "العاروري: صبرنا ينفد وسنكون عند ثقة شعبنا بنا",
-                    body: 'أكد نائب رئيس المكتب السياسي لحركة "حماس" الشيخ صالح العاروري أن محاولة الاحتلال توظيف شهر رمضان لفرض سياسته في التقسيم الزماني والمكاني والسماح للمستوطنين بأداء الطقوس التلمودية سيواجه بردة فعل شعبنا بكل تأكيد.',
-                    blogCategory: "سياسة",
-                    date: " الثلاثاء 14 مارس 2023 11:38 ص ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/2722f6be123ba49b7fdca6b5978cc013.jpeg&w=780&h=450",
-                },
-                {
-                    title: "مواجهات واعتقالات بالقدس والضفة المحتلتين",
-                    body: "شنّت قوات الاحتلال الصهيوني، فجر اليوم الثلاثاء، حملة مداهمات واقتحامات واسعة في الضفة والقدس المحتلتين، تخللتها مواجهات واعتقالات طالت عددًا من الفلسطينيين.",
-                    blogCategory: "سياسة",
-                    date: "الثلاثاء 14 مارس 2023 08:18 ص",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450",
-                },
-                {
-                    title: "الذكرى الـ19 لعملية أسدود البطولية المشتركة",
-                    body: "الرابع عشر من مارس، تاريخٌ يحفظه الصهاينة جيداً، لأنه يحمل معه ذكرى تحطيم نظرية أمنهم على صخرة أبناء المقاومة الذين مرغوا أنف الحكومة النازية بالتراب وأثبتوا أن كل التحصينات التي يتغنى بها العدو لا تمنع استشهادياً من بلوغ مرامه أو تحقيق هدفه.",
-                    blogCategory: "سياسة",
-                    date: " الثلاثاء 14 مارس 2023 08:30 ص",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/5f361459bffefbf3f8b4148594a18369.jpg&w=780&h=450",
-                },
-                {
-                    title: "فؤاد الشوبكي فور الإفراج عنه: أسرانا شهداء مع وقف التنفيذ",
-                    body: "شنّت قوات الاحتلال الصهيوني، فجر اليوم أكد شيخ الأسرى اللواء فؤاد الشوبكي، فور الإفراج عنه اليوم الإثنين، أن الأسرى في سجون الاحتلال الصهيوني شهداء مع وقف التنفيذ.",
-                    blogCategory: "سياسة",
-                    date: " الإثنين 13 مارس 2023 03:54 م ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/1d453f4357afeb0f95be26418ec5a8e7.jpg&w=780&h=450",
-                },
-                {
-                    title:
-                        "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
-                    body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
-                    blogCategory: "سياسة",
-                    date: "الأحد 12 مارس 2023 06:44 م ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
-                },
-                {
-                    title:
-                        "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
-                    body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
-                    blogCategory: "سياسة",
-                    date: "الأحد 12 مارس 2023 06:44 م ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
-                },
-                {
-                    title:
-                        "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
-                    body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
-                    blogCategory: "سياسة",
-                    date: "الأحد 12 مارس 2023 06:44 م ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
-                },
-                {
-                    title:
-                        "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
-                    body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
-                    blogCategory: "سياسة",
-                    date: "الأحد 12 مارس 2023 06:44 م ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
-                },
-                {
-                    title:
-                        "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
-                    body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
-                    blogCategory: "سياسة",
-                    date: "الأحد 12 مارس 2023 06:44 م ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
-                },
-                {
-                    title:
-                        "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
-                    body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
-                    blogCategory: "سياسة",
-                    date: "الأحد 12 مارس 2023 06:44 م ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
-                },
-                {
-                    title:
-                        "عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع ذئابنا المنفردة",
-                    body: 'شنّت قوات الاحتلال الصهيوني، فجر اليوم نعت مجموعات "عرين الأسود" ثلاثة من شهدائها الذين ارتقوا فجر اليوم الأحد، خلال اشتباك مسلح مع قوات الاحتلال قرب حاجز صرة غرب نابلس.',
-                    blogCategory: "سياسة",
-                    date: "الأحد 12 مارس 2023 06:44 م ",
-                    blogAuthor: "قناة الأقصى",
-                    imageUrl:
-                        "https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450",
-                },
-            ],
+            news: [],
         };
     },
+    mounted() {
+        // Call the method to fetch data when the component is mounted
+
+        this.reRoutUser();
+        this.getData();
+    },
+    methods: {
+        reRoutUser() {
+            if (!transUser.token) {
+                this.$router.push('/authPage');
+            }
+        },
+        getData() {
+            axios.get(`${baseUrl.url}/api/news/policy`)
+                .then(response => {
+                    console.log(response.data)
+                    this.news = response.data;
+                    // newsCache.news = response.data;
+                    // this.news = newsCache.news;
+                })
+
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+
+    }
 };
 </script>

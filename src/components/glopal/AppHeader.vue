@@ -131,26 +131,38 @@
                                                     <div class="row">
                                                         <div v-for="newsItem in news.politics" :key="newsItem"
                                                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <div class="blog-box">
-                                                                <div class="post-media">
-                                                                    <a href="single.html" title="">
-                                                                        <img :src="newsItem.image" alt=""
-                                                                             class="img-fluid"/>
-                                                                        <div class="hovereffect"></div>
-                                                                        <!-- end hover -->
-                                                                        <span class="menucat">{{ newsItem.author }}</span>
-                                                                    </a>
+                                                            <router-link class="row" to="/details" @click="
+                                            transNEWS.type = newsItem.type;
+                                            transNEWS.date = newsItem.date;
+                                            transNEWS.image = newsItem.image;
+                                            transNEWS.author = newsItem.author;
+                                            transNEWS.title = newsItem.title;
+                                            transNEWS.details = newsItem.details;
+                                            transNEWS.body = newsItem.body;
+                                            ">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="single.html" title="">
+                                                                            <img :src="newsItem.image" alt=""
+                                                                                 class="img-fluid"/>
+                                                                            <div class="hovereffect"></div>
+                                                                            <!-- end hover -->
+                                                                            <span class="menucat">{{
+                                                                                newsItem.author
+                                                                                }}</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4>
+                                                                            <a href="single.html" title="">{{
+                                                                                newsItem.title
+                                                                                }}</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <!-- end meta -->
                                                                 </div>
-                                                                <!-- end media -->
-                                                                <div class="blog-meta">
-                                                                    <h4>
-                                                                        <a href="single.html" title="">{{
-                                                                            newsItem.title
-                                                                            }}</a>
-                                                                    </h4>
-                                                                </div>
-                                                                <!-- end meta -->
-                                                            </div>
+                                                            </router-link>
                                                             <!-- end blog-box -->
                                                         </div>
                                                     </div>
@@ -160,26 +172,38 @@
                                                     <div class="row">
                                                         <div v-for="newsItem in news.economic" :key="newsItem"
                                                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <div class="blog-box">
-                                                                <div class="post-media">
-                                                                    <a href="single.html" title="">
-                                                                        <img :src="newsItem.image" alt=""
-                                                                             class="img-fluid"/>
-                                                                        <div class="hovereffect"></div>
-                                                                        <!-- end hover -->
-                                                                        <span class="menucat">{{ newsItem.author }}</span>
-                                                                    </a>
+                                                            <router-link class="row" to="/details" @click="
+                                            transNEWS.type = newsItem.type;
+                                            transNEWS.date = newsItem.date;
+                                            transNEWS.image = newsItem.image;
+                                            transNEWS.author = newsItem.author;
+                                            transNEWS.title = newsItem.title;
+                                            transNEWS.details = newsItem.details;
+                                            transNEWS.body = newsItem.body;
+                                            ">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="single.html" title="">
+                                                                            <img :src="newsItem.image" alt=""
+                                                                                 class="img-fluid"/>
+                                                                            <div class="hovereffect"></div>
+                                                                            <!-- end hover -->
+                                                                            <span class="menucat">{{
+                                                                                newsItem.author
+                                                                                }}</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4>
+                                                                            <a href="single.html" title="">{{
+                                                                                newsItem.title
+                                                                                }}</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <!-- end meta -->
                                                                 </div>
-                                                                <!-- end media -->
-                                                                <div class="blog-meta">
-                                                                    <h4>
-                                                                        <a href="single.html" title="">{{
-                                                                            newsItem.title
-                                                                            }}</a>
-                                                                    </h4>
-                                                                </div>
-                                                                <!-- end meta -->
-                                                            </div>
+                                                            </router-link>
                                                             <!-- end blog-box -->
                                                         </div>
                                                     </div>
@@ -189,26 +213,38 @@
                                                     <div class="row">
                                                         <div v-for="newsItem in news.sport" :key="newsItem"
                                                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <div class="blog-box">
-                                                                <div class="post-media">
-                                                                    <a href="single.html" title="">
-                                                                        <img :src="newsItem.image" alt=""
-                                                                             class="img-fluid"/>
-                                                                        <div class="hovereffect"></div>
-                                                                        <!-- end hover -->
-                                                                        <span class="menucat">{{ newsItem.author }}</span>
-                                                                    </a>
+                                                            <router-link class="row" to="/details" @click="
+                                            transNEWS.type = newsItem.type;
+                                            transNEWS.date = newsItem.date;
+                                            transNEWS.image = newsItem.image;
+                                            transNEWS.author = newsItem.author;
+                                            transNEWS.title = newsItem.title;
+                                            transNEWS.details = newsItem.details;
+                                            transNEWS.body = newsItem.body;
+                                            ">
+                                                                <div class="blog-box">
+                                                                    <div class="post-media">
+                                                                        <a href="single.html" title="">
+                                                                            <img :src="newsItem.image" alt=""
+                                                                                 class="img-fluid"/>
+                                                                            <div class="hovereffect"></div>
+                                                                            <!-- end hover -->
+                                                                            <span class="menucat">{{
+                                                                                newsItem.author
+                                                                                }}</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <!-- end media -->
+                                                                    <div class="blog-meta">
+                                                                        <h4>
+                                                                            <a href="single.html" title="">{{
+                                                                                newsItem.title
+                                                                                }}</a>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <!-- end meta -->
                                                                 </div>
-                                                                <!-- end media -->
-                                                                <div class="blog-meta">
-                                                                    <h4>
-                                                                        <a href="single.html" title="">{{
-                                                                            newsItem.title
-                                                                            }}</a>
-                                                                    </h4>
-                                                                </div>
-                                                                <!-- end meta -->
-                                                            </div>
+                                                            </router-link>
                                                             <!-- end blog-box -->
                                                         </div>
                                                     </div>
@@ -265,9 +301,15 @@
 <script>
 import axios from "axios";
 import {baseUrl} from "@/reactive/api.js";
+import {transNEWS} from "@/reactive/transfer_news";
 
 export default {
     name: "AppHeader",
+    computed: {
+        transNEWS() {
+            return transNEWS
+        }
+    },
     data() {
         return {
             news: {
@@ -278,7 +320,7 @@ export default {
                         date: '17/3/2023',
                         author: 'الجزيرة',
                         image: 'https://www.aljazeera.net/wp-content/uploads/2023/03/00-9.jpg?resize=770%2C513&quality=80',
-                        description: `استأنف برشلونة تدريباته، اليوم الإثنين، بعد أقل من 24 ساعة من إسقاط أتلتيك بيلباو، على ملعب سان ماميس، والحفاظ على فارق ال9 نقاط مع غريمه ريال مدريد . ويستعد برشلونة لمواجهة الكلاسيكو أمام الريال، يوم الأحد المقبل، على ملعب كامب نو، ضمن لقاءات الجولة 26 لليجا`
+                        details: `استأنف برشلونة تدريباته، اليوم الإثنين، بعد أقل من 24 ساعة من إسقاط أتلتيك بيلباو، على ملعب سان ماميس، والحفاظ على فارق ال9 نقاط مع غريمه ريال مدريد . ويستعد برشلونة لمواجهة الكلاسيكو أمام الريال، يوم الأحد المقبل، على ملعب كامب نو، ضمن لقاءات الجولة 26 لليجا`
                     },
                     {
                         title: 'تشافي يريح لاعبي برشلونة قبل الكلاسيكو',
@@ -286,7 +328,7 @@ export default {
                         date: 'الأربعاء 14 مارس 2023 11:38 ص ',
                         author: 'موقع كووورة',
                         image: 'https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-11%2f2023-03-11-10514871_epa.jpg',
-                        description: `يمثل سيرجي روبرتو أحد أكبر الألغاز لعشاق برشلونة، الراغبين في معرفة السبب وراء تمسك المدرب تشافي بلاعب لم يقدم المردود المنتظر لسنوات عديدة.
+                        details: `يمثل سيرجي روبرتو أحد أكبر الألغاز لعشاق برشلونة، الراغبين في معرفة السبب وراء تمسك المدرب تشافي بلاعب لم يقدم المردود المنتظر لسنوات عديدة.
 `
                     },
                     {

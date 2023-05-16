@@ -1,6 +1,6 @@
 <template>
     <div dir="rtl" lang="ar" id="politics" class="Economic-app">
-        {{transNEWS.by.toString()}}
+        {{ transNEWS.by.toString() }}
         <div class="page-title wb">
             <div class="container">
                 <div class="row">
@@ -32,70 +32,73 @@
                 <div class="row">
                     <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-wrapper">
-                            <div
-                                    v-for="(item, index) in news.slice(
-                  pagNumber == 1 ? 0 : (pagNumber - 1) * 10,
-                  pagNumber == 1 ? 10 : pagNumber * 10
-                )"
-                                    :key="index"
-                                    class="blog-list clearfix"
-                            >
-                                <div class="blog-box row">
-                                    <div class="col-md-4">
-                                        <div class="post-media">
-                                            <router-link to="/details"><img :src="item.imageUrl" alt=""
-                                                                            class="img-fluid"/>
-                                                <div class="hovereffect"></div>
-                                            </router-link>
-                                        </div>
-                                        <!-- end media -->
-                                    </div>
-                                    <!-- end col -->
-                                    <div class="blog-meta big-meta col-md-8">
-                                        <h4>
-                                            <router-link to="/details">{{ item.title }}</router-link>
-                                        </h4>
-                                        <p>{{ item.body }}</p>
-                                        <small
-                                        ><a href="blog-category-01.html" title="">{{
-                                            item.blogCategory
-                                            }}</a></small
-                                        >
-                                        <small
-                                        ><a href="single.html" title="">{{ item.date }}</a></small
-                                        >
-                                        <small
-                                        ><a href="blog-author.html" title="">{{
-                                            item.blogAuthor
-                                            }}</a></small
-                                        >
-                                    </div>
-                                    <!-- end meta -->
-                                    <div v-show="index == 2" class="row">
-                                        <div>
-                                            <br/>
-                                            <div class="col-lg-10 offset-lg-1">
-                                                <div class="banner-spot clearfix">
-                                                    <div class="banner-img">
-                                                        <img
-                                                                src="../../public\frontend\assets\upload/ramadan1.jpg"
-                                                                alt=""
-                                                                class="img-fluid"
-                                                        />
-                                                    </div>
-                                                    <!-- end banner-img -->
-                                                </div>
-                                                <!-- end banner -->
-                                                <!-- <hr class="invis"> -->
+                            <div v-for="(item, index) in news.slice( pagNumber === 1 ? 0 : (pagNumber - 1) * 10,pagNumber === 1 ? 10 : pagNumber * 10)"
+                                 :key="index" class="blog-list clearfix">
+                                <router-link class="row" to="/details" @click="
+                                            transNEWS.type = item.type;
+                                            transNEWS.date = item.date;
+                                            transNEWS.image = item.image;
+                                            transNEWS.author = item.author;
+                                            transNEWS.title = item.title;
+                                            transNEWS.details = item.details;
+                                            transNEWS.body = item.body;
+                                            ">
+                                    <div class="blog-box row">
+                                        <div class="col-md-4">
+                                            <div class="post-media">
+                                                <router-link to="/details"><img :src="item.image" alt=""
+                                                                                class="img-fluid"/>
+                                                    <div class="hovereffect"></div>
+                                                </router-link>
                                             </div>
-                                            <!-- end col -->
+                                            <!-- end media -->
                                         </div>
-                                    </div>
-                                    <!-- end row -->
-                                </div>
-                                <!-- end blog-box -->
+                                        <!-- end col -->
+                                        <div class="blog-meta big-meta col-md-8">
+                                            <h4>
+                                                <router-link to="/details">{{ item.title }}</router-link>
+                                            </h4>
+                                            <p>{{ item.body }}</p>
+                                            <small
+                                            ><a href="blog-category-01.html" title="">{{
+                                                item.type
+                                                }}</a></small
+                                            >
+                                            <small
+                                            ><a href="single.html" title="">{{ item.date }}</a></small
+                                            >
+                                            <small
+                                            ><a href="blog-author.html" title="">{{
+                                                item.author
+                                                }}</a></small
+                                            >
+                                        </div>
+                                        <!-- end meta -->
+                                        <div v-show="index == 2" class="row">
+                                            <div>
+                                                <br/>
+                                                <div class="col-lg-10 offset-lg-1">
+                                                    <div class="banner-spot clearfix">
+                                                        <div class="banner-img">
+                                                            <img
+                                                                    src="../../public\frontend\assets\upload/ramadan1.jpg"
+                                                                    alt=""
+                                                                    class="img-fluid"
+                                                            />
+                                                        </div>
+                                                        <!-- end banner-img -->
+                                                    </div>
+                                                    <!-- end banner -->
+                                                    <!-- <hr class="invis"> -->
+                                                </div>
+                                                <!-- end col -->
+                                            </div>
+                                        </div>
+                                        <!-- end row -->
+                                    </div></router-link>
+                                    <!-- end blog-box -->
 
-                                <hr class="invis"/>
+                                    <hr class="invis"/>
                             </div>
                             <!-- end blog-list -->
                         </div>
@@ -122,10 +125,11 @@
                                                 @click="pagNumber = index"
                                                 class="page-item"
                                         >
-                                            <router-link class="page-link" to="/Economic">{{index }}
+                                            <router-link class="page-link" to="/Economic">{{ index }}
                                             </router-link>
                                         </li>
-                                        <li @click="Math.ceil(news.length / 10) === pagNumber? pagNumber: pagNumber++" class="page-item">
+                                        <li @click="Math.ceil(news.length / 10) === pagNumber? pagNumber: pagNumber++"
+                                            class="page-item">
                                             <router-link class="page-link" to="/Economic"
                                             >التالي
                                             </router-link
@@ -215,7 +219,10 @@
     </div>
 </template>
 <script>
-import {transNEWS} from '../reactive/transfer_news'
+import {transNEWS} from '@/reactive/transfer_news'
+import axios from "axios";
+import {transUser} from "@/reactive/transfer_user";
+import {baseUrl} from "@/reactive/api";
 
 export default {
     name: "EconomicPage",
@@ -228,67 +235,34 @@ export default {
         return {
             pagNumber: 1,
             textSearch: "",
-            news: [
-                {
-                    title:
-                        'البنك الإسلامي الفلسطيني يرعى إطلاق كتاب ',
-                    body: 'الاقتصادي: قدم البنك الإسلامي الفلسطيني رعايته لإطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول" والذي يلخص وقائع المؤتمر الأكاديمي السادس الذي نظمته الهيئة الإسلامية العليا في القدس بمشاركة العديد من الباحثين المهتمين بالصيرفة الإسلامية في فلسطين والعالم، وذلك كجزء من جهود البنك لتطوير الصناعة المالية الإسلامية في فلسطين.',
-                    blogCategory: "اقتصاد",
-                    date: "الأربعاء 14 مارس 2023 10:29 ص",
-                    blogAuthor: "موقع الأقتصادي",
-                    imageUrl:
-                        "https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/ba73ec5f-fb58-4f59-ad94-f185c8838990.jfif",
-                },
-                {
-                    title: "رسمياً.. شركة البركة للتأمين الإسلامي تدخل السوق المحلية",
-                    body: "الاقتصادي: ارتفع عدد شركات التأمين التكافلي العاملة وفق أحكام الشريعة الإسلامية، إلى ثلاث شركات في فلسطين، بعد دخول شركة جديدة إلى السوق مطلع العام الجاري .وأدرجت شركة البركة للتأمين الإسلامي، في قائمة شركات التأمين المرخصة لعام 2023، الصادرة عن هيئة سوق رأس المال الفلسطينية.",
-                    blogCategory: "اقتصاد",
-                    date: " الأربعاء 14 مارس 2023 11:38 ص ",
-                    blogAuthor: "موقع الأقتصادي",
-                    imageUrl:
-                        "https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%203/334102704_909752506832878_8918314473661822180_n.jpg",
-                },
-                {
-                    title:
-                        "اجتماعات مع موردي المواد لخفض الأسعار قبل رمضان",
-                    body: "الاقتصادي: بثينة سفاريني- قال محمد زيد النبالي، نائب رئيس الغرفة التجارية لمحافظة رام الله والبيرة إن أسعار المواد الغذائية ستكون مناسبة في شهر رمضان، مضيفًا أنه سيتم عقد اجتماع لمستوردي المواد الغذائية من أجل خفض الأسعار خلال الشهر.",
-                    blogCategory: "اقتصاد",
-                    date: "الأربعاء 14 مارس 2023 08:18 ص",
-                    blogAuthor: "موقع الأقتصادي",
-                    imageUrl:
-                        "https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/334983868_1240786543523357_1805672528567298355_n.jpg",
-                },
-                {
-                    title:
-                        "محادثات فلسطينية ليتوانية لتطوير علاقات التعاون الاقتصادية بين البلدين",
-                    body: "الاقتصادي: أجرى وزير الاقتصاد الوطني خالد عسيلي محادثات مع المسؤولين في جمهورية ليتوانيا لتعزيز وتوطيد علاقات التعاون الاقتصادية والتجارية بين البلدين وإقامة شراكات استثمارية بين القطاع الخاص الفلسطيني ونظيره الليتواني.",
-                    blogCategory: "اقتصاد",
-                    date: " الأربعاء 14 مارس 2023 08:30 ص",
-                    blogAuthor: "موقع الأقتصادي",
-                    imageUrl:
-                        "https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/c62c9972-575f-4ff9-9b51-f92aae2cf0ec.jfif",
-                },
-                {
-                    title:
-                        "هيئة سوق رأس المال: ارتفاع محفظة التـأجير التمويلي بنسبة 40% في 2022",
-                    body: "الاقتصادي: بثينة سفاريني- قال براق النابلسي مدير عام هيئة سوق رأس المال إن التأجير التمويلي هو من وسائل التمويل الإضافية، إلى جانب القطاع المصرفي، وهو يوفر مصدر تمويلي لأصحاب المنشآت والحرف والمشاريع الصغيرة والمتوسطة.",
-                    blogCategory: "اقتصاد",
-                    date: " الإثنين 13 مارس 2023 03:54 م ",
-                    blogAuthor: "موقع الأقتصادي",
-                    imageUrl:
-                        "https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/335162317_727311579031953_8882415846713655037_n.jpg",
-                },
-                {
-                    title: "النفط يواصل الهبوط وسط مخاوف من أزمة مالية جديدة",
-                    body: "الاقتصادي - رويترز: انخفضت أسعار النفط أكثر من دولار اليوم الثلاثاء، لتواصل خسائرها للجلسة الثانية، إذ أدى انهيار بنك وادي السيليكون (سيليكون فالي SVB) إلى هزة في أسواق الأسهم وأثار مخاوف من وقوع أزمة مالية جديدة. وتراجعت العقود الآجلة لخام برنت 1.1% إلى 79.90 دولارا للبرميل بحلول الساعة 03:45 بتوقيت غرينتش.",
-                    blogCategory: "اقتصاد",
-                    date: "الأحد 12 مارس 2023 06:44 م ",
-                    blogAuthor: "موقع الأقتصادي",
-                    imageUrl:
-                        "https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%202/image123231232.jpeg",
-                },
-            ],
+            news: [],
         };
+    },
+    mounted() {
+        // Call the method to fetch data when the component is mounted
+
+        this.reRoutUser();
+        this.getData();
+    },
+    methods: {
+        reRoutUser() {
+            if (!transUser.token) {
+                this.$router.push('/authPage');
+            }
+        },
+        getData() {
+            axios.get(`${baseUrl.url}/api/news/economy`)
+                .then(response => {
+                    this.news = response.data;
+                    // newsCache.news = response.data;
+                    // this.news = newsCache.news;
+                })
+
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+
     },
     transNEWS
 };

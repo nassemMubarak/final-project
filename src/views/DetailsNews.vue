@@ -9,18 +9,18 @@
                             <div class="blog-title-area">
                                 <ol class="breadcrumb hidden-xs-down">
                                     <li class="breadcrumb-item"><a href="#">{{ detailsNews.title }}</a></li>
-                                    <li class="breadcrumb-item"><a href="#">السياسة</a></li>
+                                    <li class="breadcrumb-item"><a href="#">{{detailsNews.type}}</a></li>
                                 </ol>
 
-                                <span class="color-aqua"><a href="blog-category-01.html" title="">سياية</a></span>
+                                <span class="color-aqua"><a href="blog-category-01.html" title="">{{detailsNews.type}}</a></span>
 
                                 <h3>{{ detailsNews.title }}</h3>
 
                                 <div class="blog-meta big-meta">
-                                    <small><a href="single.html" title="">21 July, 2017</a></small>
-                                    <small><a href="blog-author.html" title="">by Jessica</a></small>
-                                    <small><a href="#" title=""><i class="fa fa-eye"></i> 2344</a></small>
+                                    <small><a href="single.html" title="">{{detailsNews.date}}</a></small>
+                                    <small><a href="blog-author.html" title="">{{detailsNews.author}}</a></small>
                                 </div><!-- end meta -->
+
 
                                 <div class="post-sharing">
                                     <ul class="list-inline">
@@ -46,8 +46,9 @@
 
                                     <p>Donec nec metus sed leo sollicitudin ornare sed consequat neque. Aliquam iaculis neque quis dui venenatis, eget posuere felis viverra. Ut sit amet feugiat elit, nec elementum velit. Sed eu nisl convallis, efficitur turpis eu, euismod nunc. Proin neque enim, malesuada non lobortis nec, facilisis et lectus. Ie consectetur. Nam eget neque ac ex fringilla dignissim eu ac est. Nunc et nisl vel odio posuere. </p> -->
 
-                                    <p>{{ detailsNews.body }} </p>
-                                    <p>{{ detailsNews.description }} </p>
+                                    <h6>{{ detailsNews.body }} </h6>
+                                    <br>
+                                    <p size="50" >{{ detailsNews.details }} </p>
 
                                 </div><!-- end pp -->
 
@@ -55,20 +56,20 @@
 
                             </div><!-- end content -->
 
-                            <div class="blog-title-area">
-                                <div class="tag-cloud-single">
-                                    <span>الكلمات المفتاحية</span>
-                                    <small><a href="#" title=""> #التنسيق الأمني</a></small>
-                                    <small><a href="#" title=""> #السلطة</a></small>
-                                    <small><a href="#" title=""> #قمة العقبة</a></small>
-                                    <small><a href="#" title=""> #شرم الشيخ</a></small>
-                                    <small><a href="#" title=""> #الضفة المحتلة</a></small>
-                                    <small><a href="#" title=""> #قطاع غزة</a></small>
-                                    <small><a href="#" title=""> #فلسطين</a></small>
-                                </div><!-- end meta -->
+<!--                            <div class="blog-title-area">-->
+<!--                                <div class="tag-cloud-single">-->
+<!--                                    <span>الكلمات المفتاحية</span>-->
+<!--                                    <small><a href="#" title=""> #التنسيق الأمني</a></small>-->
+<!--                                    <small><a href="#" title=""> #السلطة</a></small>-->
+<!--                                    <small><a href="#" title=""> #قمة العقبة</a></small>-->
+<!--                                    <small><a href="#" title=""> #شرم الشيخ</a></small>-->
+<!--                                    <small><a href="#" title=""> #الضفة المحتلة</a></small>-->
+<!--                                    <small><a href="#" title=""> #قطاع غزة</a></small>-->
+<!--                                    <small><a href="#" title=""> #فلسطين</a></small>-->
+<!--                                </div>&lt;!&ndash; end meta &ndash;&gt;-->
 
 
-                            </div><!-- end title -->
+<!--                            </div>&lt;!&ndash; end title &ndash;&gt;-->
 
                             <div class="row">
                                 <div class="col-lg-12">
@@ -83,62 +84,60 @@
 
                             <hr class="invis1">
 
-                            <div class="custombox prevnextpost clearfix">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="blog-list-widget">
-                                            <div class="list-group">
-                                                <a href="single.html"
-                                                    class="list-group-item list-group-item-action flex-column align-items-start">
-                                                    <div class="w-100 justify-content-between text-right">
-                                                        <img src="https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%202/image123231232.jpeg"
-                                                            alt="" class="img-fluid float-right">
-                                                        <h5 class="mb-1">النفط يواصل الهبوط وسط مخاوف من أزمة مالية جديدة
-                                                        </h5>
-                                                        <small>الخبر السابق</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col -->
-                                    <div class="col-lg-6">
-                                        <div class="blog-list-widget">
-                                            <div class="list-group">
-                                                <a href="single.html"
-                                                    class="list-group-item list-group-item-action flex-column align-items-start">
-                                                    <div class="w-100 justify-content-between text-right">
-                                                        <img src="https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450"
-                                                            alt="" class="img-fluid float-right">
-                                                        <h5 class="mb-1">عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع
-                                                            ذئابنا المنفردة</h5>
-                                                        <small>الخبر التالي</small>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col -->
+<!--                            <div class="custombox prevnextpost clearfix">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="blog-list-widget">-->
+<!--                                            <div class="list-group">-->
+<!--                                                <a href="single.html"-->
+<!--                                                    class="list-group-item list-group-item-action flex-column align-items-start">-->
+<!--                                                    <div class="w-100 justify-content-between text-right">-->
+<!--                                                        <img src="https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%202/image123231232.jpeg"-->
+<!--                                                            alt="" class="img-fluid float-right">-->
+<!--                                                        <h5 class="mb-1">النفط يواصل الهبوط وسط مخاوف من أزمة مالية جديدة-->
+<!--                                                        </h5>-->
+<!--                                                        <small>الخبر السابق</small>-->
+<!--                                                    </div>-->
+<!--                                                </a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>&lt;!&ndash; end col &ndash;&gt;-->
+<!--                                    <div class="col-lg-6">-->
+<!--                                        <div class="blog-list-widget">-->
+<!--                                            <div class="list-group">-->
+<!--                                                <a href="single.html"-->
+<!--                                                    class="list-group-item list-group-item-action flex-column align-items-start">-->
+<!--                                                    <div class="w-100 justify-content-between text-right">-->
+<!--                                                        <img src="https://seraj.tv/thumb.php?src=uploads//images/4c7108dd084feb78cfd3a39c63c8b23b.jpg&w=780&h=450"-->
+<!--                                                            alt="" class="img-fluid float-right">-->
+<!--                                                        <h5 class="mb-1">عرين الأسود: سلسلة عمليات الثأر مستمرة بتوقيع-->
+<!--                                                            ذئابنا المنفردة</h5>-->
+<!--                                                        <small>الخبر التالي</small>-->
+<!--                                                    </div>-->
+<!--                                                </a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>&lt;!&ndash; end col &ndash;&gt;-->
 
-                                </div><!-- end row -->
-                            </div><!-- end author-box -->
+<!--                                </div>&lt;!&ndash; end row &ndash;&gt;-->
+<!--                            </div>&lt;!&ndash; end author-box &ndash;&gt;-->
 
-                            <hr class="invis1">
+<!--                            <hr class="invis1">-->
 
                             <div class="custombox authorbox clearfix">
-                                <h4 class="small-title">نبذة عن الكاتب</h4>
+                                <h4 class="small-title">المصدر</h4>
                                 <div class="row">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                        <img src="https://seraj.tv/style/atyaf/assets/images/logo.png" alt=""
-                                            class="img-fluid rounded-circle">
-                                    </div><!-- end col -->
+<!--                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">-->
+<!--                                        <img src="https://seraj.tv/style/atyaf/assets/images/logo.png" alt=""-->
+<!--                                            class="img-fluid rounded-circle">-->
+<!--                                    </div>&lt;!&ndash; end col &ndash;&gt;-->
 
                                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                                        <h4><a href="#">قناة الأقصى</a></h4>
-                                        <p>قناة الأقصى قناة فضائية فلسطينية تبث من غزة، أُسست سنة 2006، وفرع من شبكة الأقصى
-                                            الإعلامية، تابعة لحركة المقاومة الإسلامية وتعبّر عن موقفها، وموقف المقاومة
-                                            الفلسطينية. وقد احتلت قناة الأقصى نسبة مشاهدة كبيرة في أوساط العالم العربي
-                                            والإسلامي وفي دول المغرب العربي بالخصوص. <a href="https://seraj.tv/live"
-                                                target="_blank">visit my website</a> </p>
-
+                                        <h4>{{detailsNews.author}}</h4>
+                                        <p>
+                                            نحن في BNMA نسعى دائماً لايصال لك الحقائق كما وردت، دون التستر عن المصدر او اي شيء يمنعك من الوصول الى الحقيقة
+                                            <a :href="detailsNews.link" target="_blank">مصدر الخبر</a>
+                                        </p>
                                         <div class="topsocial">
                                         </div><!-- end social -->
 
@@ -148,32 +147,32 @@
 
                             <hr class="invis1">
 
-                            <div class="custombox clearfix">
-                                <h4 class="small-title">ربما يعجبك أيضا</h4>
-                                <div class="row">
-                                    <div class="col-lg-6" v-for="items in youMayAlsLike" :key="items">
-                                        <div class="blog-box">
-                                            <div class="post-media">
-                                                <a href="single.html" title="">
-                                                    <img :src="items.imageUrl" alt="" class="img-fluid">
-                                                    <div class="hovereffect">
-                                                        <span class=""></span>
-                                                    </div><!-- end hover -->
-                                                </a>
-                                            </div><!-- end media -->
-                                            <div class="blog-meta">
-                                                <h4><a href="single.html" title="">{{ items.title }}</a></h4>
-                                                <small><a href="blog-category-01.html" title="">{{ items.date }}</a></small>
-                                                <small><a href="blog-category-01.html" title="">ترند</a></small>
-                                            </div><!-- end meta -->
-                                        </div><!-- end blog-box -->
-                                    </div><!-- end col -->
+<!--                            <div class="custombox clearfix">-->
+<!--                                <h4 class="small-title">ربما يعجبك أيضا</h4>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-lg-6" v-for="items in youMayAlsLike" :key="items">-->
+<!--                                        <div class="blog-box">-->
+<!--                                            <div class="post-media">-->
+<!--                                                <a href="single.html" title="">-->
+<!--                                                    <img :src="items.imageUrl" alt="" class="img-fluid">-->
+<!--                                                    <div class="hovereffect">-->
+<!--                                                        <span class=""></span>-->
+<!--                                                    </div>&lt;!&ndash; end hover &ndash;&gt;-->
+<!--                                                </a>-->
+<!--                                            </div>&lt;!&ndash; end media &ndash;&gt;-->
+<!--                                            <div class="blog-meta">-->
+<!--                                                <h4><a href="single.html" title="">{{ items.title }}</a></h4>-->
+<!--                                                <small><a href="blog-category-01.html" title="">{{ items.date }}</a></small>-->
+<!--                                                <small><a href="blog-category-01.html" title="">ترند</a></small>-->
+<!--                                            </div>&lt;!&ndash; end meta &ndash;&gt;-->
+<!--                                        </div>&lt;!&ndash; end blog-box &ndash;&gt;-->
+<!--                                    </div>&lt;!&ndash; end col &ndash;&gt;-->
 
 
-                                </div><!-- end row -->
-                            </div><!-- end custom-box -->
+<!--                                </div>&lt;!&ndash; end row &ndash;&gt;-->
+<!--                            </div>&lt;!&ndash; end custom-box &ndash;&gt;-->
 
-                            <hr class="invis1">
+<!--                            <hr class="invis1">-->
 
                             <div class="custombox clearfix">
                                 <h4 class="small-title"> التعليقات</h4>
@@ -214,62 +213,62 @@
                             </div>
                         </div><!-- end page-wrapper -->
                     </div><!-- end col -->
-                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                        <div class="sidebar">
-                            <div class="widget">
-                                <h2 class="widget-title">بحث</h2>
-                                <form class="form-inline search-form">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="البحث في الخبر">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div><!-- end widget -->
-                            <div class="widget">
-                                <h2 class="widget-title">المشاركات الاخيرة</h2>
-                                <div class="blog-list-widget">
-                                    <div class="list-group">
-                                        <a v-for="items in recentPosts" :key="items"
-                                            class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                                <img :src="items.imageUrl" alt="" class="img-fluid float-right">
-                                                <h5 class="mb-1">{{ items.title }}</h5>
-                                                <small>{{ items.date }}</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div><!-- end blog-list -->
-                            </div><!-- end widget -->
+<!--                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">-->
+<!--                        <div class="sidebar">-->
+<!--                            <div class="widget">-->
+<!--                                <h2 class="widget-title">بحث</h2>-->
+<!--                                <form class="form-inline search-form">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="text" class="form-control" placeholder="البحث في الخبر">-->
+<!--                                    </div>-->
+<!--                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>-->
+<!--                                </form>-->
+<!--                            </div>&lt;!&ndash; end widget &ndash;&gt;-->
+<!--                            <div class="widget">-->
+<!--                                <h2 class="widget-title">المشاركات الاخيرة</h2>-->
+<!--                                <div class="blog-list-widget">-->
+<!--                                    <div class="list-group">-->
+<!--                                        <a v-for="items in recentPosts" :key="items"-->
+<!--                                            class="list-group-item list-group-item-action flex-column align-items-start">-->
+<!--                                            <div class="w-100 justify-content-between">-->
+<!--                                                <img :src="items.imageUrl" alt="" class="img-fluid float-right">-->
+<!--                                                <h5 class="mb-1">{{ items.title }}</h5>-->
+<!--                                                <small>{{ items.date }}</small>-->
+<!--                                            </div>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>&lt;!&ndash; end blog-list &ndash;&gt;-->
+<!--                            </div>&lt;!&ndash; end widget &ndash;&gt;-->
 
-                            <div class="widget">
-                                <h2 class="widget-title">Advertising</h2>
-                                <div class="banner-spot clearfix">
-                                    <div class="banner-img">
-                                        <img src="../../public\frontend\assets\upload/ramadan.jpg" alt="" class="img-fluid">
-                                    </div><!-- end banner-img -->
-                                </div><!-- end banner -->
-                            </div><!-- end widget -->
+<!--                            <div class="widget">-->
+<!--                                <h2 class="widget-title">Advertising</h2>-->
+<!--                                <div class="banner-spot clearfix">-->
+<!--                                    <div class="banner-img">-->
+<!--                                        <img src="../../public\frontend\assets\upload/ramadan.jpg" alt="" class="img-fluid">-->
+<!--                                    </div>&lt;!&ndash; end banner-img &ndash;&gt;-->
+<!--                                </div>&lt;!&ndash; end banner &ndash;&gt;-->
+<!--                            </div>&lt;!&ndash; end widget &ndash;&gt;-->
 
-                            <!--
-                            <div class="widget">
-                                <h2 class="widget-title">Instagram Feed</h2>
-                                <div class="instagram-wrapper clearfix">
-                                    <a class="" href="#"><img src="../../public\frontend\assets\upload/insta_01.jpeg" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_02.jpeg" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_03.jpeg" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_04.jpeg" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_05.jpeg" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_06.jpeg" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_07.jpeg" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_08.jpeg" alt="" class="img-fluid"></a>
-                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_09.jpeg" alt="" class="img-fluid"></a>
-                                </div>
-                            </div>
-                        -->
+<!--                            &lt;!&ndash;-->
+<!--                            <div class="widget">-->
+<!--                                <h2 class="widget-title">Instagram Feed</h2>-->
+<!--                                <div class="instagram-wrapper clearfix">-->
+<!--                                    <a class="" href="#"><img src="../../public\frontend\assets\upload/insta_01.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_02.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_03.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_04.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_05.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_06.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_07.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_08.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                    <a href="#"><img src="../../public\frontend\assets\upload/insta_09.jpeg" alt="" class="img-fluid"></a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        &ndash;&gt;-->
 
 
-                        </div><!-- end sidebar -->
-                    </div><!-- end col -->
+<!--                        </div>&lt;!&ndash; end sidebar &ndash;&gt;-->
+<!--                    </div>&lt;!&ndash; end col &ndash;&gt;-->
 
                 </div><!-- end row -->
             </div><!-- end container -->
