@@ -17,7 +17,17 @@
                 <input type="email" v-model="email" @input="checkEmail" placeholder="البريد الإلكتروني"/>
                 <input type="text" placeholder="رقم الهاتف" v-model="phone" @input="checkPhone"/>
                 <input type="password" v-model="password" @input="checkPassword" placeholder="كلمة المرور"/>
-                <button type="submit">إنشاء حساب</button>
+<!--                <button type="submit">إنشاء حساب</button>-->
+
+                <button style="margin: 3em;" type="submit" class="btn btn-primary btn-lg" id="load"
+                        :class="{ 'is-loading': loading }">
+                            <span v-if="loading">
+                              <i class="fa fa-circle-o-notch fa-spin"></i>جار إنشاء حساب
+                            </span>
+                    <span v-else> إنشاء حساب</span>
+                </button>
+
+
                 <span v-if="showAlertEmail" class="alert" style=" color:Tomato;">{{ alertMessageEmail }}</span>
                 <span v-if="showAlertPassword" class="alert" style="color:Tomato;">{{ alertMessagePassword }}</span>
                 <span v-if="showAlertName" class="alert" style="color:Tomato;">{{ alertMessageName }}</span>
@@ -121,33 +131,39 @@ export default {
             this.checkPassword();
             this.checkName();
             this.checkPhone();
-
-            let result = await axios.post('http://localhost:8000/api/users/signup', {
-                email: this.email,
-                password: this.password,
-                name: this.name,
-                phone: this.phone
-            }).then(response => {
-                updateUser({
-                    _id: response.data.user._id,
-                    name: response.data.user.name,
-                    email: response.data.user.email,
-                    phone: response.data.user.phone,
-                    verifyEmail: response.data.user.verifyEmail,
-                    token: response.data.user.token,
-                });
-                this.$router.push('/verifyEmail');
-            }).catch(error => {
-                this.alertMessagePassword = error.response.data.message;
-                this.showAlertPassword = true;
-                console.log(error.response.data.message);
-            })
-            console.log(result);
+            if (!this.showAlertEmail && !this.showAlertPassword && !this.showAlertName && !this.showAlertPhone) {
+                this.loading = true;
+                let result = await axios.post('http://localhost:8000/api/users/signup', {
+                    email: this.email,
+                    password: this.password,
+                    name: this.name,
+                    phone: this.phone
+                }).then(response => {
+                    updateUser({
+                        _id: response.data.user._id,
+                        name: response.data.user.name,
+                        email: response.data.user.email,
+                        phone: response.data.user.phone,
+                        verifyEmail: response.data.user.verifyEmail,
+                        token: response.data.user.token,
+                    });
+                    this.$router.push('/verifyEmail');
+                    this.loading = false
+                }).catch(error => {
+                    this.loading = false;
+                    this.alertMessagePassword = error.response.data.message;
+                    this.showAlertPassword = true;
+                    console.log(error.response.data.message);
+                })
+                this.loading = false
+                console.log(result);
+            }
         },
         async logIn() {
-            this.loading = true
-
+            this.checkEmail();
+            this.checkPassword();
             if (!this.showAlertEmail && !this.showAlertPassword) {
+            this.loading = true
                 let result = await axios.post('http://localhost:8000/api/users/login', {
                     email: this.email,
                     password: this.password
