@@ -9,23 +9,38 @@
                             <p class="text-muted">An email has been sent to you containing an activation code</p>
                         </div>
                         <div class="card-body pt-0">
-                            <form @submit.prevent="sendCode">
+                            <form>
                                 <div class="form-group py-2">
                                     <label for="text">Code</label>
-                                    <input placeholder="****" @input="checkCode" class="form-control my-1" v-model="code"
-                                        autocomplete="off" name="code" id="email" autofocus required />
+                                    <input placeholder="****" @input="checkCode" class="form-control my-1"
+                                           v-model="code"
+                                           autocomplete="off" name="code" id="email" autofocus required/>
                                     <small class="form-text text-muted">Enter your code</small>
                                 </div>
                             </form>
                             <span v-if="showAlertCode" class="alert" style="color:Tomato;">{{ alertMessageCode }}</span>
-                            <div class="pt-2">
-                                <button @click="sendCode" class="btn btn-primary border-0 py-2 px-3 w-100">
-                                    Verify
-                                </button>
-                            </div>
+
+
+                            <button @click="sendCode" type="submit"
+                                    class="btn btn-primary border-0 py-2 px-3 w-100 btn-lg" id="load"
+                                    :class="{ 'is-loading': loading }">
+                            <span v-if="loading">
+                              <i class="fa fa-circle-o-notch fa-spin"></i>جار التحقق من الكود
+                            </span>
+                                <span v-else> تأكيد</span>
+                            </button>
+
+
+                            <!--                            <div class="pt-2">-->
+                            <!--                                -->
+                            <!--                                <button @click="sendCode" class="btn btn-primary border-0 py-2 px-3 w-100">-->
+                            <!--                                    Verify-->
+                            <!--                                </button>-->
+                            <!--                            </div>-->
                             <div class="timer-container">
                                 <p v-if="minutes != 0 || seconds != 0" class="timer">{{ timer }}</p>
-                                <p @click="reSendCode" v-if="minutes == 0 && seconds == 0" style="color:blue" class="timer">
+                                <p @click="reSendCode" v-if="minutes == 0 && seconds == 0" style="color:blue"
+                                   class="timer">
                                     resend</p>
                             </div>
                         </div>
@@ -35,7 +50,7 @@
         </div>
     </section>
 </template>
-  
+
 <style>
 .timer-container {
     display: flex;
@@ -52,7 +67,8 @@
 </style>
 <script>
 import axios from 'axios';
-import { transUser } from '@/reactive/transfer_user';
+import {transUser} from '@/reactive/transfer_user';
+
 export default {
     name: 'verifyEmail',
     setup() {
@@ -63,6 +79,7 @@ export default {
     },
     data() {
         return {
+            loading: false,
             seconds: 0,
             minutes: 0,
             hours: 0,
@@ -101,25 +118,27 @@ export default {
             const headers = {
                 'Authorization': `Bearer ${this.user.token}`
             };
-            const result = await axios.get('http://localhost:8000/api/users/verifyEmail', { headers })
-            .then(response => {
-                this.alertMessageCode = 'We have re-sent the code to your email address';
-                console.log(response.data.email);
-                this.minutes = 3;
-            }).catch(error => {
-                console.log('---------------------------');
-                this.alertMessageCode = error.response.data.message;
-                this.showAlertCode = true;
-                console.log(error.response.data.message);
-            });
+            const result = await axios.get('http://localhost:8000/api/users/verifyEmail', {headers})
+                .then(response => {
+                    this.alertMessageCode = 'We have re-sent the code to your email address';
+                    console.log(response.data.email);
+                    this.minutes = 3;
+                }).catch(error => {
+                    console.log('---------------------------');
+                    this.alertMessageCode = error.response.data.message;
+                    this.showAlertCode = true;
+                    console.log(error.response.data.message);
+                });
             console.log('------------++++++++++++++++++++', result);
         },
         async sendCode() {
+            console.log('-----------------------------------------')
+            this.loading = true;
             this.checkCode();
             if (!this.showAlertCode) {
                 let result = await axios.post('http://localhost:8000/api/users/verifyEmail', {
-                    code: this.code
-                },
+                        code: this.code
+                    },
                     {
                         headers: {
                             'Authorization': `Bearer ${this.user.token}`,
@@ -129,21 +148,28 @@ export default {
                 ).then(response => {
                     console.log(response.data.email);
                     this.$router.push('/homePage');
+                    // this.loading = false;
+
                 }).catch(error => {
                     this.alertMessageCode = error.response.data.message;
                     this.showAlertCode = true;
                     console.log('---------------------------');
                     console.log(error.response.data.message);
+                    // this.loading = false;
+
                 })
                 console.log(result);
+                // this.loading = false;
+
             }
         },
         checkCode() {
+
             const regex = /^\D*(\d\D*){4}$/;
             let result = regex.test(this.code);
             if (this.code == '') {
-                this.showAlertCode = true,
-                    this.alertMessageCode = 'Please enter 4 number code'
+                this.showAlertCode = true;
+                this.alertMessageCode = 'Please enter 4 number code'
             } else if (!result) {
                 this.showAlertCode = true,
                     this.alertMessageCode = 'Input must be exactly 4 digits'
