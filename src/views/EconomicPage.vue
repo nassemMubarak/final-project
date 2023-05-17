@@ -219,17 +219,16 @@
     </div>
 </template>
 <script>
-import {transNEWS} from '@/reactive/save_news'
 import axios from "axios";
 import {baseUrl} from "@/reactive/api";
 
 export default {
     name: "EconomicPage",
-    computed: {
-        transNEWS() {
-            return transNEWS
-        }
-    },
+    // computed: {
+    //     transNEWS() {
+    //         return transNEWS
+    //     }
+    // },
     data() {
         return {
             pagNumber: 1,
@@ -263,6 +262,6 @@ export default {
         },
 
     },
-    transNEWS
+    // transNEWS
 };
 </script>

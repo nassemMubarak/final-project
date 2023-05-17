@@ -1,5 +1,5 @@
 <template>
-    <div dir="rtl" lang="ar"
+    <div dir="rtl" lang="ar" :key="rerender"
          :class="{ 'app-header': true, 'd-none': (this.$route.path === '/'||this.$route.path === '/loadingHome'||this.$route.path === '/verifyEmail' || this.$route.path == '/ourTeam' || this.$route.path == '/authPage') }">
         <div class="collapse top-search" id="collapseExample">
             <div class="card card-block">
@@ -131,38 +131,32 @@
                                                     <div class="row">
                                                         <div v-for="newsItem in news.politics" :key="newsItem"
                                                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <router-link class="row" to="/details" @click="
-                                            transNEWS.type = newsItem.type;
-                                            transNEWS.date = newsItem.date;
-                                            transNEWS.image = newsItem.image;
-                                            transNEWS.author = newsItem.author;
-                                            transNEWS.title = newsItem.title;
-                                            transNEWS.details = newsItem.details;
-                                            transNEWS.body = newsItem.body;
-                                            ">
-                                                                <div class="blog-box">
-                                                                    <div class="post-media">
-                                                                        <a href="single.html" title="">
-                                                                            <img :src="newsItem.image" alt=""
-                                                                                 class="img-fluid"/>
-                                                                            <div class="hovereffect"></div>
-                                                                            <!-- end hover -->
-                                                                            <span class="menucat">{{
-                                                                                newsItem.author
-                                                                                }}</span>
-                                                                        </a>
+                                                            <h4 style="cursor: pointer">
+                                                                <a @click="goToDetails(newsItem)">
+                                                                    <div class="blog-box">
+                                                                        <div class="post-media">
+                                                                            <a>
+                                                                                <img :src="newsItem.image" alt=""
+                                                                                     class="img-fluid"/>
+                                                                                <div class="hovereffect"></div>
+                                                                                <!-- end hover -->
+                                                                                <span class="menucat">{{
+                                                                                    newsItem.author
+                                                                                    }}</span>
+                                                                            </a>
+                                                                        </div>
+                                                                        <!-- end media -->
+                                                                        <div class="blog-meta">
+                                                                            <h4>
+                                                                                <a>{{
+                                                                                    newsItem.title
+                                                                                    }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <!-- end meta -->
                                                                     </div>
-                                                                    <!-- end media -->
-                                                                    <div class="blog-meta">
-                                                                        <h4>
-                                                                            <a href="single.html" title="">{{
-                                                                                newsItem.title
-                                                                                }}</a>
-                                                                        </h4>
-                                                                    </div>
-                                                                    <!-- end meta -->
-                                                                </div>
-                                                            </router-link>
+                                                                </a>
+                                                            </h4>
                                                             <!-- end blog-box -->
                                                         </div>
                                                     </div>
@@ -172,38 +166,32 @@
                                                     <div class="row">
                                                         <div v-for="newsItem in news.economic" :key="newsItem"
                                                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <router-link class="row" to="/details" @click="
-                                            transNEWS.type = newsItem.type;
-                                            transNEWS.date = newsItem.date;
-                                            transNEWS.image = newsItem.image;
-                                            transNEWS.author = newsItem.author;
-                                            transNEWS.title = newsItem.title;
-                                            transNEWS.details = newsItem.details;
-                                            transNEWS.body = newsItem.body;
-                                            ">
-                                                                <div class="blog-box">
-                                                                    <div class="post-media">
-                                                                        <a href="single.html" title="">
-                                                                            <img :src="newsItem.image" alt=""
-                                                                                 class="img-fluid"/>
-                                                                            <div class="hovereffect"></div>
-                                                                            <!-- end hover -->
-                                                                            <span class="menucat">{{
-                                                                                newsItem.author
-                                                                                }}</span>
-                                                                        </a>
+                                                            <h4 style="cursor: pointer">
+                                                                <a @click="goToDetails(newsItem)">
+                                                                    <div class="blog-box">
+                                                                        <div class="post-media">
+                                                                            <a>
+                                                                                <img :src="newsItem.image" alt=""
+                                                                                     class="img-fluid"/>
+                                                                                <div class="hovereffect"></div>
+                                                                                <!-- end hover -->
+                                                                                <span class="menucat">{{
+                                                                                    newsItem.author
+                                                                                    }}</span>
+                                                                            </a>
+                                                                        </div>
+                                                                        <!-- end media -->
+                                                                        <div class="blog-meta">
+                                                                            <h4>
+                                                                                <a>{{
+                                                                                    newsItem.title
+                                                                                    }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <!-- end meta -->
                                                                     </div>
-                                                                    <!-- end media -->
-                                                                    <div class="blog-meta">
-                                                                        <h4>
-                                                                            <a href="single.html" title="">{{
-                                                                                newsItem.title
-                                                                                }}</a>
-                                                                        </h4>
-                                                                    </div>
-                                                                    <!-- end meta -->
-                                                                </div>
-                                                            </router-link>
+                                                                </a>
+                                                            </h4>
                                                             <!-- end blog-box -->
                                                         </div>
                                                     </div>
@@ -213,38 +201,32 @@
                                                     <div class="row">
                                                         <div v-for="newsItem in news.sport" :key="newsItem"
                                                              class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <router-link class="row" to="/details" @click="
-                                            transNEWS.type = newsItem.type;
-                                            transNEWS.date = newsItem.date;
-                                            transNEWS.image = newsItem.image;
-                                            transNEWS.author = newsItem.author;
-                                            transNEWS.title = newsItem.title;
-                                            transNEWS.details = newsItem.details;
-                                            transNEWS.body = newsItem.body;
-                                            ">
-                                                                <div class="blog-box">
-                                                                    <div class="post-media">
-                                                                        <a href="single.html" title="">
-                                                                            <img :src="newsItem.image" alt=""
-                                                                                 class="img-fluid"/>
-                                                                            <div class="hovereffect"></div>
-                                                                            <!-- end hover -->
-                                                                            <span class="menucat">{{
-                                                                                newsItem.author
-                                                                                }}</span>
-                                                                        </a>
+                                                            <h4 style="cursor: pointer">
+                                                                <a @click="goToDetails(newsItem)">
+                                                                    <div class="blog-box">
+                                                                        <div class="post-media">
+                                                                            <a>
+                                                                                <img :src="newsItem.image" alt=""
+                                                                                     class="img-fluid"/>
+                                                                                <div class="hovereffect"></div>
+                                                                                <!-- end hover -->
+                                                                                <span class="menucat">{{
+                                                                                    newsItem.author
+                                                                                    }}</span>
+                                                                            </a>
+                                                                        </div>
+                                                                        <!-- end media -->
+                                                                        <div class="blog-meta">
+                                                                            <h4>
+                                                                                <a>{{
+                                                                                    newsItem.title
+                                                                                    }}</a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <!-- end meta -->
                                                                     </div>
-                                                                    <!-- end media -->
-                                                                    <div class="blog-meta">
-                                                                        <h4>
-                                                                            <a href="single.html" title="">{{
-                                                                                newsItem.title
-                                                                                }}</a>
-                                                                        </h4>
-                                                                    </div>
-                                                                    <!-- end meta -->
-                                                                </div>
-                                                            </router-link>
+                                                                </a>
+                                                            </h4>
                                                             <!-- end blog-box -->
                                                         </div>
                                                     </div>
@@ -301,123 +283,14 @@
 <script>
 import axios from "axios";
 import {baseUrl} from "@/reactive/api.js";
-import {transNEWS} from "@/reactive/save_news";
+import {transNEWS} from "@/reactive/news_category";
 
 export default {
     name: "AppHeader",
-    computed: {
-        transNEWS() {
-            return transNEWS
-        }
-    },
     data() {
         return {
-            news: {
-                sport: [
-                    {
-                        title: 'قرعة ربع نهائي دوري أبطال أوروبا 2022-2023 ومواعيد مبارياتها',
-                        type: 'Sport',
-                        date: '17/3/2023',
-                        author: 'الجزيرة',
-                        image: 'https://www.aljazeera.net/wp-content/uploads/2023/03/00-9.jpg?resize=770%2C513&quality=80',
-                        details: `استأنف برشلونة تدريباته، اليوم الإثنين، بعد أقل من 24 ساعة من إسقاط أتلتيك بيلباو، على ملعب سان ماميس، والحفاظ على فارق ال9 نقاط مع غريمه ريال مدريد . ويستعد برشلونة لمواجهة الكلاسيكو أمام الريال، يوم الأحد المقبل، على ملعب كامب نو، ضمن لقاءات الجولة 26 لليجا`
-                    },
-                    {
-                        title: 'تشافي يريح لاعبي برشلونة قبل الكلاسيكو',
-                        type: 'Sport',
-                        date: 'الأربعاء 14 مارس 2023 11:38 ص ',
-                        author: 'موقع كووورة',
-                        image: 'https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-11%2f2023-03-11-10514871_epa.jpg',
-                        details: `يمثل سيرجي روبرتو أحد أكبر الألغاز لعشاق برشلونة، الراغبين في معرفة السبب وراء تمسك المدرب تشافي بلاعب لم يقدم المردود المنتظر لسنوات عديدة.
-`
-                    },
-                    {
-                        title: 'قرعة ربع نهائي دوري أبطال أوروبا 2022-2023 ومواعيد مبارياتها',
-                        type: 'Sport',
-                        date: '17/3/2023',
-                        author: 'الجزيرة',
-                        image: 'https://www.aljazeera.net/wp-content/uploads/2023/03/00-9.jpg?resize=770%2C513&quality=80',
-                        description: `استأنف برشلونة تدريباته، اليوم الإثنين، بعد أقل من 24 ساعة من إسقاط أتلتيك بيلباو، على ملعب سان ماميس، والحفاظ على فارق ال9 نقاط مع غريمه ريال مدريد . ويستعد برشلونة لمواجهة الكلاسيكو أمام الريال، يوم الأحد المقبل، على ملعب كامب نو، ضمن لقاءات الجولة 26 لليجا
-`
-                    },
-                    {
-                        title: 'تشافي يريح لاعبي برشلونة قبل الكلاسيكو',
-                        type: 'Sport',
-                        date: 'الأربعاء 14 مارس 2023 11:38 ص ',
-                        author: 'موقع كووورة',
-                        image: 'https://img.kooora.com/?i=epa%2fsoccer%2f2023-03%2f2023-03-11%2f2023-03-11-10514871_epa.jpg',
-                        description: `يمثل سيرجي روبرتو أحد أكبر الألغاز لعشاق برشلونة، الراغبين في معرفة السبب وراء تمسك المدرب تشافي بلاعب لم يقدم المردود المنتظر لسنوات عديدة.
-`
-                    },
-
-                ],
-                politics: [
-                    {
-                        title: 'المصادقة بالقراءة الأولى على عودة الاستيطان لشمال الضفة',
-                        type: 'Politics',
-                        date: 'الثلاثاء 14 مارس 2023 10:29 ص',
-                        author: 'قناة الأقصى',
-                        image: 'https://seraj.tv/thumb.php?src=uploads/images/23cdf7627a9e1ebcdc1172bb343a26fc.jpg&w=780&h=450',
-                    },
-                    {
-                        title: 'العاروري: صبرنا ينفد وسنكون عند ثقة شعبنا بنا',
-                        type: 'Politics',
-                        date: 'الثلاثاء 14 مارس 2023 11:38 ص ',
-                        author: 'قناة الأقصى',
-                        image: 'https://seraj.tv/thumb.php?src=uploads//images/2722f6be123ba49b7fdca6b5978cc013.jpeg&w=780&h=450',
-                    },
-                    {
-                        title: 'مواجهات واعتقالات بالقدس والضفة المحتلتين',
-                        type: 'Politics',
-                        date: 'الثلاثاء 14 مارس 2023 08:18 ص',
-                        author: 'قناة الأقصى',
-                        image: 'https://seraj.tv/thumb.php?src=uploads//images/1fd00ee8479a5665c0bc0589f4e00bd3.jpg&w=780&h=450',
-                    },
-                    {
-                        title: 'الذكرى الـ19 لعملية أسدود البطولية المشتركة',
-                        type: 'Politics',
-                        date: 'الثلاثاء 14 مارس 2023 08:30 ص',
-                        author: 'قناة الأقصى',
-                        image: 'https://seraj.tv/thumb.php?src=uploads//images/5f361459bffefbf3f8b4148594a18369.jpg&w=780&h=450',
-                    },
-                ],
-                economic: [
-                    {
-                        title: 'البنك الإسلامي الفلسطيني يرعى إطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول',
-                        type: 'Economic',
-                        date: 'الأربعاء 14 مارس 2023 10:29 ص',
-                        author: 'موقع الأقتصادي',
-                        image: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/ba73ec5f-fb58-4f59-ad94-f185c8838990.jfif',
-                        description: `
-الاقتصادي: قدم البنك الإسلامي الفلسطيني رعايته لإطلاق كتاب "المصارف الإسلامية بين الواقع والمأمول" والذي يلخص وقائع المؤتمر الأكاديمي السادس الذي نظمته الهيئة الإسلامية العليا في القدس بمشاركة العديد من الباحثين المهتمين بالصيرفة الإسلامية في فلسطين والعالم، وذلك كجزء من جهود البنك لتطوير الصناعة المالية الإسلامية في فلسطين.`
-                    },
-                    {
-                        title: 'رسمياً.. شركة البركة للتأمين الإسلامي تدخل السوق المحلية',
-                        type: 'Economic',
-                        date: 'الأربعاء 14 مارس 2023 11:38 ص ',
-                        author: 'موقع الأقتصادي',
-                        image: 'https://www.aliqtisadi.ps//public/files/image/2020/untitled%20folder%203/334102704_909752506832878_8918314473661822180_n.jpg',
-                        description: `الاقتصادي: ارتفع عدد شركات التأمين التكافلي العاملة وفق أحكام الشريعة الإسلامية، إلى ثلاث شركات في فلسطين، بعد دخول شركة جديدة إلى السوق مطلع العام الجاري .وأدرجت شركة البركة للتأمين الإسلامي، في قائمة شركات التأمين المرخصة لعام 2023، الصادرة عن هيئة سوق رأس المال الفلسطينية.`
-                    },
-                    {
-                        title: 'غرفة تجارة رام الله والبيرة: اجتماعات مع موردي المواد الغذائية لخفض الأسعار قبل رمضان',
-                        type: 'Economic',
-                        date: 'الأربعاء 14 مارس 2023 08:18 ص',
-                        author: 'موقع الأقتصادي',
-                        image: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/334983868_1240786543523357_1805672528567298355_n.jpg',
-                        description: `الاقتصادي: بثينة سفاريني- قال محمد زيد النبالي، نائب رئيس الغرفة التجارية لمحافظة رام الله والبيرة إن أسعار المواد الغذائية ستكون مناسبة في شهر رمضان، مضيفًا أنه سيتم عقد اجتماع لمستوردي المواد الغذائية من أجل خفض الأسعار خلال الشهر.`
-                    },
-                    {
-                        title: 'محادثات فلسطينية ليتوانية لتطوير علاقات التعاون الاقتصادية بين البلدين',
-                        type: 'Economic',
-                        date: 'الأربعاء 14 مارس 2023 08:30 ص',
-                        author: 'موقع الأقتصادي',
-                        image: 'https://www.aliqtisadi.ps//public/files/4541%D9%87%D9%86%D8%AA/c62c9972-575f-4ff9-9b51-f92aae2cf0ec.jfif',
-                        description: `
-الاقتصادي: أجرى وزير الاقتصاد الوطني خالد عسيلي محادثات مع المسؤولين في جمهورية ليتوانيا لتعزيز وتوطيد علاقات التعاون الاقتصادية والتجارية بين البلدين وإقامة شراكات استثمارية بين القطاع الخاص الفلسطيني ونظيره الليتواني.`
-                    },
-                ]
-            },
+            news: {},
+            rerender: 0
         }
     },
     mounted() {
@@ -434,6 +307,14 @@ export default {
                     console.log(error);
                 });
         },
+        goToDetails(data) {
+            localStorage.setItem('detailsNews', JSON.stringify(data));
+            transNEWS.detailsNews = JSON.stringify(data);
+            if (this.$route.path === '/details') {
+                this.$router.reload();
+            }
+            this.$router.push('/details');
+        }
     }
 };
 </script>

@@ -276,9 +276,9 @@
     </div>
 </template>
 <script>
-// import {transNEWS} from '@/reactive/save_news'
-console.log(JSON.parse(localStorage.getItem("detailsNews")))
-console.log("hi")
+// import {transNEWS} from '@localStorage'
+import {transNEWS} from "@/reactive/news_category";
+
 export default {
     name: "DetailsNews",
     data() {
@@ -355,11 +355,21 @@ export default {
                     text: 'دعت حركة المقاومة الإسلامية (حماس) السلطة الفلسطينية لعدم المشاركة في قمة شرم الشيخ الأمنية'
                 },
             ],
-            detailsNews: JSON.parse(localStorage.getItem("detailsNews")),
+            detailsNews: JSON.parse(transNEWS.detailsNews),
         }
     },
     mounted() {
         window. scrollTo(0,500);
+        this.getNews();
+    },
+    methods:{
+        getNews(){
+            if(transNEWS.detailsNews){
+                return JSON.parse(transNEWS.detailsNews);
+            }else{
+                return  JSON.parse(localStorage.getItem("detailsNews"));
+            }
+        }
     }
 }
 </script>

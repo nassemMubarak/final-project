@@ -233,15 +233,14 @@
 <script>
 import axios from "axios";
 import {baseUrl} from "@/reactive/api";
-import {transNEWS} from "@/reactive/save_news";
 
 export default {
     name: "PoliticsPage",
-    computed: {
-        transNEWS() {
-            return transNEWS
-        }
-    },
+    // computed: {
+    //     transNEWS() {
+    //         return transNEWS
+    //     }
+    // },
     data() {
         return {
             pagNumber: 1,
@@ -264,7 +263,6 @@ export default {
         getData() {
             axios.get(`${baseUrl.url}/api/news/policy`)
                 .then(response => {
-                    console.log(response.data)
                     this.news = response.data;
                     // newsCache.news = response.data;
                     // this.news = newsCache.news;
