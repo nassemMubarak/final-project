@@ -237,17 +237,17 @@
     </div>
 </template>
 <script>
-import {transNEWS} from "@/reactive/save_news";
+// import {transNEWS} from "@/reactive/save_news";
 import {baseUrl} from "@/reactive/api";
 import axios from "axios";
 
 export default {
     name: "SportPage",
-    computed: {
-        transNEWS() {
-            return transNEWS
-        }
-    },
+    // computed: {
+    //     transNEWS() {
+    //         return transNEWS
+    //     }
+    // },
     data() {
         return {
             pagNumber: 1,

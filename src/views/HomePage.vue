@@ -15,7 +15,7 @@
                     <div class="left-side">
 
                         <div class="masonry-box post-media">
-                            <img :src="news.economic[0].image" alt="" class="img-fluid"/>
+                            <img :src="news.sport[0].image" alt="" class="img-fluid"/>
                             <div class="shadoweffect">
                                 <div class="shadow-desc">
                                     <div class="blog-meta">
@@ -329,7 +329,7 @@
     </div>
 </template>
 <script>
-// import {localStorage} from '@/reactive/save_news'
+// import {localStorage} from '@localStorage'
 // import {transUser} from '@/reactive/transfer_user'
 // import {newsCache} from '@/reactive/transfer_news'
 // import {baseUrl} from '@/reactive/api.js'
