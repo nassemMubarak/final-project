@@ -269,7 +269,6 @@ export default {
                     // newsCache.news = response.data;
                     // this.news = newsCache.news;
                 })
-
                 .catch(error => {
                     console.log(error);
                 });

@@ -96,7 +96,7 @@
 <script>
 
 import axios from 'axios';
-import {updateUser} from '@/reactive/save_user';
+import updateTransUser from '@/reactive/save_user';
 import {baseUrl} from '@/reactive/api.js';
 
 export default {
@@ -126,20 +126,19 @@ export default {
     },
     methods: {
         async signUp() {
-
             this.checkEmail();
             this.checkPassword();
             this.checkName();
             this.checkPhone();
             if (!this.showAlertEmail && !this.showAlertPassword && !this.showAlertName && !this.showAlertPhone) {
                 this.loading = true;
-                let result = await axios.post('http://localhost:8000/api/users/signup', {
+                let result = await axios.post(`${baseUrl.url}/api/users/signup`, {
                     email: this.email,
                     password: this.password,
                     name: this.name,
                     phone: this.phone
                 }).then(response => {
-                    updateUser({
+                    updateTransUser({
                         _id: response.data.user._id,
                         name: response.data.user.name,
                         email: response.data.user.email,
@@ -158,19 +157,20 @@ export default {
                 this.loading = false
                 console.log(result);
             }
+
         },
         async logIn() {
             this.checkEmail();
             this.checkPassword();
             if (!this.showAlertEmail && !this.showAlertPassword) {
             this.loading = true
-                let result = await axios.post('http://localhost:8000/api/users/login', {
+                let result = await axios.post(`${baseUrl.url}/api/users/login`, {
                     email: this.email,
                     password: this.password
                 }).then(async response => {
                     console.log(response.data.email);
                     if (response.data.verifyEmail == false) {
-                        updateUser({
+                        updateTransUser({
                             _id: response.data._id,
                             name: response.data.name,
                             email: response.data.email,
@@ -179,7 +179,7 @@ export default {
                             token: response.data.token,
                         });
                         const headers = {'Authorization': `Bearer ${response.data.token}`}
-                        let result = await axios.get('http://localhost:8000/api/users/verifyEmail', {headers})
+                        let result = await axios.get(`${baseUrl.url}/api/users/verifyEmail`, {headers})
                             .then(response => {
                                 this.alertMessageCode = 'We have re-sent the code to your email address';
                                 console.log(response.data.email);
@@ -193,7 +193,7 @@ export default {
                         console.log(result);
                         this.$router.push('/verifyEmail');
                     } else {
-                        updateUser({
+                        updateTransUser({
                             _id: response.data._id,
                             name: response.data.name,
                             email: response.data.email,
@@ -201,7 +201,7 @@ export default {
                             verifyEmail: response.data.verifyEmail,
                             token: response.data.token,
                         });
-                        this.$router.push('/loadingHome');
+                        this.$router.push('/homePage');
                     }
                     this.loading = false
                     // this.$router.push({ name: 'login', query: { redirect: '/homePage' } })
