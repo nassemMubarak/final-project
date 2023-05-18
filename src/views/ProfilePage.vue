@@ -124,9 +124,9 @@ export default {
 
   data() {
     return {
-      name: "",
-      email: "",
-      phone: "",
+      name: localStorage.name,
+      email: localStorage.email,
+      phone: localStorage.phone,
       image: "",
     };
   },

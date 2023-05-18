@@ -29,7 +29,7 @@
                       <h6 class="mb-0">الإسم الكامل</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <input type="text" class="form-control" value="BNMA NEWS" />
+                      <input type="text" class="form-control" :value="editProfileView.userName" />
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -37,7 +37,7 @@
                       <h6 class="mb-0">البريد الإلكتروني</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <input type="text" class="form-control" value="john@example.com" />
+                      <input type="text" class="form-control" :value="editProfileView.email" />
                     </div>
                   </div>
 
@@ -46,7 +46,7 @@
                       <h6 class="mb-0">رقم الهاتف</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      <input type="text" class="form-control" value="(320) 380-4539" />
+                      <input type="text" class="form-control" :value="editProfileView.phone" />
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -82,7 +82,11 @@ export default {
   name: "EditProfileView",
   data() {
     return {
-      editProfileView: {},
+      editProfileView: {
+          userName: localStorage.name,
+          phone: localStorage.phone,
+          email: localStorage.email,
+      },
     };
   },
 };
