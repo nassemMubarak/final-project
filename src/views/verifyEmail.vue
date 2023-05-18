@@ -67,15 +67,9 @@
 </style>
 <script>
 import axios from 'axios';
-import { transUser } from '@/reactive/save_user';
+import {baseUrl} from "@/reactive/api";
 export default {
     name: 'verifyEmail',
-    setup() {
-        const user = transUser;
-        return {
-            user
-        };
-    },
     data() {
         return {
             loading: false,
@@ -115,9 +109,9 @@ export default {
     methods: {
         async reSendCode() {
             const headers = {
-                'Authorization': `Bearer ${this.user.token}`
+                'Authorization': `Bearer ${localStorage.token}`
             };
-            const result = await axios.get('http://localhost:8000/api/users/verifyEmail', {headers})
+            const result = await axios.get(`${baseUrl.url}/api/users/verifyEmail`, {headers})
                 .then(response => {
                     this.alertMessageCode = 'We have re-sent the code to your email address';
                     console.log(response.data.email);
@@ -131,16 +125,16 @@ export default {
             console.log('------------++++++++++++++++++++', result);
         },
         async sendCode() {
-            console.log('-----------------------------------------')
+            console.log('-----------------------------------------',localStorage.token)
             this.loading = true;
             this.checkCode();
             if (!this.showAlertCode) {
-                let result = await axios.post('http://localhost:8000/api/users/verifyEmail', {
+                let result = await axios.post(`${baseUrl.url}/api/users/verifyEmail`, {
                         code: this.code
                     },
                     {
                         headers: {
-                            'Authorization': `Bearer ${this.user.token}`,
+                            'Authorization': `Bearer ${localStorage.token}`,
                             'Content-Type': 'application/x-www-form-urlencoded'
                         }
                     }

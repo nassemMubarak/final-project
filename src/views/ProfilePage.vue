@@ -110,6 +110,7 @@ export default {
 <script>
 import axios from "axios";
 import { transUser } from "@/reactive/save_user";
+import {baseUrl} from "@/reactive/api";
 
 export default {
   name: "ProfileView",
@@ -149,7 +150,7 @@ export default {
         };
 
         const response = await axios.get(
-          "http://localhost:8000/api/profile/getProfile",
+            `${baseUrl.url}/api/profile/getProfile`,
           { headers }
         );
 
