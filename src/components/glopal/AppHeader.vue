@@ -100,145 +100,145 @@
                                 <router-link class="nav-link color-pink-hover" to="/homePage">الرئيسية</router-link>
                                 <!-- <a class="nav-link color-pink-hover" href="index.html">Home</a> -->
                             </li>
-                            <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">
-                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
-                                   aria-haspopup="true"
-                                   aria-expanded="false">الفئات</a>
-                                <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">
-                                    <li>
-                                        <div class="mega-menu-content clearfix">
-                                            <div class="tab">
-                                                <button class="tablinks active"
-                                                        onclick="openCategory(event, 'politics')">
-                                                    السياسة
-                                                </button>
-                                                <button class="tablinks" onclick="openCategory(event, 'economic')">
-                                                    الأقتصاد
-                                                </button>
-                                                <button class="tablinks" onclick="openCategory(event, 'sport')">
-                                                    الرياضة
-                                                </button>
-                                                <!-- <button class="tablinks" onclick="openCategory(event, 'cat04')">
-                                                  Architecture
-                                                </button>
-                                                <button class="tablinks" onclick="openCategory(event, 'cat05')">
-                                                  Recipes
-                                                </button> -->
-                                            </div>
+<!--                            <li class="nav-item dropdown has-submenu menu-large hidden-md-down hidden-sm-down hidden-xs-down">-->
+<!--                                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"-->
+<!--                                   aria-haspopup="true"-->
+<!--                                   aria-expanded="false">الفئات</a>-->
+<!--                                <ul class="dropdown-menu megamenu" aria-labelledby="dropdown01">-->
+<!--                                    <li>-->
+<!--                                        <div class="mega-menu-content clearfix">-->
+<!--                                            <div class="tab">-->
+<!--                                                <button class="tablinks active"-->
+<!--                                                        onclick="openCategory(event, 'politics')">-->
+<!--                                                    السياسة-->
+<!--                                                </button>-->
+<!--                                                <button class="tablinks" onclick="openCategory(event, 'economic')">-->
+<!--                                                    الأقتصاد-->
+<!--                                                </button>-->
+<!--                                                <button class="tablinks" onclick="openCategory(event, 'sport')">-->
+<!--                                                    الرياضة-->
+<!--                                                </button>-->
+<!--                                                &lt;!&ndash; <button class="tablinks" onclick="openCategory(event, 'cat04')">-->
+<!--                                                  Architecture-->
+<!--                                                </button>-->
+<!--                                                <button class="tablinks" onclick="openCategory(event, 'cat05')">-->
+<!--                                                  Recipes-->
+<!--                                                </button> &ndash;&gt;-->
+<!--                                            </div>-->
 
-                                            <div class="tab-details clearfix">
-                                                <div id="politics" class="tabcontent active">
-                                                    <div class="row">
-                                                        <div v-for="newsItem in news.politics" :key="newsItem"
-                                                             class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <h4 style="cursor: pointer">
-                                                                <a @click="goToDetails(newsItem)">
-                                                                    <div class="blog-box">
-                                                                        <div class="post-media">
-                                                                            <a>
-                                                                                <img :src="newsItem.image" alt=""
-                                                                                     class="img-fluid"/>
-                                                                                <div class="hovereffect"></div>
-                                                                                <!-- end hover -->
-                                                                                <span class="menucat">{{
-                                                                                    newsItem.author
-                                                                                    }}</span>
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- end media -->
-                                                                        <div class="blog-meta">
-                                                                            <h4>
-                                                                                <a>{{
-                                                                                    newsItem.title
-                                                                                    }}</a>
-                                                                            </h4>
-                                                                        </div>
-                                                                        <!-- end meta -->
-                                                                    </div>
-                                                                </a>
-                                                            </h4>
-                                                            <!-- end blog-box -->
-                                                        </div>
-                                                    </div>
-                                                    <!-- end row -->
-                                                </div>
-                                                <div id="economic" class="tabcontent">
-                                                    <div class="row">
-                                                        <div v-for="newsItem in news.economic" :key="newsItem"
-                                                             class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <h4 style="cursor: pointer">
-                                                                <a @click="goToDetails(newsItem)">
-                                                                    <div class="blog-box">
-                                                                        <div class="post-media">
-                                                                            <a>
-                                                                                <img :src="newsItem.image" alt=""
-                                                                                     class="img-fluid"/>
-                                                                                <div class="hovereffect"></div>
-                                                                                <!-- end hover -->
-                                                                                <span class="menucat">{{
-                                                                                    newsItem.author
-                                                                                    }}</span>
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- end media -->
-                                                                        <div class="blog-meta">
-                                                                            <h4>
-                                                                                <a>{{
-                                                                                    newsItem.title
-                                                                                    }}</a>
-                                                                            </h4>
-                                                                        </div>
-                                                                        <!-- end meta -->
-                                                                    </div>
-                                                                </a>
-                                                            </h4>
-                                                            <!-- end blog-box -->
-                                                        </div>
-                                                    </div>
-                                                    <!-- end row -->
-                                                </div>
-                                                <div id="sport" class="tabcontent">
-                                                    <div class="row">
-                                                        <div v-for="newsItem in news.sport" :key="newsItem"
-                                                             class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-                                                            <h4 style="cursor: pointer">
-                                                                <a @click="goToDetails(newsItem)">
-                                                                    <div class="blog-box">
-                                                                        <div class="post-media">
-                                                                            <a>
-                                                                                <img :src="newsItem.image" alt=""
-                                                                                     class="img-fluid"/>
-                                                                                <div class="hovereffect"></div>
-                                                                                <!-- end hover -->
-                                                                                <span class="menucat">{{
-                                                                                    newsItem.author
-                                                                                    }}</span>
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- end media -->
-                                                                        <div class="blog-meta">
-                                                                            <h4>
-                                                                                <a>{{
-                                                                                    newsItem.title
-                                                                                    }}</a>
-                                                                            </h4>
-                                                                        </div>
-                                                                        <!-- end meta -->
-                                                                    </div>
-                                                                </a>
-                                                            </h4>
-                                                            <!-- end blog-box -->
-                                                        </div>
-                                                    </div>
-                                                    <!-- end row -->
-                                                </div>
-                                            </div>
-                                            <!-- end tab-details -->
-                                        </div>
-                                        <!-- end mega-menu-content -->
-                                    </li>
-                                </ul>
-                            </li>
+<!--                                            <div class="tab-details clearfix">-->
+<!--                                                <div id="politics" class="tabcontent active">-->
+<!--                                                    <div class="row">-->
+<!--                                                        <div v-for="newsItem in news.politics" :key="newsItem"-->
+<!--                                                             class="col-lg-3 col-md-6 col-sm-12 col-xs-12">-->
+<!--                                                            <h4 style="cursor: pointer">-->
+<!--                                                                <a @click="goToDetails(newsItem)">-->
+<!--                                                                    <div class="blog-box">-->
+<!--                                                                        <div class="post-media">-->
+<!--                                                                            <a>-->
+<!--                                                                                <img :src="newsItem.image" alt=""-->
+<!--                                                                                     class="img-fluid"/>-->
+<!--                                                                                <div class="hovereffect"></div>-->
+<!--                                                                                &lt;!&ndash; end hover &ndash;&gt;-->
+<!--                                                                                <span class="menucat">{{-->
+<!--                                                                                    newsItem.author-->
+<!--                                                                                    }}</span>-->
+<!--                                                                            </a>-->
+<!--                                                                        </div>-->
+<!--                                                                        &lt;!&ndash; end media &ndash;&gt;-->
+<!--                                                                        <div class="blog-meta">-->
+<!--                                                                            <h4>-->
+<!--                                                                                <a>{{-->
+<!--                                                                                    newsItem.title-->
+<!--                                                                                    }}</a>-->
+<!--                                                                            </h4>-->
+<!--                                                                        </div>-->
+<!--                                                                        &lt;!&ndash; end meta &ndash;&gt;-->
+<!--                                                                    </div>-->
+<!--                                                                </a>-->
+<!--                                                            </h4>-->
+<!--                                                            &lt;!&ndash; end blog-box &ndash;&gt;-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                    &lt;!&ndash; end row &ndash;&gt;-->
+<!--                                                </div>-->
+<!--                                                <div id="economic" class="tabcontent">-->
+<!--                                                    <div class="row">-->
+<!--                                                        <div v-for="newsItem in news.economic" :key="newsItem"-->
+<!--                                                             class="col-lg-3 col-md-6 col-sm-12 col-xs-12">-->
+<!--                                                            <h4 style="cursor: pointer">-->
+<!--                                                                <a @click="goToDetails(newsItem)">-->
+<!--                                                                    <div class="blog-box">-->
+<!--                                                                        <div class="post-media">-->
+<!--                                                                            <a>-->
+<!--                                                                                <img :src="newsItem.image" alt=""-->
+<!--                                                                                     class="img-fluid"/>-->
+<!--                                                                                <div class="hovereffect"></div>-->
+<!--                                                                                &lt;!&ndash; end hover &ndash;&gt;-->
+<!--                                                                                <span class="menucat">{{-->
+<!--                                                                                    newsItem.author-->
+<!--                                                                                    }}</span>-->
+<!--                                                                            </a>-->
+<!--                                                                        </div>-->
+<!--                                                                        &lt;!&ndash; end media &ndash;&gt;-->
+<!--                                                                        <div class="blog-meta">-->
+<!--                                                                            <h4>-->
+<!--                                                                                <a>{{-->
+<!--                                                                                    newsItem.title-->
+<!--                                                                                    }}</a>-->
+<!--                                                                            </h4>-->
+<!--                                                                        </div>-->
+<!--                                                                        &lt;!&ndash; end meta &ndash;&gt;-->
+<!--                                                                    </div>-->
+<!--                                                                </a>-->
+<!--                                                            </h4>-->
+<!--                                                            &lt;!&ndash; end blog-box &ndash;&gt;-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                    &lt;!&ndash; end row &ndash;&gt;-->
+<!--                                                </div>-->
+<!--                                                <div id="sport" class="tabcontent">-->
+<!--                                                    <div class="row">-->
+<!--                                                        <div v-for="newsItem in news.sport" :key="newsItem"-->
+<!--                                                             class="col-lg-3 col-md-6 col-sm-12 col-xs-12">-->
+<!--                                                            <h4 style="cursor: pointer">-->
+<!--                                                                <a @click="goToDetails(newsItem)">-->
+<!--                                                                    <div class="blog-box">-->
+<!--                                                                        <div class="post-media">-->
+<!--                                                                            <a>-->
+<!--                                                                                <img :src="newsItem.image" alt=""-->
+<!--                                                                                     class="img-fluid"/>-->
+<!--                                                                                <div class="hovereffect"></div>-->
+<!--                                                                                &lt;!&ndash; end hover &ndash;&gt;-->
+<!--                                                                                <span class="menucat">{{-->
+<!--                                                                                    newsItem.author-->
+<!--                                                                                    }}</span>-->
+<!--                                                                            </a>-->
+<!--                                                                        </div>-->
+<!--                                                                        &lt;!&ndash; end media &ndash;&gt;-->
+<!--                                                                        <div class="blog-meta">-->
+<!--                                                                            <h4>-->
+<!--                                                                                <a>{{-->
+<!--                                                                                    newsItem.title-->
+<!--                                                                                    }}</a>-->
+<!--                                                                            </h4>-->
+<!--                                                                        </div>-->
+<!--                                                                        &lt;!&ndash; end meta &ndash;&gt;-->
+<!--                                                                    </div>-->
+<!--                                                                </a>-->
+<!--                                                            </h4>-->
+<!--                                                            &lt;!&ndash; end blog-box &ndash;&gt;-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                    &lt;!&ndash; end row &ndash;&gt;-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            &lt;!&ndash; end tab-details &ndash;&gt;-->
+<!--                                        </div>-->
+<!--                                        &lt;!&ndash; end mega-menu-content &ndash;&gt;-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
 
                             <li class="nav-item">
                                 <router-link class="nav-link color-pink-hover" to="/politics">السياسية</router-link>

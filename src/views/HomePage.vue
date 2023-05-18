@@ -357,7 +357,7 @@ export default {
         },
         goToDetails(data) {
             localStorage.setItem('detailsNews', JSON.stringify(data));
-            this.$router.push('/details');
+                this.$router.push('/details');
         }
     }
 

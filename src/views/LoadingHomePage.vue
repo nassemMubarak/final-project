@@ -27,7 +27,10 @@ export default {
                 this.$router.push('/authPage');
             }
         },
-        getData() {
+        async getData() {
+            axios.post(`${baseUrl.url}/api/news/policy`).then().catch()
+            axios.post(`${baseUrl.url}/api/news/economy`).then().catch()
+            axios.post(`${baseUrl.url}/api/news/sport`).then().catch()
             axios.get(`${baseUrl.url}/api/news/home`)
                 .then(response => {
                     console.log(response.data)
